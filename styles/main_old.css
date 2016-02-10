@@ -1,0 +1,29 @@
+body{
+    background-color: cornsilk;
+    font: 12pt helvetica sans-serif;
+}
+.table_wrapper{
+    overflow: scroll;
+    overflow-scrolling: auto;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 2px groove gainsboro;
+    border-top-width: 1px;
+    border-bottom-width: 3px;
+    border-radius: 5px
+}
+.table_wrapper table{
+    background-color: aliceblue;
+}
+.table_wrapper thead td{
+    background-color: lightblue;
+    border-top: 1px groove gainsboro;
+    border-bottom: 3px groove gainsboro;
+    border-radius: 5px;
+}
+.table_wrapper tbody td{
+    border: 2px groove gainsboro;
+    border-top-width: 1px;
+    border-bottom-width: 3px;
+    border-radius: 5px;
+}
