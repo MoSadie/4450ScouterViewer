@@ -12,6 +12,9 @@ class Math {
 	 * @return float standard deviation of the input array as a float
 	 */
 	public static function standardDeviation($arr) {
+		if(sizeof($arr) <= 1){
+			return 0;
+		}
 		$total = array_sum($arr);
 		$avg = $total / sizeof($arr);
 		$variation = 0;

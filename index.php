@@ -1,37 +1,53 @@
 <?php
 include_once "MyPDO.php";
-include_once "Math.php";
 /**
  * Created by Caleb Milligan on 2/1/2016.
  */
-function getScores($team_number) {
-	$db = new MyPDO();
-	$statement = $db->prepare("SELECT `low_goals`, `high_goals` FROM `stand_scouting` WHERE `team_number`=:team_number");
-	$statement->bindParam(":team_number", $team_number, PDO::PARAM_INT);
-	$success = $statement->execute();
-	$scores = array();
-	if (!$success) {
-		return $scores;
+
+function getSpeedName($speed) {
+	switch ((int)$speed) {
+		case 0:
+			return "Slow";
+		case 1:
+			return "Medium";
+		case 2:
+			return "Fast";
+		default:
+			return "N/A";
 	}
+}
+
+function getEndgameName($endgame){
+	switch((int)$endgame){
+		case 0:
+			return "Parked on ramp";
+		case 1:
+			return "Climbed tower";
+		default:
+			return "N/A";
+	}
+}
+
+$db = new MyPDO();
+$matches = array();
+$teams = array();
+$raw_query = "SELECT * FROM `stand_scouting` ORDER BY `team_number` ASC, `match_number`";
+$statement = $db->prepare($raw_query);
+$success = $statement->execute();
+if ($success) {
 	for ($i = 0; $i < $statement->rowCount(); $i++) {
-		$data = $statement->fetch(PDO::FETCH_ASSOC);
-		array_push($scores, $data["low_goals"] + $data["high_goals"]);
+		array_push($matches, $statement->fetch(PDO::FETCH_ASSOC));
 	}
-	return $scores;
 }
-
-function getAverageScore(&$scores) {
-	return array_sum($scores) / sizeof($scores);
+$raw_query = "SELECT * FROM `pit_scouting` ORDER BY `team_number` ASC";
+$statement = $db->prepare($raw_query);
+$success = $statement->execute();
+if ($success) {
+	for ($i = 0; $i < $statement->rowCount(); $i++) {
+		array_push($teams, $statement->fetch(PDO::FETCH_ASSOC));
+	}
 }
-
-function getReliability(&$scores) {
-	return Math::standardDeviation($scores);
-}
-
-$team_number = -1;
-if (isset($_GET["team"])) {
-	$team_number = (int)$_GET["team"];
-}
+$statement->closeCursor();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,11 +72,12 @@ if (isset($_GET["team"])) {
 							$temp_team_number = $statement->fetchColumn(0);
 							echo "<option label='$temp_team_number' value='$temp_team_number'></option>";
 						}
+						$statement->closeCursor();
 						?>
 					</datalist>
 					<form>
-						<input type="number" title="Team #" placeholder="Team #" list="team_numbers"/>
-						<input type="button" class="btn-sm" value="Go" title="Go">
+						<input id="team_number" type="number" title="Team #" placeholder="Team #" list="team_numbers"/>
+						<input id="submit_team" type="button" class="btn-sm" value="Go" title="Go" onclick="getScores()">
 					</form>
 				</div>
 			</div>
@@ -80,16 +97,16 @@ if (isset($_GET["team"])) {
 					</div>
 					<div class="row">
 						<div class="col-lg-6">
-							<h4><span>Average score: </span>23</h4>
+							<h4 id="average_score"><span>Average score: </span>23</h4>
 						</div>
 						<div class="col-lg-6">
-							<h4><span>Reliability: </span>4</h4>
+							<h4 id="reliability"><span>Reliability: </span>4</h4>
 						</div>
 						<div class="col-lg-6">
-							<p><h4>Autonomous behavior: </h4>We did some crazy cool stuff.</p>
+							<p id="autonomous_behavior"><h4>Autonomous behavior: </h4>We did some crazy cool stuff.</p>
 						</div>
 						<div class="col-lg-6">
-							<p><h4>Robot description: </h4>It's got wheels, and some pneumatics.</p>
+							<p id="robot_description"><h4>Robot description: </h4>It's got wheels, and some pneumatics.</p>
 						</div>
 					</div>
 				</div>
@@ -104,8 +121,8 @@ if (isset($_GET["team"])) {
 						<option label="4" value="4"></option>
 					</datalist>
 					<form>
-						<input type="number" title="Match #" placeholder="Match #" list="match_numbers"/>
-						<input type="button" class="btn-sm" value="Go" title="Go">
+						<input id="match_number" type="number" title="Match #" placeholder="Match #" list="match_numbers"/>
+						<input id="submit_match" type="button" class="btn-sm" value="Go" title="Go">
 					</form>
 					<hr>
 				</div>
@@ -237,6 +254,69 @@ if (isset($_GET["team"])) {
 			</div>
 		</div>
 		<hr>
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<td>Team #</td>
+						<td>Match #</td>
+						<td>Scouter Name</td>
+						<td>Pickup Speed</td>
+						<td>Portcullis Speed</td>
+						<td>Chival de Frise Speed</td>
+						<td>Moat Speed</td>
+						<td>Ramparts Speed</td>
+						<td>Drawbridge Speed</td>
+						<td>Sally Port Speed</td>
+						<td>Rock Wall Speed</td>
+						<td>Rough Terrain Speed</td>
+						<td>Low Bar Speed</td>
+						<td>Low Goals</td>
+						<td>High Goals</td>
+						<td>Endgame</td>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					foreach ($matches as $match) {
+						echo "<tr><td>";
+						echo $match["team_number"];
+						echo "</td><td>";
+						echo $match["match_number"];
+						echo "</td><td>";
+						echo $match["team_name"];
+						echo "</td><td>";
+						echo getSpeedName($match["pickup_speed"]);
+						echo "</td><td>";
+						echo getSpeedName($match["portcullis_speed"]);
+						echo "</td><td>";
+						echo getSpeedName($match["chival_speed"]);
+						echo "</td><td>";
+						echo getSpeedName($match["moat_speed"]);
+						echo "</td><td>";
+						echo getSpeedName($match["ramparts_speed"]);
+						echo "</td><td>";
+						echo getSpeedName($match["drawbridge_speed"]);
+						echo "</td><td>";
+						echo getSpeedName($match["sally_speed"]);
+						echo "</td><td>";
+						echo getSpeedName($match["rock_speed"]);
+						echo "</td><td>";
+						echo getSpeedName($match["rough_speed"]);
+						echo "</td><td>";
+						echo getSpeedName($match["low_speed"]);
+						echo "</td><td>";
+						echo $match["low_goals"];
+						echo "</td><td>";
+						echo $match["high_goals"];
+						echo "</td><td>";
+						echo getEndgameName($match["endgame"]);
+						echo "</td></tr>";
+					}
+					?>
+				</tbody>
+			</table>
+		</div>
 		<footer class="text-center">
 			<div class="container">
 				<div class="row">
@@ -248,5 +328,6 @@ if (isset($_GET["team"])) {
 		</footer>
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/bootstrap.js"></script>
+		<script src="js/scouting.js"></script>
 	</body>
 </html>
