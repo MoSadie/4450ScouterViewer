@@ -34,7 +34,7 @@ if ($action == "getinfo") {
 	}
 	$data["auto_behavior"] = $auto_behavior;
 	$imgname = "uploaded/images/ROBOT_" . $team . ".jpg";
-	if(!file_exists($imgname)){
+	if (!file_exists($imgname)) {
 		$imgname = "images/FIRST-Logo.png";
 	}
 	$data["image"] = $imgname;
@@ -112,16 +112,24 @@ function getScores($team_number) {
 }
 
 function getAverageScore(&$scores) {
-	if(sizeof($scores) < 1){
+	if (sizeof($scores) < 1) {
 		return 0;
 	}
 	return array_sum($scores) / sizeof($scores);
 }
 
 function getReliability(&$scores) {
-	return Math::standardDeviation($scores);
+	$raw_value = Math::standardDeviation($scores);
+	if ($raw_value <= 2.0) {
+		return "Very reliable (<= 2 pts)";
+	}
+	if ($raw_value <= 6.0) {
+		return "Somewhat reliable (<= 6 pts)";
+	}
+	else {
+		return "Unreliable (> 6 pts)";
+	}
 }
-
 
 function getSpeedName($speed) {
 	switch ((int)$speed) {
