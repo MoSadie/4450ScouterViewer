@@ -13,11 +13,11 @@ if (isset($_FILES['userfile'])) {
 			$failed .= "$file_name (Invalid file type)\\n";
 			continue;
 		}
-		if(!preg_match("/ROBOT_\\d+$/", $file_name)) {
+		$file_name_no_ext = pathinfo($file_name, PATHINFO_FILENAME);
+		if(!preg_match("/ROBOT_\\d+$/", $file_name_no_ext)) {
 			$failed .= "$file_name (Invalid file name)\\n";
 			continue;
 		}
-		$file_name_no_ext = pathinfo($file_name, PATHINFO_FILENAME);
 		if (!move_uploaded_file($file_tmp, "uploaded/images/$file_name_no_ext.JPG")) {
 			$failed .= "$file_name (Copy failed)\\n";
 		}
