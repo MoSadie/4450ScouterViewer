@@ -23,7 +23,7 @@ function getScores(){
         $("reliability").innerHTML = "<span>Reliability: </span>" + matches["variance"];
         $("team_name").innerHTML = "<span>Team Name: </span>" + matches["team_name"];
         $("robot_description").innerHTML = "<h4>Robot description: </h4>" + matches["robot_description"];
-        //$("robot_image").attr("src", matches["image"]);
+        $("robot_image").attr("src", matches["image"]);
         var list = "";
         matches["auto_behavior"].forEach(function(entry){
             list += "<li value=\"" + entry["match_number"] + "\">" + entry["autonomous_behavior"] + "</li>";
