@@ -91,9 +91,6 @@ if (isset($_FILES['userfile'])) {
 						<div class="col-lg-6">
 							<h4 id="team_name"><span>Team Name: </span></h4>
 						</div>
-						<div class="col-lg-6">
-							<h4 id="scouter_name"><span>Scouter: </span></h4>
-						</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-6">
