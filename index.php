@@ -30,17 +30,6 @@ if (isset($_FILES['userfile'])) {
 		<?php
 	}
 }
-$db = new MyPDO();
-$teams = array();
-$raw_query = "SELECT * FROM `pit_scouting` ORDER BY `team_number` ASC";
-$statement = $db->prepare($raw_query);
-$success = $statement->execute();
-if ($success) {
-	for ($i = 0; $i < $statement->rowCount(); $i++) {
-		array_push($teams, $statement->fetch(PDO::FETCH_ASSOC));
-	}
-}
-$statement->closeCursor();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +47,7 @@ $statement->closeCursor();
 					<datalist id="team_numbers">
 						<?php
 						$db = new MyPDO();
-						$statement = $db->prepare("SELECT DISTINCT(`team_number`) FROM `stand_scouting` ORDER BY `team_number` ASC");
+						$statement = $db->prepare("SELECT DISTINCT(`team_number`) FROM `stand_scouting` UNION DISTINCT SELECT DISTINCT(`team_number`) FROM `pit_scouting` ORDER BY `team_number` ASC;");
 						$statement->execute();
 						for ($i = 0; $i < $statement->rowCount(); $i++) {
 							$temp_team_number = $statement->fetchColumn(0);
