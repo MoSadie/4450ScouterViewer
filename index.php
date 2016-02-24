@@ -5,15 +5,11 @@ include_once "MyPDO.php";
  */
 if (isset($_FILES['userfile'])) {
 	for ($i = 0; $i < sizeof($_FILES['userfile']); $i++) {
-		$file_name = $_FILES['userfile']['name'][$i];
-		$file_size = $_FILES['userfile']['size'][$i];
+		$file_name = strtoupper($_FILES['userfile']['name'][$i]);
 		$file_tmp = $_FILES['userfile']['tmp_name'][$i];
-		$file_type = $_FILES['userfile']['type'][$i];
-		$file_ext = strtolower(end(explode('.', $_FILES['image']['name'][$i])));
+		echo "$file_tmp<hr/>";
 
-		$extensions = array("jpeg", "jpg", "png");
-
-		if (in_array($file_ext, $extensions)){
+		if (preg_match("ROBOT_\\d*\\.jpg", $file_name)) {
 			move_uploaded_file($file_tmp, "uploaded/images/$file_name");
 		}
 	}
@@ -71,8 +67,8 @@ $statement->closeCursor();
 						</div>
 						<form action="" method="post" enctype="multipart/form-data">
 							<h3>Upload Images:</h3>
-							<input multiple="" name="userfile[]" type="file" accept="image/*" /><br />
-							<input type="submit" value="Upload" />
+							<input multiple="" name="userfile[]" type="file" accept="*.jpg"/><br/>
+							<input type="submit" value="Upload"/>
 						</form>
 					</div>
 				</div>
