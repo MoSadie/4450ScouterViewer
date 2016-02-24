@@ -47,6 +47,11 @@ if ($action == "getinfo") {
 		}
 	}
 	$data["auto_behavior"] = $auto_behavior;
+	$imgname = "uploaded/images/ROBOT_" . $team . ".JPG";
+	if(!file_exists($imgname)){
+		$imgname = "images/FIRST-Logo.png";
+	}
+	$data["image"] = $imgname;
 
 	$json = json_encode($data);
 	echo $json;
@@ -54,8 +59,8 @@ if ($action == "getinfo") {
 }
 if ($action == "getmatches") {
 	$matches = array();
-	$raw_query = "SELECT * FROM `stand_scouting` ORDER BY `team_number` ASC, `match_number`";
-	$statement = $db->prepare($raw_query);
+	$statement = $db->prepare("SELECT * FROM `stand_scouting` WHERE `team_number`=:team_number ORDER BY `team_number` ASC, `match_number`");
+	$statement->bindParam(":team_number", $team, PDO::PARAM_INT);
 	$success = $statement->execute();
 	if ($success) {
 		for ($i = 0; $i < $statement->rowCount(); $i++) {
@@ -97,6 +102,7 @@ if ($action == "getmatches") {
 		echo getEndgameName($match["endgame"]);
 		echo "</td></tr>";
 	}
+	exit();
 }
 
 function getScores($team_number) {
@@ -117,6 +123,9 @@ function getScores($team_number) {
 }
 
 function getAverageScore(&$scores) {
+	if(sizeof($scores) < 1){
+		return 0;
+	}
 	return array_sum($scores) / sizeof($scores);
 }
 

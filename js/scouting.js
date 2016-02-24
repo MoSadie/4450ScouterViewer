@@ -23,9 +23,9 @@ function getScores(){
         document.getElementById("reliability").innerHTML = "<span>Reliability: </span>" + matches["variance"];
         document.getElementById("team_name").innerHTML = "<span>Team Name: </span>" + matches["team_name"];
         document.getElementById("robot_description").innerHTML = "<h4>Robot description: </h4>" + matches["robot_description"];
+        document.getElementById("robot_image").attr("src", matches["image"]);
         var list = "";
         matches["auto_behavior"].forEach(function(entry){
-            for(var i = 0; i < 20; i++)
             list += "<li value=\"" + entry["match_number"] + "\">" + entry["autonomous_behavior"] + "</li>";
         });
         document.getElementById("autonomous_behavior").innerHTML = list;

@@ -25,7 +25,6 @@ $statement->closeCursor();
 		<link rel="stylesheet" href="css/scouting.css">
 	</head>
 	<body>
-
 		<div class="container">
 			<hr>
 			<div class="row">
@@ -52,8 +51,10 @@ $statement->closeCursor();
 			<hr>
 			<div class="row">
 				<div class="col-xs-7">
-					<div class="media">
-						<img class="center-block" src="images/yoglo.jpg">
+					<div class="row">
+						<div class="media">
+							<img id="robot_image" class="center-block" src="images/FIRST-Logo.png">
+						</div>
 					</div>
 				</div>
 				<div class="col-xs-5 well">
