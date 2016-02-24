@@ -54,6 +54,7 @@ if ($action == "getmatches") {
 			array_push($matches, $statement->fetch(PDO::FETCH_ASSOC));
 		}
 	}
+	http_response_code(200);
 	foreach ($matches as $match) {
 		echo "<tr><td>";
 		echo $match["team_number"];
