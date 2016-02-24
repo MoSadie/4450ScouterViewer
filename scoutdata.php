@@ -12,20 +12,6 @@ $action = $_GET["action"];
 $team = $_GET["team"];
 $db = new MyPDO();
 if ($action == "getinfo") {
-	/*
-	$statement = $db->prepare("SELECT * FROM `stand_scouting` WHERE `team_number`=:team_number ORDER BY `match_number` ASC");
-	$statement->bindParam(":team_number", $team, PDO::PARAM_INT);
-	$success = $statement->execute();
-	$matches = array();
-	if ($success) {
-		for ($i = 0; $i < $statement->rowCount(); $i++) {
-			array_push($matches, $statement->fetch(PDO::FETCH_ASSOC));
-		}
-	}
-	$statement->closeCursor();
-	echo json_encode($matches);
-	exit();
-	*/
 	$scores = getScores($team);
 	$average = getAverageScore($scores);
 	$reliability = getReliability($scores);

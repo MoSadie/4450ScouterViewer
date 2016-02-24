@@ -3,7 +3,6 @@ include_once "MyPDO.php";
 /**
  * Created by Caleb Milligan on 2/1/2016.
  */
-
 $db = new MyPDO();
 $teams = array();
 $raw_query = "SELECT * FROM `pit_scouting` ORDER BY `team_number` ASC";
@@ -55,6 +54,11 @@ $statement->closeCursor();
 						<div class="media">
 							<img id="robot_image" class="center-block" src="images/FIRST-Logo.png">
 						</div>
+						<form action="file-upload.php" method="post" enctype="multipart/form-data">
+							Send these files:<br />
+							<input multiple="" name="userfile[]" type="file" /><br />
+							<input type="submit" value="Send files" />
+						</form>
 					</div>
 				</div>
 				<div class="col-xs-5 well">
