@@ -7,12 +7,14 @@ if (isset($_FILES['userfile'])) {
 	for ($i = 0; $i < sizeof($_FILES['userfile']['name']); $i++) {
 		$file_name = strtoupper($_FILES['userfile']['name'][$i]);
 		$file_tmp = $_FILES['userfile']['tmp_name'][$i];
-		echo "$file_tmp ($file_name)<hr/>";
-
-		if (preg_match("/ROBOT_\\d*\\.JPG/", $file_name)) {
-			echo "MOVIN' ON UP";
-			move_uploaded_file($file_tmp, "uploaded/images/$file_name");
+		$file_type = strtolower($_FILES['userfile']['type'][$i]);
+		echo "$file_type</hr>";
+		if($file_type != "image/jpeg"){
+			continue;
 		}
+		$file_name = pathinfo($file_name, PATHINFO_FILENAME);
+		echo "$file_name</hr>";
+		move_uploaded_file($file_tmp, "uploaded/images/$file_name.JPG");
 	}
 }
 $db = new MyPDO();
@@ -68,7 +70,7 @@ $statement->closeCursor();
 						</div>
 						<form action="" method="post" enctype="multipart/form-data">
 							<h3>Upload Images:</h3>
-							<input multiple="" name="userfile[]" type="file" accept="*.jpg"/><br/>
+							<input multiple="" name="userfile[]" type="file" accept="image/jpeg"/><br/>
 							<input type="submit" value="Upload"/>
 						</form>
 					</div>
