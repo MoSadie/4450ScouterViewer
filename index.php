@@ -32,7 +32,7 @@ include_once "MyPDO.php";
 						?>
 					</datalist>
 					<form>
-						<input id="team_number" type="number" title="Team #" placeholder="Team #" list="team_numbers"/>
+						<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0" list="team_numbers"/>
 						<input id="submit_team" type="button" class="btn-sm" value="Go" title="Go"
 							   onclick="getScores()">
 					</form>
