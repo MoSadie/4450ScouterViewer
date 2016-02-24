@@ -9,7 +9,7 @@ if (isset($_FILES['userfile'])) {
 		$file_tmp = $_FILES['userfile']['tmp_name'][$i];
 		echo "$file_tmp<hr/>";
 
-		if (preg_match("ROBOT_\\d*\\.jpg", $file_name)) {
+		if (preg_match("/ROBOT_\\d*\\.jpg/", $file_name)) {
 			move_uploaded_file($file_tmp, "uploaded/images/$file_name");
 		}
 	}
