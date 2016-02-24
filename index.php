@@ -13,7 +13,7 @@ if (isset($_FILES['userfile'])) {
 		$file_tmp = $_FILES['userfile']['tmp_name'][$i];
 		$file_type = strtolower($_FILES['userfile']['type'][$i]);
 		// Validate file type
-		if ($file_type != "image/jpeg" || !exif_imagetype($file_tmp)){
+		if (!exif_imagetype($file_tmp)){
 			$failed .= "$file_name (Invalid file type)\\n";
 			continue;
 		}
@@ -81,7 +81,7 @@ if (isset($_FILES['userfile'])) {
 						</div>
 						<form action="" method="post" enctype="multipart/form-data">
 							<h3>Upload Images:</h3>
-							<input multiple="" name="userfile[]" type="file" accept="image/jpeg"/><br/>
+							<input multiple="" name="userfile[]" type="file" accept="image/*"/><br/>
 							<input type="submit" value="Upload"/>
 						</form>
 					</div>
