@@ -4,17 +4,22 @@ include_once "MyPDO.php";
  * Created by Caleb Milligan on 2/1/2016.
  */
 if (isset($_FILES['userfile'])) {
+	$failed = "";
 	for ($i = 0; $i < sizeof($_FILES['userfile']['name']); $i++) {
 		$file_name = strtoupper($_FILES['userfile']['name'][$i]);
 		$file_tmp = $_FILES['userfile']['tmp_name'][$i];
 		$file_type = strtolower($_FILES['userfile']['type'][$i]);
-		echo "$file_type</hr>";
-		if($file_type != "image/jpeg"){
+		if($file_type != "image/jpeg" || !preg_match("/ROBOT_\\d+$/", $file_name)){
+			$failed .= "$file_name\n";
 			continue;
 		}
-		$file_name = pathinfo($file_name, PATHINFO_FILENAME);
-		echo "$file_name</hr>";
-		move_uploaded_file($file_tmp, "uploaded/images/$file_name.JPG");
+		$file_name_no_ext = pathinfo($file_name, PATHINFO_FILENAME);
+		if(!move_uploaded_file($file_tmp, "uploaded/images/$file_name_no_ext.JPG")){
+			$failed .= "$file_name\n";
+		}
+	}
+	if(!empty($failed)){
+		echo "<script type='text/javascript'>alert(" . $failed . ")</script>";
 	}
 }
 $db = new MyPDO();
