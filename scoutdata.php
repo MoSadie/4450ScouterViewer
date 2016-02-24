@@ -38,9 +38,8 @@ if ($action == "getinfo") {
 		$imgname = "images/FIRST-Logo.png";
 	}
 	$data["image"] = $imgname;
-
 	$json = json_encode($data);
-	http_send_content_type("text/json");
+	header('Content-Type: application/json');
 	echo $json;
 	exit();
 }
