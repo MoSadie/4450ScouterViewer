@@ -3,6 +3,21 @@ include_once "MyPDO.php";
 /**
  * Created by Caleb Milligan on 2/1/2016.
  */
+if (isset($_FILES['userfile'])) {
+	for ($i = 0; $i < sizeof($_FILES['userfile']); $i++) {
+		$file_name = $_FILES['userfile']['name'][$i];
+		$file_size = $_FILES['userfile']['size'][$i];
+		$file_tmp = $_FILES['userfile']['tmp_name'][$i];
+		$file_type = $_FILES['userfile']['type'][$i];
+		$file_ext = strtolower(end(explode('.', $_FILES['image']['name'][$i])));
+
+		$extensions = array("jpeg", "jpg", "png");
+
+		if (in_array($file_ext, $extensions)){
+			move_uploaded_file($file_tmp, "uploaded/images/$file_name");
+		}
+	}
+}
 $db = new MyPDO();
 $teams = array();
 $raw_query = "SELECT * FROM `pit_scouting` ORDER BY `team_number` ASC";
@@ -54,10 +69,10 @@ $statement->closeCursor();
 						<div class="media">
 							<img id="robot_image" class="center-block" src="images/FIRST-Logo.png">
 						</div>
-						<form action="file-upload.php" method="post" enctype="multipart/form-data">
-							Send these files:<br />
-							<input multiple="" name="userfile[]" type="file" /><br />
-							<input type="submit" value="Send files" />
+						<form action="" method="post" enctype="multipart/form-data">
+							<h3>Upload Images:</h3>
+							<input multiple="" name="userfile[]" type="file" accept="image/*" /><br />
+							<input type="submit" value="Upload" />
 						</form>
 					</div>
 				</div>
