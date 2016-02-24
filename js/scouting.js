@@ -16,9 +16,10 @@ function getScores(){
     request.open("GET", "scoutdata.php?action=getinfo&team=" + team_number.value.trim(), true);
     request.send();
     request.onreadystatechange = function () {
+        console.log(request.readyState);
+        console.log(request.status);
         if (request.readyState == 4 && request.status == 200) {
-            console.log(request.readyState);
-            console.log(request.status);
+            console.log("WOOOO");
             var response = request.responseText;
             console.log(response);
             var matches = JSON.parse(response);
@@ -41,7 +42,8 @@ function getScores(){
         console.log(request.readyState);
         console.log(request.status);
         if (request.readyState == 4 && request.status == 200) {
-            document.getElementById("match_data").innerHTML = match_request.responseText;
+            console.log("WOOOOHOO");
+            $("match_data").innerHTML = match_request.responseText;
         }
     }
 }
