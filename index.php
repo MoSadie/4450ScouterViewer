@@ -3,25 +3,32 @@ include_once "MyPDO.php";
 /**
  * Created by Caleb Milligan on 2/1/2016.
  */
+// If this is present, then we've uploaded some images
 if (isset($_FILES['userfile'])) {
 	$failed = "";
+	// Loop over each uploaded file
 	for ($i = 0; $i < sizeof($_FILES['userfile']['name']); $i++) {
+		// Get file info
 		$file_name = strtoupper($_FILES['userfile']['name'][$i]);
 		$file_tmp = $_FILES['userfile']['tmp_name'][$i];
 		$file_type = strtolower($_FILES['userfile']['type'][$i]);
+		// Validate file type
 		if ($file_type != "image/jpeg"){
 			$failed .= "$file_name (Invalid file type)\\n";
 			continue;
 		}
+		// Validate file name
 		$file_name_no_ext = pathinfo($file_name, PATHINFO_FILENAME);
 		if(!preg_match("/ROBOT_\\d+$/", $file_name_no_ext)) {
 			$failed .= "$file_name (Invalid file name)\\n";
 			continue;
 		}
+		// Move the file
 		if (!move_uploaded_file($file_tmp, "uploaded/images/$file_name_no_ext.jpg")) {
 			$failed .= "$file_name (Copy failed)\\n";
 		}
 	}
+	// If there were some invalid files, send an alert
 	if (!empty($failed)) {
 		?>
 		<script type="text/javascript">
@@ -47,8 +54,10 @@ if (isset($_FILES['userfile'])) {
 					<datalist id="team_numbers">
 						<?php
 						$db = new MyPDO();
+						// Select distinct team numbers from all available tables
 						$statement = $db->prepare("SELECT DISTINCT(`team_number`) FROM `stand_scouting` UNION DISTINCT SELECT DISTINCT(`team_number`) FROM `pit_scouting` ORDER BY `team_number` ASC;");
 						$statement->execute();
+						// Add each team number to the datalist
 						for ($i = 0; $i < $statement->rowCount(); $i++) {
 							$temp_team_number = $statement->fetchColumn(0);
 							echo "<option label='$temp_team_number' value='$temp_team_number'></option>";
