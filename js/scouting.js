@@ -19,11 +19,11 @@ function getScores(){
         var response = request.responseText;
         console.log(response);
         var matches = JSON.parse(response);
-        document.getElementById("average_score").innerHTML = "<span>Average score: </span>" + matches["average"];
-        document.getElementById("reliability").innerHTML = "<span>Reliability: </span>" + matches["variance"];
-        document.getElementById("team_name").innerHTML = "<span>Team Name: </span>" + matches["team_name"];
-        document.getElementById("robot_description").innerHTML = "<h4>Robot description: </h4>" + matches["robot_description"];
-        document.getElementById("robot_image").attr("src", matches["image"]);
+        $("average_score").innerHTML = "<span>Average score: </span>" + matches["average"];
+        $("reliability").innerHTML = "<span>Reliability: </span>" + matches["variance"];
+        $("team_name").innerHTML = "<span>Team Name: </span>" + matches["team_name"];
+        $("robot_description").innerHTML = "<h4>Robot description: </h4>" + matches["robot_description"];
+        $("robot_image").attr("src", matches["image"]);
         var list = "";
         matches["auto_behavior"].forEach(function(entry){
             list += "<li value=\"" + entry["match_number"] + "\">" + entry["autonomous_behavior"] + "</li>";
