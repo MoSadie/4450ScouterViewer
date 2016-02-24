@@ -4,6 +4,12 @@
     height: auto;
 }
 
-#obstacle_data *{
-	max-width: 100%;
+#obstacle_data * {
+    max-width: 100%;
+}
+
+.scrolling_list {
+    max-height: 100px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
