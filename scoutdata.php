@@ -40,6 +40,7 @@ if ($action == "getinfo") {
 	$data["image"] = $imgname;
 
 	$json = json_encode($data);
+	http_send_content_type("text/json");
 	echo $json;
 	exit();
 }
