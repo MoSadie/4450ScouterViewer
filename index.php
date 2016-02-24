@@ -9,13 +9,17 @@ if (isset($_FILES['userfile'])) {
 		$file_name = strtoupper($_FILES['userfile']['name'][$i]);
 		$file_tmp = $_FILES['userfile']['tmp_name'][$i];
 		$file_type = strtolower($_FILES['userfile']['type'][$i]);
-		if ($file_type != "image/jpeg" || !preg_match("/ROBOT_\\d+$/", $file_name)) {
-			$failed .= "$file_name\\n";
+		if ($file_type != "image/jpeg"){
+			$failed .= "$file_name (Invalid file type)\\n";
+			continue;
+		}
+		if(!preg_match("/ROBOT_\\d+$/", $file_name)) {
+			$failed .= "$file_name (Invalid file name)\\n";
 			continue;
 		}
 		$file_name_no_ext = pathinfo($file_name, PATHINFO_FILENAME);
 		if (!move_uploaded_file($file_tmp, "uploaded/images/$file_name_no_ext.JPG")) {
-			$failed .= "$file_name\\n";
+			$failed .= "$file_name (Copy failed)\\n";
 		}
 	}
 	if (!empty($failed)) {
