@@ -21,7 +21,7 @@ if (isset($_FILES['userfile'])) {
 	if (!empty($failed)) {
 		?>
 		<script type="text/javascript">
-			alert("Failed to upload files:\n"<?php echo $failed?>);
+			alert("Failed to upload files:\n<?php echo $failed?>");
 		</script>
 		<?php
 	}
