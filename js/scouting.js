@@ -18,7 +18,6 @@ function getScores(){
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
             var response = request.responseText;
-            console.log(response);
             var matches = JSON.parse(response);
             document.getElementById("average_score").innerHTML = "<span>Average score: </span>" + matches["average"];
             document.getElementById("reliability").innerHTML = "<span>Reliability: </span>" + matches["variance"];
@@ -37,7 +36,7 @@ function getScores(){
     match_request.send();
     match_request.onreadystatechange = function () {
         if (match_request.readyState == 4 && match_request.status == 200) {
-            $("match_data").innerHTML = match_request.responseText;
+            document.getElementById("match_data").innerHTML = match_request.responseText;
         }
     }
 }
