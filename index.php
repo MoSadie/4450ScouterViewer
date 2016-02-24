@@ -7,7 +7,7 @@ if (isset($_FILES['userfile'])) {
 	for ($i = 0; $i < sizeof($_FILES['userfile']['name']); $i++) {
 		$file_name = strtoupper($_FILES['userfile']['name'][$i]);
 		$file_tmp = $_FILES['userfile']['tmp_name'][$i];
-		echo "$file_tmp<hr/>";
+		echo "$file_tmp ($file_name)<hr/>";
 
 		if (preg_match("/ROBOT_\\d*\\.JPG/", $file_name)) {
 			echo "MOVIN' ON UP";
