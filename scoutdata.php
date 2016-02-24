@@ -121,13 +121,13 @@ function getAverageScore(&$scores) {
 function getReliability(&$scores) {
 	$raw_value = Math::standardDeviation($scores);
 	if ($raw_value <= 2.0) {
-		return "Very reliable (<= 2 pts)";
+		return "Very reliable (<= 2 pts variance)";
 	}
 	if ($raw_value <= 6.0) {
-		return "Somewhat reliable (<= 6 pts)";
+		return "Somewhat reliable (<= 6 pts variance)";
 	}
 	else {
-		return "Unreliable (> 6 pts)";
+		return "Unreliable (> 6 pts variance)";
 	}
 }
 
