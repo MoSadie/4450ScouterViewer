@@ -4,7 +4,7 @@ include_once "MyPDO.php";
  * Created by Caleb Milligan on 2/1/2016.
  */
 if (isset($_FILES['userfile'])) {
-	for ($i = 0; $i < sizeof($_FILES['userfile']); $i++) {
+	for ($i = 0; $i < sizeof($_FILES['userfile']['name']); $i++) {
 		$file_name = strtoupper($_FILES['userfile']['name'][$i]);
 		$file_tmp = $_FILES['userfile']['tmp_name'][$i];
 		echo "$file_tmp<hr/>";
