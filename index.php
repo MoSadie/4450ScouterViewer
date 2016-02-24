@@ -13,7 +13,7 @@ if (isset($_FILES['userfile'])) {
 		$file_tmp = $_FILES['userfile']['tmp_name'][$i];
 		$file_type = strtolower($_FILES['userfile']['type'][$i]);
 		// Validate file type
-		if ($file_type != "image/jpeg"){
+		if ($file_type != "image/jpeg" || !exif_imagetype($file_tmp)){
 			$failed .= "$file_name (Invalid file type)\\n";
 			continue;
 		}
