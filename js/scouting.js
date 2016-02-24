@@ -37,9 +37,7 @@ function getScores(){
     match_request.open("GET", "scoutdata.php?action=getmatches&team=" + team_number.value.trim(), true);
     match_request.send();
     match_request.onreadystatechange = function () {
-        console.log(request.readyState);
-        console.log(request.status);
-        if (request.readyState == 4 && request.status == 200) {
+        if (match_request.readyState == 4 && match_request.status == 200) {
             console.log("WOOOOHOO");
             $("match_data").innerHTML = match_request.responseText;
         }
