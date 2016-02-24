@@ -39,6 +39,7 @@ if ($action == "getinfo") {
 	}
 	$data["image"] = $imgname;
 	$json = json_encode($data);
+	http_response_code(200);
 	header('Content-Type: application/json;charset=utf-8');
 	echo $json;
 	exit();
