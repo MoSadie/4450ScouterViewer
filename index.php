@@ -18,7 +18,7 @@ if (isset($_FILES['userfile'])) {
 			$failed .= "$file_name (Invalid file name)\\n";
 			continue;
 		}
-		if (!move_uploaded_file($file_tmp, "uploaded/images/$file_name_no_ext.JPG")) {
+		if (!move_uploaded_file($file_tmp, "uploaded/images/$file_name_no_ext.jpg")) {
 			$failed .= "$file_name (Copy failed)\\n";
 		}
 	}

@@ -33,7 +33,7 @@ if ($action == "getinfo") {
 		}
 	}
 	$data["auto_behavior"] = $auto_behavior;
-	$imgname = "uploaded/images/ROBOT_" . $team . ".JPG";
+	$imgname = "uploaded/images/ROBOT_" . $team . ".jpg";
 	if(!file_exists($imgname)){
 		$imgname = "images/FIRST-Logo.png";
 	}
