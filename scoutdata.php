@@ -37,7 +37,7 @@ if ($action == "getinfo") {
 	if(!file_exists($imgname)){
 		$imgname = "images/FIRST-Logo.png";
 	}
-	$data["image"] = $imgname;
+	//$data["image"] = $imgname;
 	$json = json_encode($data);
 	header('Content-Type: application/json');
 	echo $json;
