@@ -40,7 +40,7 @@ if ($action == "getinfo") {
 	$data["image"] = $imgname;
 
 	$json = json_encode($data);
-	echo str_replace("\"", "'", $json);
+	echo $json;
 	exit();
 }
 if ($action == "getmatches") {
