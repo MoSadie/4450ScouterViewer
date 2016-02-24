@@ -13,7 +13,7 @@ function getScores(){
         return;
     }
     var request = new XMLHttpRequest();
-    request.open("GET", "scoutdata.php?action=getinfo&team=" + team_number.value.trim(), true);
+    request.open("GET", "scoutdata.php?action=getinfo&team=" + team_number.value.trim(), false);
     request.send();
     request.onreadystatechange = function () {
         var response = request.responseText;
