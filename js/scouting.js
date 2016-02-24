@@ -17,15 +17,14 @@ function getScores(){
     request.send();
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
-            console.log("WOOOO");
             var response = request.responseText;
             console.log(response);
             var matches = JSON.parse(response);
-            $("average_score").innerHTML = "<span>Average score: </span>" + matches["average"];
-            $("reliability").innerHTML = "<span>Reliability: </span>" + matches["variance"];
-            $("team_name").innerHTML = "<span>Team Name: </span>" + matches["team_name"];
-            $("robot_description").innerHTML = "<h4>Robot description: </h4>" + matches["robot_description"];
-            $("robot_image").attr("src", matches["image"]);
+            document.getElementById("average_score").innerHTML = "<span>Average score: </span>" + matches["average"];
+            document.getElementById("reliability").innerHTML = "<span>Reliability: </span>" + matches["variance"];
+            document.getElementById("team_name").innerHTML = "<span>Team Name: </span>" + matches["team_name"];
+            document.getElementById("robot_description").innerHTML = "<h4>Robot description: </h4>" + matches["robot_description"];
+            document.getElementById("robot_image").setAttribute("src", matches["image"]);
             var list = "";
             matches["auto_behavior"].forEach(function (entry) {
                 list += "<li value=\"" + entry["match_number"] + "\">" + entry["autonomous_behavior"] + "</li>";
@@ -38,7 +37,6 @@ function getScores(){
     match_request.send();
     match_request.onreadystatechange = function () {
         if (match_request.readyState == 4 && match_request.status == 200) {
-            console.log("WOOOOHOO");
             $("match_data").innerHTML = match_request.responseText;
         }
     }
