@@ -1,15 +1,13 @@
 /**
  * Created by Caleb Milligan on 2/23/2016.
  */
-$(document).ready(function(){
-    var submit_team = document.getElementById("submit_team");
-    var submit_match = document.getElementById("submit_match");
-    var match_number = document.getElementById("match_number");
+$(document).ready(function () {
+
 });
 
-function getScores(){
+function getScores() {
     var team_number = document.getElementById("team_number");
-    if(!team_number.value.trim()){
+    if (!team_number.value.trim()) {
         return;
     }
     var request = new XMLHttpRequest();
@@ -38,5 +36,14 @@ function getScores(){
         if (match_request.readyState == 4 && match_request.status == 200) {
             document.getElementById("match_data").innerHTML = match_request.responseText;
         }
+    }
+}
+
+function verifyUpload() {
+    if (document.getElementById("file_selector").files.length > 0) {
+        document.getElementById("upload_button").removeAttribute("disabled");
+    }
+    else {
+        document.getElementById("upload_button").setAttribute("disabled", "disabled");
     }
 }

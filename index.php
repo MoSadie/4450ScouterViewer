@@ -31,9 +31,10 @@ include_once "MyPDO.php";
 						$statement->closeCursor();
 						?>
 					</datalist>
-					<form>
-						<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0" list="team_numbers"/>
-						<input id="submit_team" type="button" class="btn-sm" value="Go" title="Go"
+					<form onsubmit="getScores();return false">
+						<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0"
+							   list="team_numbers"/>
+						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go"
 							   onclick="getScores()">
 					</form>
 				</div>
@@ -47,8 +48,8 @@ include_once "MyPDO.php";
 						</div>
 						<form action="" method="post" enctype="multipart/form-data">
 							<h3>Upload Images:</h3>
-							<input multiple="" name="userfile[]" type="file" accept="image/*"/><br/>
-							<input type="submit" value="Upload"/>
+							<input id="file_selector" multiple="" name="userfile[]" type="file" accept="image/*" onchange="verifyUpload()"/><br/>
+							<input id="upload_button" disabled="disabled" type="submit" class="btn-sm" value="Upload"/>
 						</form>
 					</div>
 				</div>
