@@ -38,15 +38,13 @@ include_once "MyPDO.php";
 						$statement->closeCursor();
 						?>
 					</datalist>
-					<div class="center">
-						<h3>Search by team:</h3>
-						<form onsubmit="getScores();return false">
-							<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0"
-								   list="team_numbers"/>
-							<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go"
-								   onclick="getScores()">
-						</form>
-					</div>
+					<h3>Search by team:</h3>
+					<form onsubmit="getScores();return false">
+						<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0"
+							   list="team_numbers"/>
+						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go"
+							   onclick="getScores()">
+					</form>
 				</div>
 			</div>
 			<hr>
@@ -54,7 +52,7 @@ include_once "MyPDO.php";
 				<div class="col-xs-7">
 					<div class="row">
 						<div class="media">
-							<img id="robot_image" class="center-block" src="images/FIRST-Logo.png">
+							<img id="robot_image" class="center-block well" src="images/FIRST-Logo.png">
 						</div>
 					</div>
 				</div>
