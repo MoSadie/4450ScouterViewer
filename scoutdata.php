@@ -129,14 +129,15 @@ function getAverageScore(&$scores) {
 
 function getReliability(&$scores) {
 	$raw_value = Math::standardDeviation($scores);
+	$rounded = round($raw_value);
 	if ($raw_value <= 2.0) {
-		return "Very reliable (<= 2 pts variance)";
+		return "Very (~$rounded pts variance)";
 	}
 	if ($raw_value <= 6.0) {
-		return "Somewhat reliable (<= 6 pts variance)";
+		return "Somewhat (~$rounded pts variance)";
 	}
 	else {
-		return "Unreliable (> 6 pts variance)";
+		return "Unreliable (~$rounded pts variance)";
 	}
 }
 
