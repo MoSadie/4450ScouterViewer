@@ -2,18 +2,19 @@ header {
     text-align: center;
 }
 
-.team_query{
+.team_query {
     margin: auto;
     width: 44%;
     border: 1px solid lightgray;
     border-radius: 10px;
     padding: 10px;
 }
-.team_query *{
+
+.team_query * {
     display: inline;
 }
 
-.team_query datalist{
+.team_query datalist {
     display: none;
 }
 
