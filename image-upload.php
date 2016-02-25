@@ -4,12 +4,14 @@
  */
 // We need this to check validity
 if (!isset($_SERVER["HTTP_USER_AGENT"])) {
+	echo file_get_contents("unauthorized.html");
 	http_response_code(401);
 	exit();
 }
 // Not us? Then we don't want your data!
 $user_agent = $_SERVER["HTTP_USER_AGENT"];
 if (!preg_match("/4450Scouting\\/*.+/", $user_agent)) {
+	echo file_get_contents("unauthorized.html");
 	http_response_code(401);
 	exit();
 }
