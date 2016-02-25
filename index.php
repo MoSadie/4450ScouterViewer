@@ -16,10 +16,14 @@ include_once "MyPDO.php";
 		<script src="js/scouting.js"></script>
 	</head>
 	<body>
+		<header>
+			<h1>Olympia Robotics Federation</h1>
+			<h2>2016 FIRST Stronghold Scouter</h2>
+		</header>
 		<div class="container">
 			<hr>
 			<div class="row">
-				<div class="col-xs-6">
+				<div class="team_query">
 					<datalist id="team_numbers">
 						<?php
 						$db = new MyPDO();
@@ -34,12 +38,15 @@ include_once "MyPDO.php";
 						$statement->closeCursor();
 						?>
 					</datalist>
-					<form onsubmit="getScores();return false">
-						<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0"
-							   list="team_numbers"/>
-						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go"
-							   onclick="getScores()">
-					</form>
+					<div class="center">
+						<h3>Search by team:</h3>
+						<form onsubmit="getScores();return false">
+							<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0"
+								   list="team_numbers"/>
+							<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go"
+								   onclick="getScores()">
+						</form>
+					</div>
 				</div>
 			</div>
 			<hr>
