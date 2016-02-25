@@ -15,3 +15,5 @@ target/
 out/
 uploaded/
 *.log
+*.pw
+.htaccess

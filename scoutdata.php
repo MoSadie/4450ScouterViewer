@@ -113,7 +113,7 @@ function getScores($team_number) {
 	if ($success) {
 		for ($i = 0; $i < $statement->rowCount(); $i++) {
 			$data = $statement->fetch(PDO::FETCH_ASSOC);
-			array_push($scores, $data["low_goals"] + $data["high_goals"]);
+			array_push($scores, ($data["low_goals"] * 2) + ($data["high_goals"] * 5));
 		}
 	}
 	$statement->closeCursor();
