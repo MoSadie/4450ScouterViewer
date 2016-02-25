@@ -124,7 +124,7 @@ function getAverageScore(&$scores) {
 	if (sizeof($scores) < 1) {
 		return 0;
 	}
-	return array_sum($scores) / sizeof($scores);
+	return round(array_sum($scores) / sizeof($scores)) . " pts";
 }
 
 function getReliability(&$scores) {
