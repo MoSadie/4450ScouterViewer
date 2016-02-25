@@ -130,10 +130,10 @@ function getAverageScore(&$scores) {
 function getReliability(&$scores) {
 	$raw_value = Math::standardDeviation($scores);
 	$rounded = round($raw_value);
-	if ($raw_value <= 2.0) {
+	if ($raw_value <= 15.0) {
 		return "Very (~$rounded pts variance)";
 	}
-	if ($raw_value <= 6.0) {
+	if ($raw_value <= 30.0) {
 		return "Somewhat (~$rounded pts variance)";
 	}
 	else {
