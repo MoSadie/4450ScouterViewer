@@ -14,6 +14,16 @@ include_once "MyPDO.php";
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<script src="js/scouting.js"></script>
+		<?php
+		try {
+			$db = new MyPDO();
+		}
+		catch (Throwable $e) {
+			error_log($e->__toString());
+			header("Location: errpage.php?timestamp=" . time() . "&err=" . get_class($e), true);
+			exit();
+		}
+		?>
 	</head>
 	<body>
 		<header>
@@ -24,20 +34,6 @@ include_once "MyPDO.php";
 			<hr>
 			<div class="row">
 				<div class="team_query">
-					<datalist id="team_numbers">
-						<?php
-						$db = new MyPDO();
-						// Select distinct team numbers from all available tables
-						$statement = $db->prepare("SELECT DISTINCT(`team_number`) FROM `stand_scouting` UNION DISTINCT SELECT DISTINCT(`team_number`) FROM `pit_scouting` ORDER BY `team_number` ASC;");
-						$statement->execute();
-						// Add each team number to the datalist
-						for ($i = 0; $i < $statement->rowCount(); $i++) {
-							$temp_team_number = $statement->fetchColumn(0);
-							echo "<option label='$temp_team_number' value='$temp_team_number'></option>";
-						}
-						$statement->closeCursor();
-						?>
-					</datalist>
 					<h3>Search by team:</h3>
 					<form onsubmit="getScores();return false">
 						<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0"
@@ -52,7 +48,8 @@ include_once "MyPDO.php";
 				<div class="col-xs-7">
 					<div class="row">
 						<div class="media">
-							<img id="robot_image" class="img-responsive img-rounded center-block" src="images/FIRST-Logo.png">
+							<img id="robot_image" class="img-responsive img-rounded center-block"
+								 src="images/FIRST-Logo.png">
 						</div>
 					</div>
 				</div>
@@ -118,6 +115,26 @@ include_once "MyPDO.php";
 						</div>
 					</div>
 				</div>
+				<datalist id="team_numbers">
+					<?php
+					try {
+						// Select distinct team numbers from all available tables
+						$statement = $db->prepare("SELECT DISTINCT(`team_number`) FROM `stand_scouting` UNION DISTINCT SELECT DISTINCT(`team_number`) FROM `pit_scouting` ORDER BY `team_number` ASC;");
+						$statement->execute();
+						// Add each team number to the datalist
+						for ($i = 0; $i < $statement->rowCount(); $i++) {
+							$temp_team_number = $statement->fetchColumn(0);
+							echo "<option label='$temp_team_number' value='$temp_team_number'></option>";
+						}
+						$statement->closeCursor();
+					}
+					catch (Throwable $e) {
+						error_log($e->__toString());
+						header("Location: errpage.php?timestamp=" . time() . "&err=" . get_class($e), true);
+						exit();
+					}
+					?>
+				</datalist>
 			</footer>
 		</div>
 	</body>
