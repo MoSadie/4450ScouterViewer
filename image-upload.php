@@ -17,7 +17,7 @@ if(!isset($_GET["filename"])){
 	http_response_code(400);
 	exit();
 }
-$filename = $_GET["filename"];
+$filename = strtoupper($_GET["filename"]);
 // Ensure the image directory is created
 $image_dir = "uploaded/images/";
 $tmp_dir = $image_dir . "tmp/";
