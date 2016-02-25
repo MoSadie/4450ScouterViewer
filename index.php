@@ -52,7 +52,7 @@ include_once "MyPDO.php";
 				<div class="col-xs-7">
 					<div class="row">
 						<div class="media">
-							<img id="robot_image" class="center-block well" src="images/FIRST-Logo.png">
+							<img id="robot_image" class="img-responsive img-rounded center-block" src="images/FIRST-Logo.png">
 						</div>
 					</div>
 				</div>
