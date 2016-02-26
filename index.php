@@ -81,7 +81,7 @@ include_once "MyPDO.php";
 			</div>
 			<hr>
 			<div class="table-responsive">
-				<table class="table">
+				<table id="data_table" class="table">
 					<thead>
 						<tr>
 							<td>Team #</td>
