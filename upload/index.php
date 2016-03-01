@@ -15,9 +15,9 @@
 			<script src="../js/scouting.js"></script>
 		</head>
 		<body>
-			<form action="" method="post" enctype="multipart/form-data">
+			<form action="" method="post" enctype="multipart/form-data" style="background: none">
 				<h3>Upload Images:</h3>
-				<input id="file_selector" multiple="" name="userfile[]" type="file" accept="image/*"
+				<input style="color: #fff" id="file_selector" multiple="" name="userfile[]" type="file" accept="image/*"
 					   onchange="verifyUpload()"/><br/>
 				<input id="upload_button" disabled="disabled" type="submit" class="btn-sm" value="Upload"/>
 			</form>
