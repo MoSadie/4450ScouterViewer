@@ -23,6 +23,7 @@ $body = rawurlencode($body);
 	<head>
 		<meta charset="UTF-8">
 		<title>Oops!</title>
+		<link rel="stylesheet" type="text/css" href="css/scouting.css">
 		<link rel="stylesheet" type="text/css" href="css/errpage.css">
 	</head>
 	<body>
