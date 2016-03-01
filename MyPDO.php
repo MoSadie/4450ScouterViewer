@@ -5,6 +5,6 @@
  */
 class MyPDO extends PDO {
 	public function __construct() {
-		parent::__construct("mysql:host=localhost;dbname=scouting;", "root", "PIrAtEs", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		parent::__construct("mysql:host=localhost;dbname=orf;", "milligancn", "9390164", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 	}
 }
