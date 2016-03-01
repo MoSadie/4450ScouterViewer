@@ -53,7 +53,7 @@ include_once "MyPDO.php";
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-5 well">
+				<div class="col-xs-5 william">
 					<div class="row">
 						<div class="col-lg-6">
 							<h4 id="team_name"><span>Team Name: </span></h4>
