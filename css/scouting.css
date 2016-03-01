@@ -20,6 +20,7 @@ header {
 
 body {
     background: url("http://orf.hulk.osd.wednet.edu/files/theme/content-bg.jpg") repeat;
+    text-shadow: 3px 5px 4px #000;
     color: #fff;
 }
 
@@ -38,13 +39,16 @@ input{
 
 .media{
     border: 4px inset #333;
-    border-radius: 10px;
+    border-radius: 10px 0 10px 10px;
     background: url("http://orf.hulk.osd.wednet.edu/files/theme/header-footer-bg.jpg") repeat;
 }
 
 .well{
     border: 4px inset #333;
-    border-radius: 10px;
+    border-left: none;
+    margin-left: -5px;
+    z-index: 1;
+    border-radius: 0 10px 10px 10px;
     background: url("http://orf.hulk.osd.wednet.edu/files/theme/header-footer-bg.jpg") repeat;
 }
 
