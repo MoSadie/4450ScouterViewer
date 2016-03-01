@@ -18,7 +18,7 @@ include_once "MyPDO.php";
 		try {
 			$db = new MyPDO();
 		}
-		catch (Throwable $e) {
+		catch (Exception $e) {
 			error_log($e->__toString());
 			header("Location: errpage.php?timestamp=" . time() . "&err=" . get_class($e), true);
 			exit();
@@ -128,7 +128,7 @@ include_once "MyPDO.php";
 						}
 						$statement->closeCursor();
 					}
-					catch (Throwable $e) {
+					catch (Exception $e) {
 						error_log($e->__toString());
 						header("Location: errpage.php?timestamp=" . time() . "&err=" . get_class($e), true);
 						exit();

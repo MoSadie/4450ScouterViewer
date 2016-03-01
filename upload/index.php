@@ -60,7 +60,7 @@ try {
 		}
 	}
 }
-catch (Throwable $e) {
+catch (Exception $e) {
 	error_log($e->__toString());
 	header("Location: errpage.php?timestamp=" . time() . "&err=" . get_class($e), true);
 	exit();
