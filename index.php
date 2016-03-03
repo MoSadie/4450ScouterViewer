@@ -49,7 +49,7 @@ include_once "MyPDO.php";
 					<div class="row">
 						<div class="media">
 							<img id="robot_image" class="img-responsive img-rounded center-block"
-								 src="images/FIRST-Logo.png">
+								 src="images/ORF_Logo.png">
 						</div>
 					</div>
 				</div>

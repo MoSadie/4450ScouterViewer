@@ -45,7 +45,7 @@ if ($action == "getinfo") {
 	$imgname = "uploaded/images/ROBOT_" . $team . ".jpg";
 	// Otherwise, use the default image
 	if (!file_exists($imgname)) {
-		$imgname = "images/FIRST-Logo.png";
+		$imgname = "images/ORF_Logo.png";
 	}
 	$data["image"] = $imgname;
 	// Encode JSON and return
@@ -113,7 +113,7 @@ function getScores($team_number) {
 	if ($success) {
 		for ($i = 0; $i < $statement->rowCount(); $i++) {
 			$data = $statement->fetch(PDO::FETCH_ASSOC);
-			array_push($scores, ($data["low_goals"] * 2) + ($data["high_goals"] * 5));
+			array_push($scores, $data["low_goals"] + $data["high_goals"]);
 		}
 	}
 	$statement->closeCursor();
@@ -130,10 +130,10 @@ function getAverageScore(&$scores) {
 function getReliability(&$scores) {
 	$raw_value = Math::standardDeviation($scores);
 	$rounded = round($raw_value);
-	if ($raw_value <= 15.0) {
+	if ($raw_value <= 3.0) {
 		return "Very (~$rounded pts variance)";
 	}
-	if ($raw_value <= 30.0) {
+	if ($raw_value <= 7.0) {
 		return "Somewhat (~$rounded pts variance)";
 	}
 	else {

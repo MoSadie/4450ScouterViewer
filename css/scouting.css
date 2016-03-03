@@ -19,10 +19,9 @@ header {
 }
 
 body {
-    background: url("http://orf.hulk.osd.wednet.edu/files/theme/content-bg.jpg") repeat;
+    background: #0F0F0F url("http://orf.hulk.osd.wednet.edu/files/theme/content-bg.jpg") repeat;
     text-shadow: 3px 5px 4px #000;
     color: #fff;
-    text-shadow: 3px 5px 3px black;
 }
 
 input {
