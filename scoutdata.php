@@ -144,11 +144,11 @@ function getReliability(&$scores) {
 function getSpeedName($speed) {
 	switch ((int)$speed) {
 		case 0:
-			return "Slow";
+			return "Fast";
 		case 1:
 			return "Medium";
 		case 2:
-			return "Fast";
+			return "Slow";
 		default:
 			return "N/A";
 	}
