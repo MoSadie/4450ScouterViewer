@@ -61,7 +61,7 @@ include_once "MyPDO.php";
 					</div>
 					<div class="row">
 						<div class="col-lg-6">
-							<h4 id="average_score"><span>Average score: </span></h4>
+							<h4 id="average_score"><span>Average goals: </span></h4>
 						</div>
 						<div class="col-lg-6">
 							<h4 id="reliability"><span>Reliability: </span></h4>

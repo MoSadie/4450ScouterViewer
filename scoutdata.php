@@ -124,20 +124,20 @@ function getAverageScore(&$scores) {
 	if (sizeof($scores) < 1) {
 		return 0;
 	}
-	return round(array_sum($scores) / sizeof($scores)) . " pts";
+	return round(array_sum($scores) / sizeof($scores));
 }
 
 function getReliability(&$scores) {
 	$raw_value = Math::standardDeviation($scores);
 	$rounded = round($raw_value);
 	if ($raw_value <= 3.0) {
-		return "Very (~$rounded pts variance)";
+		return "Very (~$rounded goals variance)";
 	}
 	if ($raw_value <= 7.0) {
-		return "Somewhat (~$rounded pts variance)";
+		return "Somewhat (~$rounded goals variance)";
 	}
 	else {
-		return "Unreliable (~$rounded pts variance)";
+		return "Unreliable (~$rounded goals variance)";
 	}
 }
 

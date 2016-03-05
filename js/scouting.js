@@ -17,7 +17,7 @@ function getScores() {
         if (request.readyState == 4 && request.status == 200) {
             var response = request.responseText;
             var matches = JSON.parse(response);
-            document.getElementById("average_score").innerHTML = "<span>Average score: </span>" + matches["average"];
+            document.getElementById("average_score").innerHTML = "<span>Average goals: </span>" + matches["average"];
             document.getElementById("reliability").innerHTML = "<span>Reliability: </span>" + matches["variance"];
             document.getElementById("team_name").innerHTML = "<span>Team Name: </span>" + matches["team_name"];
             document.getElementById("robot_description").innerHTML = "<h4>Robot description: </h4>" + matches["robot_description"];
