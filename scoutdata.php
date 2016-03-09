@@ -4,6 +4,7 @@
  */
 include_once "MyPDO.php";
 include_once "Math.php";
+include_once "Naming.php";
 // We need these parameters
 if (!isset($_GET["action"]) || !isset($_GET["team"])) {
 	http_response_code(400);
@@ -72,31 +73,31 @@ if ($action == "getmatches") {
 			echo "</td><td>";
 			echo $match["team_name"];
 			echo "</td><td>";
-			echo getSpeedName($match["pickup_speed"]);
+			echo Naming::getSpeedName($match["pickup_speed"]);
 			echo "</td><td>";
-			echo getSpeedName($match["portcullis_speed"]);
+			echo Naming::getSpeedName($match["portcullis_speed"]);
 			echo "</td><td>";
-			echo getSpeedName($match["chival_speed"]);
+			echo Naming::getSpeedName($match["chival_speed"]);
 			echo "</td><td>";
-			echo getSpeedName($match["moat_speed"]);
+			echo Naming::getSpeedName($match["moat_speed"]);
 			echo "</td><td>";
-			echo getSpeedName($match["ramparts_speed"]);
+			echo Naming::getSpeedName($match["ramparts_speed"]);
 			echo "</td><td>";
-			echo getSpeedName($match["drawbridge_speed"]);
+			echo Naming::getSpeedName($match["drawbridge_speed"]);
 			echo "</td><td>";
-			echo getSpeedName($match["sally_speed"]);
+			echo Naming::getSpeedName($match["sally_speed"]);
 			echo "</td><td>";
-			echo getSpeedName($match["rock_speed"]);
+			echo Naming::getSpeedName($match["rock_speed"]);
 			echo "</td><td>";
-			echo getSpeedName($match["rough_speed"]);
+			echo Naming::getSpeedName($match["rough_speed"]);
 			echo "</td><td>";
-			echo getSpeedName($match["low_speed"]);
+			echo Naming::getSpeedName($match["low_speed"]);
 			echo "</td><td>";
 			echo $match["low_goals"];
 			echo "</td><td>";
 			echo $match["high_goals"];
 			echo "</td><td>";
-			echo getEndgameName($match["endgame"]);
+			echo Naming::getEndgameName($match["endgame"]);
 			echo "</td></tr>";
 		}
 	}
@@ -127,42 +128,5 @@ function getAverageScore(&$scores) {
 	return round(array_sum($scores) / sizeof($scores));
 }
 
-function getReliability(&$scores) {
-	$raw_value = Math::standardDeviation($scores);
-	$rounded = round($raw_value);
-	if ($raw_value <= 3.0) {
-		return "Very (~$rounded goals variance)";
-	}
-	if ($raw_value <= 7.0) {
-		return "Somewhat (~$rounded goals variance)";
-	}
-	else {
-		return "Unreliable (~$rounded goals variance)";
-	}
-}
-
-function getSpeedName($speed) {
-	switch ((int)$speed) {
-		case 0:
-			return "Fast";
-		case 1:
-			return "Medium";
-		case 2:
-			return "Slow";
-		default:
-			return "N/A";
-	}
-}
-
-function getEndgameName($endgame) {
-	switch ((int)$endgame) {
-		case 0:
-			return "Parked on ramp";
-		case 1:
-			return "Climbed tower";
-		default:
-			return "N/A";
-	}
-}
 
 ?>

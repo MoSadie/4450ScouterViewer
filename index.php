@@ -20,7 +20,7 @@ include_once "MyPDO.php";
 		}
 		catch (Exception $e) {
 			error_log($e->__toString());
-			header("Location: errpage.php?timestamp=" . time() . "&err=" . get_class($e), true);
+			header("Location: ./errpage.php?timestamp=" . time() . "&err=" . get_class($e), true);
 			exit();
 		}
 		?>
