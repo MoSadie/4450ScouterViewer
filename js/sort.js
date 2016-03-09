@@ -1,20 +1,23 @@
 /**
  * Created by Caleb Milligan on 3/9/2016.
  */
+$(document).ready(function () {
+    executeSort();
+});
 var sorting = [];
-function toggleSort(name){
+function toggleSort(name) {
     var index = sorting.indexOf(name);
-    if(index > -1){
+    if (index > -1) {
         sorting.splice(index, 1);
     }
-    else{
+    else {
         sorting.push(name);
     }
     console.log(sorting);
     executeSort();
 }
 
-function executeSort(){
+function executeSort() {
     var match_request = new XMLHttpRequest();
     match_request.open("GET", "../sort.php?order=" + JSON.stringify(sorting), true);
     match_request.send();
