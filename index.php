@@ -30,8 +30,8 @@ include_once "MyPDO.php";
 			<h1>Olympia Robotics Federation</h1>
 			<h2>2016 FIRST Stronghold Scouter</h2>
 		</header>
+		<hr>
 		<div class="container">
-			<hr>
 			<div class="row">
 				<div class="team_query">
 					<h3>Search by team:</h3>
@@ -41,6 +41,7 @@ include_once "MyPDO.php";
 						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go"
 							   onclick="getScores()">
 					</form>
+					<h3>Or <a href="sort">view a sortable table</a></h3>
 				</div>
 			</div>
 			<hr>
