@@ -5,25 +5,19 @@
 include_once "MyPDO.php";
 include_once "Naming.php";
 
-$query = "SELECT * FROM `stand_scouting`";
-$overridden = false;
+$query = "SELECT * FROM `stand_scouting` ORDER BY ";
 if (isset($_GET["order"])) {
 	$order_params = json_decode($_GET["order"]);
 	if ($order_params && sizeof($order_params) > 0) {
-		$query .= " ORDER BY ";
 		foreach ($order_params as $order_param) {
 			if (preg_match('/\s/', $order_param)) {
 				continue;
 			}
 			$query .= "`$order_param` ASC, ";
 		}
-		$query = rtrim($query, ", ");
-		$overridden = true;
 	}
 }
-if(!$overridden){
-	$query .=" ORDER BY `match_number` ASC, `team_number` ASC";
-}
+$query .= "`match_number` ASC, `team_number` ASC";
 $db = new MyPDO();
 $statement = $db->prepare($query);
 $success = $statement->execute();

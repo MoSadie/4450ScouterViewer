@@ -27,8 +27,8 @@
 						<table id="data_table" class="table">
 							<thead>
 								<tr>
-									<td>Team #<br/><input type="checkbox" name="sort" title="Team #" onchange="toggleSort('team_number')"></td>
-									<td>Match #<br/><input type="checkbox" name="sort" title="Match #" onchange="toggleSort('match_number')"></td>
+									<td>Team #</td>
+									<td>Match #</td>
 									<td>Scouter Name<br/><input type="checkbox" name="sort" title="Scouter Name" onchange="toggleSort('team_name')"></td>
 									<td>Pickup Speed<br/><input type="checkbox" name="sort" title="Pickup Speed" onchange="toggleSort('pickup_speed')"></td>
 									<td>Portcullis Spee<br/><input type="checkbox" name="sort" title="Portcullis Speed" onchange="toggleSort('portcullis_speed')"></td>
