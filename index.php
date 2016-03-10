@@ -57,9 +57,10 @@ include_once "MyPDO.php";
 				<div class="col-xs-5 william">
 					<div class="row">
 						<div class="col-lg-6">
-							<h4 id="team_name"><span>Team Name: </span></h4>
+							<h4><span>Team Name: </span><span id="team_name"></span></h4>
 						</div>
 					</div>
+					<hr>
 					<div class="row">
 						<div class="col-lg-6">
 							<h4><span>Average goals: </span><span id="average_score"></span></h4>
