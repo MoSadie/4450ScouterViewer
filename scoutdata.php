@@ -17,7 +17,7 @@ $db = new MyPDO();
 if ($action == "getinfo") {
 	$scores = getScores($team);
 	$average = getAverageScore($scores);
-	$reliability = getReliability($scores);
+	$reliability = Naming::getReliability($scores);
 	// Construct data array
 	$data = array("average" => $average, "variance" => $reliability);
 	// Get robot description and scouter name
