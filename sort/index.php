@@ -30,10 +30,10 @@
 									<td>Team #</td>
 									<td>Match #</td>
 									<td>Scouter Name<br/><input type="checkbox" name="sort" title="Scouter Name" onchange="toggleSort('scouter_name')"></td>
-									<td>Pickup Speed<br/><input type="checkbox" name="sort" title="Pickup Speed" onchange="toggleSort('pickup_speed')"></td>
 									<td>No-Show<br/><input type="checkbox" name="sort" title="No-Show" onchange="toggleSort('no_show')"></td>
 									<td>D.O.F<br/><input type="checkbox" name="sort" title="Died on Field" onchange="toggleSort('died_on_field')"></td>
 									<td>Defended<br/><input type="checkbox" name="sort" title="Pickup Speed" onchange="toggleSort('defended')"></td>
+									<td>Pickup Speed<br/><input type="checkbox" name="sort" title="Pickup Speed" onchange="toggleSort('pickup_speed')"></td>
 									<td>Portcullis Crosses<br/><input type="checkbox" name="sort" title="Portcullis Crosses" onchange="toggleSort('portcullis_crosses')"></td>
 									<td>Portcullis Speed<br/><input type="checkbox" name="sort" title="Portcullis Speed" onchange="toggleSort('portcullis_speed')"></td>
 									<td>Chival de Frise Crosses<br/><input type="checkbox" name="sort" title="Chival de Frise Crosses" onchange="toggleSort('chival_crosses')"></td>

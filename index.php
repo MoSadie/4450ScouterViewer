@@ -88,10 +88,10 @@ include_once "MyPDO.php";
 							<td>Team #</td>
 							<td>Match #</td>
 							<td>Scouter Name</td>
-							<td>Pickup Speed</td>
 							<td>No-Show</td>
 							<td>D.O.F</td>
 							<td>Defended</td>
+							<td>Pickup Speed</td>
 							<td>Portcullis Crosses</td>
 							<td>Portcullis Speed</td>
 							<td>Chival de Frise Crosses</td>
