@@ -21,7 +21,7 @@ if ($action == "getinfo") {
 	// Construct data array
 	$data = array("average" => $average, "variance" => $reliability);
 	// Get robot description and scouter name
-	$statement = $db->prepare("SELECT `robot_description`, `team_name` FROM `pit_scouting` WHERE `team_number`=:team_number");
+	$statement = $db->prepare("SELECT * FROM `pit_scouting` WHERE `team_number`=:team_number");
 	$statement->bindParam(":team_number", $team, PDO::PARAM_INT);
 	$success = $statement->execute();
 	// Add values to data array
@@ -29,19 +29,6 @@ if ($action == "getinfo") {
 		$data = array_merge($data, $statement->fetch(PDO::FETCH_ASSOC));
 	}
 	$statement->closeCursor();
-	// Get autonomous behavior for each match
-	$statement = $db->prepare("SELECT `match_number`, `autonomous_behavior` FROM `stand_scouting` WHERE `team_number`=:team_number");
-	$statement->bindParam(":team_number", $team, PDO::PARAM_INT);
-	$success = $statement->execute();
-	$auto_behavior = array();
-	// Add each auto behavior description
-	if ($success && $statement->rowCount() > 0) {
-		for ($i = 0; $i < $statement->rowCount(); $i++) {
-			array_push($auto_behavior, $statement->fetch(PDO::FETCH_ASSOC));
-		}
-	}
-	$statement->closeCursor();
-	$data["auto_behavior"] = $auto_behavior;
 	// If an image has been uploaded for this robot, specify its URL
 	$imgname = "uploaded/images/ROBOT_" . $team . ".jpg";
 	// Otherwise, use the default image
@@ -76,6 +63,8 @@ if ($action == "getmatches") {
 			echo Naming::getBooleanName($match["no_show"]);
 			echo "</td><td>";
 			echo Naming::getBooleanName($match["died_on_field"]);
+			echo "</td><td>";
+			echo $match["autonomous_behavior"];
 			echo "</td><td>";
 			echo Naming::getBooleanName($match["defended"]);
 			echo "</td><td>";

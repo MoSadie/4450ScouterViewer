@@ -32,6 +32,7 @@
 									<td>Scouter Name<br/><input type="checkbox" name="sort" title="Scouter Name" onchange="toggleSort('scouter_name')"></td>
 									<td>No-Show<br/><input type="checkbox" name="sort" title="No-Show" onchange="toggleSort('no_show')"></td>
 									<td>D.O.F<br/><input type="checkbox" name="sort" title="Died on Field" onchange="toggleSort('died_on_field')"></td>
+									<td>Autonomous Behavior</td>
 									<td>Defended<br/><input type="checkbox" name="sort" title="Pickup Speed" onchange="toggleSort('defended')"></td>
 									<td>Pickup Speed<br/><input type="checkbox" name="sort" title="Pickup Speed" onchange="toggleSort('pickup_speed')"></td>
 									<td>Portcullis Crosses<br/><input type="checkbox" name="sort" title="Portcullis Crosses" onchange="toggleSort('portcullis_crosses')"></td>

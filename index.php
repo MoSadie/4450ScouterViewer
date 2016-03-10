@@ -62,20 +62,28 @@ include_once "MyPDO.php";
 					</div>
 					<div class="row">
 						<div class="col-lg-6">
-							<h4 id="average_score"><span>Average goals: </span></h4>
+							<h4><span>Average goals: </span><span id="average_score"></span></h4>
 						</div>
 						<div class="col-lg-6">
-							<h4 id="reliability"><span>Reliability: </span></h4>
+							<h4><span>Reliability: </span><span id="reliability"></span></h4>
 						</div>
 						<div class="col-lg-6">
-							<div id="robot_description"><h4>Robot description: </h4></div>
+							<div><h4>Robot description: </h4><span id="robot_description"></span></div>
 						</div>
 						<div class="col-lg-6">
-							<div><h4>Autonomous behavior: </h4>
-								<ol class="scrolling_list" id="autonomous_behavior">
-
-								</ol>
-							</div>
+							<div><h4>Autonomous Notes: </h4><span id="auto_notes"></span></div>
+						</div>
+						<div class="col-lg-6">
+							<div><h4>Drive Base Notes: </h4><span id="drive_base_notes"></span></div>
+						</div>
+						<div class="col-lg-6">
+							<div><h4>Pickup Notes: </h4><span id="pickup_notes"></span></div>
+						</div>
+						<div class="col-lg-6">
+							<div><h4>Shooting Notes: </h4><span id="shooting_notes"></span></div>
+						</div>
+						<div class="col-lg-6">
+							<div><h4>Defense Notes: </h4><span id="defense_notes"></span></div>
 						</div>
 					</div>
 				</div>
@@ -90,6 +98,7 @@ include_once "MyPDO.php";
 							<td>Scouter Name</td>
 							<td>No-Show</td>
 							<td>D.O.F</td>
+							<td>Autonomous Behavior</td>
 							<td>Defended</td>
 							<td>Pickup Speed</td>
 							<td>Portcullis Crosses</td>

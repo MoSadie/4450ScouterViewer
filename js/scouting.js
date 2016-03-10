@@ -17,16 +17,16 @@ function getScores() {
         if (request.readyState == 4 && request.status == 200) {
             var response = request.responseText;
             var matches = JSON.parse(response);
-            document.getElementById("average_score").innerHTML = "<span>Average goals: </span>" + matches["average"];
-            document.getElementById("reliability").innerHTML = "<span>Reliability: </span>" + matches["variance"];
-            document.getElementById("team_name").innerHTML = "<span>Team Name: </span>" + matches["team_name"];
-            document.getElementById("robot_description").innerHTML = "<h4>Robot description: </h4>" + matches["robot_description"];
+            document.getElementById("average_score").innerHTML = matches["average"];
+            document.getElementById("reliability").innerHTML = matches["variance"];
+            document.getElementById("team_name").innerHTML = matches["team_name"];
+            document.getElementById("robot_description").innerHTML = matches["robot_description"];
+            document.getElementById("auto_notes").innerHTML = matches["auto_notes"];
+            document.getElementById("drive_base_notes").innerHTML = matches["drive_base_notes"];
+            document.getElementById("pickup_notes").innerHTML = matches["pickup_notes"];
+            document.getElementById("shooting_notes").innerHTML = matches["shooting_notes"];
+            document.getElementById("defense_notes").innerHTML = matches["defense_notes"];
             document.getElementById("robot_image").setAttribute("src", matches["image"]);
-            var list = "";
-            matches["auto_behavior"].forEach(function (entry) {
-                list += "<li value=\"" + entry["match_number"] + "\">" + entry["autonomous_behavior"] + "</li>";
-            });
-            document.getElementById("autonomous_behavior").innerHTML = list;
         }
     };
     var match_request = new XMLHttpRequest();
