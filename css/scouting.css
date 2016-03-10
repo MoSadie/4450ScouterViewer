@@ -36,6 +36,16 @@ input {
     max-height: 500px;
     overflow-y: scroll;
     overflow-x: scroll;
+    white-space: nowrap;
+}
+
+table{
+    table-layout: fixed;
+    overflow-x: scroll;
+}
+
+table *{
+    display: inline-block;
 }
 
 .media {

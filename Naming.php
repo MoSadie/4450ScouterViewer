@@ -41,4 +41,8 @@ class Naming {
 				return "N/A";
 		}
 	}
+
+	static function getBooleanName($val){
+		return $val ? "True" : "False";
+	}
 }

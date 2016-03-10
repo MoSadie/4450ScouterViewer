@@ -89,18 +89,31 @@ include_once "MyPDO.php";
 							<td>Match #</td>
 							<td>Scouter Name</td>
 							<td>Pickup Speed</td>
+							<td>No-Show</td>
+							<td>D.O.F</td>
+							<td>Defended</td>
+							<td>Portcullis Crosses</td>
 							<td>Portcullis Speed</td>
+							<td>Chival de Frise Crosses</td>
 							<td>Chival de Frise Speed</td>
+							<td>Moat Crosses</td>
 							<td>Moat Speed</td>
+							<td>Ramparts Crosses</td>
 							<td>Ramparts Speed</td>
+							<td>Drawbridge Crosses</td>
 							<td>Drawbridge Speed</td>
+							<td>Sally Port Crosses</td>
 							<td>Sally Port Speed</td>
+							<td>Rock Wall Crosses</td>
 							<td>Rock Wall Speed</td>
+							<td>Rough Terrain Crosses</td>
 							<td>Rough Terrain Speed</td>
+							<td>Low Bar Crosses</td>
 							<td>Low Bar Speed</td>
 							<td>Low Goals</td>
 							<td>High Goals</td>
 							<td>Endgame</td>
+							<td>Notes</td>
 						</tr>
 					</thead>
 					<tbody id="match_data">
