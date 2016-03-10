@@ -37,6 +37,8 @@ if ($success) {
 		echo "</td><td>";
 		echo Naming::getBooleanName($match["died_on_field"]);
 		echo "</td><td>";
+		echo $match["autonomous_behavior"];
+		echo "</td><td>";
 		echo Naming::getBooleanName($match["defended"]);
 		echo "</td><td>";
 		echo Naming::getSpeedName($match["pickup_speed"]);
