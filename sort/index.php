@@ -29,7 +29,7 @@
 								<tr>
 									<td>Team #</td>
 									<td>Match #</td>
-									<td>Scouter Name<br/><input type="checkbox" name="sort" title="Scouter Name" onchange="toggleSort('team_name')"></td>
+									<td>Scouter Name<br/><input type="checkbox" name="sort" title="Scouter Name" onchange="toggleSort('scouter_name')"></td>
 									<td>Pickup Speed<br/><input type="checkbox" name="sort" title="Pickup Speed" onchange="toggleSort('pickup_speed')"></td>
 									<td>No-Show<br/><input type="checkbox" name="sort" title="No-Show" onchange="toggleSort('no_show')"></td>
 									<td>D.O.F<br/><input type="checkbox" name="sort" title="Died on Field" onchange="toggleSort('died_on_field')"></td>
