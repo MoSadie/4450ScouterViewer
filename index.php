@@ -59,30 +59,35 @@ include_once "MyPDO.php";
 						<div class="col-lg-6">
 							<h4><span>Team Name: </span><span id="team_name"></span></h4>
 						</div>
-					</div>
-					<hr>
-					<div class="row">
+						<hr>
 						<div class="col-lg-6">
 							<h4><span>Average goals: </span><span id="average_score"></span></h4>
 						</div>
+						<hr>
 						<div class="col-lg-6">
 							<h4><span>Reliability: </span><span id="reliability"></span></h4>
 						</div>
+						<hr>
 						<div class="col-lg-6">
 							<div><h4>Robot description: </h4><span id="robot_description"></span></div>
 						</div>
+						<hr>
 						<div class="col-lg-6">
 							<div><h4>Autonomous Notes: </h4><span id="auto_notes"></span></div>
 						</div>
+						<hr>
 						<div class="col-lg-6">
 							<div><h4>Drive Base Notes: </h4><span id="drive_base_notes"></span></div>
 						</div>
+						<hr>
 						<div class="col-lg-6">
 							<div><h4>Pickup Notes: </h4><span id="pickup_notes"></span></div>
 						</div>
+						<hr>
 						<div class="col-lg-6">
 							<div><h4>Shooting Notes: </h4><span id="shooting_notes"></span></div>
 						</div>
+						<hr>
 						<div class="col-lg-6">
 							<div><h4>Defense Notes: </h4><span id="defense_notes"></span></div>
 						</div>
