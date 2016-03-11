@@ -20,11 +20,11 @@ class Naming {
 
 	static function getSpeedName($speed) {
 		switch ((int)$speed) {
-			case 0:
+			case 2:
 				return "Fast";
 			case 1:
 				return "Medium";
-			case 2:
+			case 0:
 				return "Slow";
 			default:
 				return "N/A";

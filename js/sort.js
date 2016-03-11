@@ -13,7 +13,6 @@ function toggleSort(name) {
     else {
         sorting[name] = getOrderDir(name);
     }
-    console.log(sorting);
     debouncedExecute();
 }
 
