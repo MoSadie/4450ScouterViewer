@@ -102,36 +102,36 @@ include_once "MyPDO.php";
 				<table id="data_table" class="table">
 					<thead>
 						<tr>
-							<td>Team #</td>
-							<td>Match #</td>
-							<td>Scouter Name</td>
-							<td>No-Show</td>
-							<td>D.O.F</td>
-							<td>Autonomous Behavior</td>
-							<td>Defended</td>
-							<td>Pickup Speed</td>
-							<td>Portcullis Crosses</td>
-							<td>Portcullis Speed</td>
-							<td>Chival de Frise Crosses</td>
-							<td>Chival de Frise Speed</td>
-							<td>Moat Crosses</td>
-							<td>Moat Speed</td>
-							<td>Ramparts Crosses</td>
-							<td>Ramparts Speed</td>
-							<td>Drawbridge Crosses</td>
-							<td>Drawbridge Speed</td>
-							<td>Sally Port Crosses</td>
-							<td>Sally Port Speed</td>
-							<td>Rock Wall Crosses</td>
-							<td>Rock Wall Speed</td>
-							<td>Rough Terrain Crosses</td>
-							<td>Rough Terrain Speed</td>
-							<td>Low Bar Crosses</td>
-							<td>Low Bar Speed</td>
-							<td>Low Goals</td>
-							<td>High Goals</td>
-							<td>Endgame</td>
-							<td>Notes</td>
+							<th>Team #</th>
+							<th>Match #</th>
+							<th>Scouter Name</th>
+							<th>No-Show</th>
+							<th>D.O.F.</th>
+							<th>Autonomous Behavior</th>
+							<th>Defended</th>
+							<th>Pickup Speed</th>
+							<th>Portcullis Crosses</th>
+							<th>Portcullis Speed</th>
+							<th>Chival de Frise Crosses</th>
+							<th>Chival de Frise Speed</th>
+							<th>Moat Crosses</th>
+							<th>Moat Speed</th>
+							<th>Ramparts Crosses</th>
+							<th>Ramparts Speed</th>
+							<th>Drawbridge Crosses</th>
+							<th>Drawbridge Speed</th>
+							<th>Sally Port Crosses</th>
+							<th>Sally Port Speed</th>
+							<th>Rock Wall Crosses</th>
+							<th>Rock Wall Speed</th>
+							<th>Rough Terrain Crosses</th>
+							<th>Rough Terrain Speed</th>
+							<th>Low Bar Crosses</th>
+							<th>Low Bar Speed</th>
+							<th>Low Goals</th>
+							<th>High Goals</th>
+							<th>Endgame</th>
+							<th>Notes</th>
 						</tr>
 					</thead>
 					<tbody id="match_data">

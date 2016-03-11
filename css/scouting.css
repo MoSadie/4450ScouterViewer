@@ -33,13 +33,25 @@ input {
     color: #000
 }
 
+table tr {
+    white-space: nowrap;
+}
+
+thead tr {
+    border-radius: 5px;
+    background-color: #0F0F0F;
+}
+
+tr input {
+    margin-left: 5px !important;
+}
+
 .table-responsive {
     border: 4px inset #333;
     border-radius: 10px;
     background: url("http://orf.hulk.osd.wednet.edu/files/theme/header-footer-bg.jpg") repeat;
     max-height: 500px;
-    overflow-y: scroll;
-    overflow-x: scroll;
+    overflow: auto;
 }
 
 .media {
@@ -48,7 +60,7 @@ input {
     background: url("http://orf.hulk.osd.wednet.edu/files/theme/header-footer-bg.jpg") repeat;
 }
 
-.william{
+.william {
     border: 4px inset #333;
     border-left: none;
     margin-left: -5px;
