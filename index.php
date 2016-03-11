@@ -3,6 +3,14 @@ include_once "MyPDO.php";
 /**
  * Created by Caleb Milligan on 2/1/2016.
  */
+try {
+	$db = new MyPDO();
+}
+catch (Exception $e) {
+	error_log($e->__toString());
+	header("Location: ./errpage.php?timestamp=" . time() . "&err=" . get_class($e), true);
+	exit();
+}
 ?>
 <!DOCTYPE html>
 <!--
@@ -17,16 +25,6 @@ include_once "MyPDO.php";
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<script src="js/scouting.js"></script>
-		<?php
-		try {
-			$db = new MyPDO();
-		}
-		catch (Exception $e) {
-			error_log($e->__toString());
-			header("Location: ./errpage.php?timestamp=" . time() . "&err=" . get_class($e), true);
-			exit();
-		}
-		?>
 	</head>
 	<body>
 		<header>

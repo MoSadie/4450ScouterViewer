@@ -1,9 +1,6 @@
 /**
  * Created by Caleb Milligan on 2/23/2016.
  */
-$(document).ready(function () {
-
-});
 
 function getScores() {
     var team_number = document.getElementById("team_number");
@@ -14,27 +11,37 @@ function getScores() {
     request.open("GET", "scoutdata.php?action=getinfo&team=" + team_number.value.trim(), true);
     request.send();
     request.onreadystatechange = function () {
-        if (request.readyState == 4 && request.status == 200) {
-            var response = request.responseText;
-            var matches = JSON.parse(response);
-            document.getElementById("average_score").innerHTML = matches["average"];
-            document.getElementById("reliability").innerHTML = matches["variance"];
-            document.getElementById("team_name").innerHTML = matches["team_name"];
-            document.getElementById("robot_description").innerHTML = matches["robot_description"];
-            document.getElementById("auto_notes").innerHTML = matches["auto_notes"];
-            document.getElementById("drive_base_notes").innerHTML = matches["drive_base_notes"];
-            document.getElementById("pickup_notes").innerHTML = matches["pickup_notes"];
-            document.getElementById("shooting_notes").innerHTML = matches["shooting_notes"];
-            document.getElementById("defense_notes").innerHTML = matches["defense_notes"];
-            document.getElementById("robot_image").setAttribute("src", matches["image"]);
+        if (request.readyState == 4) {
+            if(request.status= 200) {
+                var response = request.responseText;
+                var matches = JSON.parse(response);
+                document.getElementById("average_score").innerHTML = matches["average"];
+                document.getElementById("reliability").innerHTML = matches["variance"];
+                document.getElementById("team_name").innerHTML = matches["team_name"];
+                document.getElementById("robot_description").innerHTML = matches["robot_description"];
+                document.getElementById("auto_notes").innerHTML = matches["auto_notes"];
+                document.getElementById("drive_base_notes").innerHTML = matches["drive_base_notes"];
+                document.getElementById("pickup_notes").innerHTML = matches["pickup_notes"];
+                document.getElementById("shooting_notes").innerHTML = matches["shooting_notes"];
+                document.getElementById("defense_notes").innerHTML = matches["defense_notes"];
+                document.getElementById("robot_image").setAttribute("src", matches["image"]);
+            }
+            else if(match_request.status = 500){
+                window.location.replace("errpage.php?timestamp=" + (new Date().getTime()))
+            }
         }
     };
     var match_request = new XMLHttpRequest();
     match_request.open("GET", "scoutdata.php?action=getmatches&team=" + team_number.value.trim(), true);
     match_request.send();
     match_request.onreadystatechange = function () {
-        if (match_request.readyState == 4 && match_request.status == 200) {
-            document.getElementById("match_data").innerHTML = match_request.responseText;
+        if (match_request.readyState == 4) {
+            if (match_request.status == 200) {
+                document.getElementById("match_data").innerHTML = match_request.responseText;
+            }
+            else if(match_request.status = 500){
+                window.location.replace("errpage.php?timestamp=" + (new Date().getTime()))
+            }
         }
     }
 }

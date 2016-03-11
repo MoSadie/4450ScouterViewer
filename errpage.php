@@ -11,7 +11,7 @@ if (isset($_GET["timestamp"])) {
 if (isset($_GET["err"])) {
 	$error = $_GET["err"];
 }
-$timestring = date("Y-M-d H:i:s T", $timestamp);
+$timestring = date("Y-M-d H:i:s T", (int)$timestamp);
 $subject = rawurlencode("ORF Stronghold Scouting Error");
 $body = "System time: $timestring\n";
 $body .= "Error: $error\n";

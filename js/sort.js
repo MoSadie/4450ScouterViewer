@@ -42,10 +42,20 @@ function executeSort() {
     match_request.open("GET", "../sort.php?order=" + JSON.stringify(sorting), true);
     match_request.send();
     match_request.onreadystatechange = function () {
-        if (match_request.readyState == 4 && match_request.status == 200) {
-            document.getElementById("match_data").innerHTML = match_request.responseText;
+        console.log(match_request);
+        if (match_request.readyState == 4) {
+            if (match_request.status == 200) {
+                document.getElementById("match_data").innerHTML = match_request.responseText;
+            }
+            if(match_request.status = 500){
+                window.location.replace("../errpage.php?timestamp=" + (new Date().getTime()))
+            }
         }
     };
+    match_request.onerror(function(){
+        alert("what")
+    });
+
 }
 
 function debounce(func, wait, immediate) {
