@@ -27,7 +27,7 @@ function getScores() {
                 document.getElementById("robot_image").setAttribute("src", matches["image"]);
             }
             else if(match_request.status = 500){
-                window.location.replace("errpage.php?timestamp=" + (new Date().getTime()))
+                window.location.replace("errpage.php");
             }
         }
     };
@@ -40,7 +40,7 @@ function getScores() {
                 document.getElementById("match_data").innerHTML = match_request.responseText;
             }
             else if(match_request.status = 500){
-                window.location.replace("errpage.php?timestamp=" + (new Date().getTime()))
+                window.location.replace("errpage.php");
             }
         }
     }

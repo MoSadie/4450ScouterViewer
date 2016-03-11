@@ -48,7 +48,7 @@ function executeSort() {
                 document.getElementById("match_data").innerHTML = match_request.responseText;
             }
             if(match_request.status = 500){
-                window.location.replace("../errpage.php?timestamp=" + (new Date().getTime()))
+                window.location.replace("../errpage.php");
             }
         }
     };
