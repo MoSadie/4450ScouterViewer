@@ -43,6 +43,6 @@ class Naming {
 	}
 
 	static function getBooleanName($val){
-		return $val ? "True" : "False";
+		return $val ? "Yes" : "No";
 	}
 }

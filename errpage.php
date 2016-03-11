@@ -19,6 +19,9 @@ $body .= "-------DO NOT MODIFY ABOVE THIS LINE-------\n\n";
 $body = rawurlencode($body);
 ?>
 <!DOCTYPE html>
+<!--
+  -- Created by Caleb Milligan on 2/25/2016.
+  -->
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">

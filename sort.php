@@ -7,13 +7,13 @@ include_once "Naming.php";
 
 $query = "SELECT * FROM `stand_scouting` ORDER BY ";
 if (isset($_GET["order"])) {
-	$order_params = json_decode($_GET["order"]);
+	$order_params = json_decode($_GET["order"], true);
 	if ($order_params && sizeof($order_params) > 0) {
-		foreach ($order_params as $order_param) {
-			if (preg_match('/\s/', $order_param)) {
+		foreach ($order_params as $order_param => $order_dir) {
+			if (preg_match('/\s/', $order_param) || !preg_match('/^(ASC|DESC)$/i', $order_dir)) {
 				continue;
 			}
-			$query .= "`$order_param` ASC, ";
+			$query .= "`$order_param` $order_dir, ";
 		}
 	}
 }

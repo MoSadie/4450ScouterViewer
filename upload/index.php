@@ -3,26 +3,29 @@
  * Created by Caleb Milligan on 2/24/2016.
  */
 ?>
-	<!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="utf-8">
-			<title>Scouter Data Viewer</title>
-			<link rel="stylesheet" href="../css/bootstrap.css">
-			<link rel="stylesheet" href="../css/scouting.css">
-			<script src="../js/jquery-1.11.3.min.js"></script>
-			<script src="../js/bootstrap.js"></script>
-			<script src="../js/scouting.js"></script>
-		</head>
-		<body>
-			<form action="" method="post" enctype="multipart/form-data" style="background: none">
-				<h3>Upload Images:</h3>
-				<input style="color: #fff" id="file_selector" multiple="" name="userfile[]" type="file" accept="image/*"
-					   onchange="verifyUpload()"/><br/>
-				<input id="upload_button" disabled="disabled" type="submit" class="btn-sm" value="Upload"/>
-			</form>
-		</body>
-	</html>
+<!DOCTYPE html>
+<!--
+  -- Created by Caleb Milligan on 2/24/2016.
+  -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Scouter Data Viewer</title>
+		<link rel="stylesheet" href="../css/bootstrap.css">
+		<link rel="stylesheet" href="../css/scouting.css">
+		<script src="../js/jquery-1.11.3.min.js"></script>
+		<script src="../js/bootstrap.js"></script>
+		<script src="../js/scouting.js"></script>
+	</head>
+	<body>
+		<form action="" method="post" enctype="multipart/form-data" style="background: none">
+			<h3>Upload Images:</h3>
+			<input style="color: #fff" id="file_selector" multiple="" name="userfile[]" type="file" accept="image/*"
+				   onchange="verifyUpload()"/><br/>
+			<input id="upload_button" disabled="disabled" type="submit" class="btn-sm" value="Upload"/>
+		</form>
+	</body>
+</html>
 <?php
 try {
 	// If this is present, then we've uploaded some images

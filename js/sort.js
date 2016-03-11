@@ -4,17 +4,38 @@
 $(document).ready(function () {
     executeSort();
 });
-var sorting = [];
+var sorting = {};
 var debouncedExecute = debounce(executeSort, 1500);
 function toggleSort(name) {
-    var index = sorting.indexOf(name);
-    if (index > -1) {
-        sorting.splice(index, 1);
+    if (sorting.hasOwnProperty(name)) {
+        delete sorting[name];
     }
     else {
-        sorting.push(name);
+        sorting[name] = getOrderDir(name);
     }
+    console.log(sorting);
     debouncedExecute();
+}
+
+function getOrderDir(name) {
+    switch (name.toLowerCase()) {
+        case "scouter_name":
+        case "no_show":
+        case "dead_on_field":
+        case "defended":
+        case "portcullis_speed":
+        case "chival_speed":
+        case "moat_speed":
+        case "ramparts_speed":
+        case "drawbridge_speed":
+        case "sally_speed":
+        case "rock_speed":
+        case "rough_speed":
+        case "low_speed":
+            return "ASC";
+        default:
+            return "DESC";
+    }
 }
 
 function executeSort() {
