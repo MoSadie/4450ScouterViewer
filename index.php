@@ -106,7 +106,7 @@ include_once "MyPDO.php";
 							<th>Match #</th>
 							<th>Scouter Name</th>
 							<th>No-Show</th>
-							<th>D.O.F.</th>
+							<th>D.o.F.</th>
 							<th>Autonomous Behavior</th>
 							<th>Defended</th>
 							<th>Pickup Speed</th>
