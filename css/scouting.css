@@ -42,6 +42,14 @@ thead tr {
     background-color: #0F0F0F;
 }
 
+tbody tr:nth-child(odd){
+    background-color: rgba(48, 48, 48, 0.5);
+}
+
+tbody tr:nth-child(even){
+    background-color: rgba(32, 32, 32, 0.5);
+}
+
 tr input {
     margin-left: 5px !important;
 }
