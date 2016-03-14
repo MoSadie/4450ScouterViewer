@@ -54,9 +54,9 @@ if ($action == "getmatches") {
 		for ($i = 0; $i < $statement->rowCount(); $i++) {
 			$match = $statement->fetch(PDO::FETCH_ASSOC);
 			echo "<tr><td>";
-			echo $match["team_number"];
-			echo "</td><td>";
 			echo $match["match_number"];
+			echo "</td><td>";
+			echo $match["team_number"];
 			echo "</td><td>";
 			echo $match["scouter_name"];
 			echo "</td><td>";

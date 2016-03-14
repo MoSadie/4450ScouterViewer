@@ -100,8 +100,8 @@ catch (Exception $e) {
 				<table id="data_table" class="table">
 					<thead>
 						<tr>
-							<th>Team #</th>
 							<th>Match #</th>
+							<th>Team #</th>
 							<th>Scouter Name</th>
 							<th>No-Show</th>
 							<th>D.o.F.</th>
