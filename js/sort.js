@@ -52,10 +52,6 @@ function executeSort() {
             }
         }
     };
-    match_request.onerror(function(){
-        alert("what")
-    });
-
 }
 
 function debounce(func, wait, immediate) {
