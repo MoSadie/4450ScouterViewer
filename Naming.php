@@ -45,4 +45,70 @@ class Naming {
 	static function getBooleanName($val){
 		return $val ? "Yes" : "No";
 	}
+
+	static function matchDataToTableRow(&$match){
+		$data = "";
+		$data .= "<tr><td>";
+		$data .= $match["match_number"];
+		$data .= "</td><td>";
+		$data .= $match["team_number"];
+		$data .= "</td><td>";
+		$data .= $match["scouter_name"];
+		$data .= "</td><td>";
+		$data .= Naming::getBooleanName($match["no_show"]);
+		$data .= "</td><td>";
+		$data .= Naming::getBooleanName($match["died_on_field"]);
+		$data .= "</td><td>";
+		$data .= $match["autonomous_behavior"];
+		$data .= "</td><td>";
+		$data .= Naming::getBooleanName($match["defended"]);
+		$data .= "</td><td>";
+		$data .= Naming::getSpeedName($match["pickup_speed"]);
+		$data .= "</td><td>";
+		$data .= $match["portcullis_crosses"];
+		$data .= "</td><td>";
+		$data .= Naming::getSpeedName($match["portcullis_speed"]);
+		$data .= "</td><td>";
+		$data .= $match["chival_crosses"];
+		$data .= "</td><td>";
+		$data .= Naming::getSpeedName($match["chival_speed"]);
+		$data .= "</td><td>";
+		$data .= $match["moat_crosses"];
+		$data .= "</td><td>";
+		$data .= Naming::getSpeedName($match["moat_speed"]);
+		$data .= "</td><td>";
+		$data .= $match["ramparts_crosses"];
+		$data .= "</td><td>";
+		$data .= Naming::getSpeedName($match["ramparts_speed"]);
+		$data .= "</td><td>";
+		$data .= $match["drawbridge_crosses"];
+		$data .= "</td><td>";
+		$data .= Naming::getSpeedName($match["drawbridge_speed"]);
+		$data .= "</td><td>";
+		$data .= $match["sally_crosses"];
+		$data .= "</td><td>";
+		$data .= Naming::getSpeedName($match["sally_speed"]);
+		$data .= "</td><td>";
+		$data .= $match["rock_crosses"];
+		$data .= "</td><td>";
+		$data .= Naming::getSpeedName($match["rock_speed"]);
+		$data .= "</td><td>";
+		$data .= $match["rough_crosses"];
+		$data .= "</td><td>";
+		$data .= Naming::getSpeedName($match["rough_speed"]);
+		$data .= "</td><td>";
+		$data .= $match["low_crosses"];
+		$data .= "</td><td>";
+		$data .= Naming::getSpeedName($match["low_speed"]);
+		$data .= "</td><td>";
+		$data .= $match["low_goals"];
+		$data .= "</td><td>";
+		$data .= $match["high_goals"];
+		$data .= "</td><td>";
+		$data .= Naming::getEndgameName($match["endgame"]);
+		$data .= "</td><td>";
+		$data .= $match["notes"];
+		$data .= "</td></tr>";
+		return $data;
+	}
 }
