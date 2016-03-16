@@ -5,13 +5,15 @@
 date_default_timezone_set("UTC");
 $timestamp = time();
 $error = "Unknown";
+$suffix = " (approximate)";
 if (isset($_GET["timestamp"])) {
 	$timestamp = $_GET["timestamp"];
+	$suffix = "";
 }
 if (isset($_GET["err"])) {
 	$error = $_GET["err"];
 }
-$timestring = date("Y-M-d H:i:s T", (int)$timestamp);
+$timestring = date("d-M-Y H:i:s T", (int)$timestamp) . $suffix;
 $subject = rawurlencode("ORF Stronghold Scouting Error");
 $body = "System time: $timestring\n";
 $body .= "Error: $error\n";
