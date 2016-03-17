@@ -71,7 +71,7 @@ function generateInsert(&$db, $table_name, &$values) {
 		return;
 	}
 	// Define query strings
-	$query = "INSERT INTO `$table_name` (";
+	$query = "REPLACE INTO `$table_name` (";
 	$values_query = "VALUES (";
 	// Append each column and binding name
 	foreach ($values as $column_name => $value) {
