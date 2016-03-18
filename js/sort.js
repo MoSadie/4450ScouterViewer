@@ -20,7 +20,7 @@ function getOrderDir(name) {
     switch (name.toLowerCase()) {
         case "scouter_name":
         case "no_show":
-        case "dead_on_field":
+        case "died_on_field":
         case "defended":
         case "portcullis_speed":
         case "chival_speed":
