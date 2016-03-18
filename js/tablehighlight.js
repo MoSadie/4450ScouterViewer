@@ -15,9 +15,12 @@ function reloadHighlights() {
         var team_number = row.cells.item(1).textContent;
         console.log(match_number);
         console.log(team_number);
-        $(".selectable tbody tr").each(function(){
-            if(this.cells.item(0).textContent == match_number
-                && this.cells.item(1).textContent == team_number){
+        $(".selectable tbody tr").each(function () {
+            var tmp_match_number = this.cells.item(0).textContent;
+            var tmp_team_number = this.cells.item(1).textContent;
+            console.log(tmp_match_number);
+            console.log(tmp_team_number);
+            if (tmp_match_number == match_number && tmp_team_number == team_number) {
                 toggleRow(this);
             }
         });
