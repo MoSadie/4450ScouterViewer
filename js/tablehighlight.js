@@ -18,8 +18,6 @@ function reloadHighlights() {
         $(".selectable tbody tr").each(function () {
             var tmp_match_number = this.cells.item(0).textContent;
             var tmp_team_number = this.cells.item(1).textContent;
-            console.log(tmp_match_number);
-            console.log(tmp_team_number);
             if (tmp_match_number == match_number && tmp_team_number == team_number) {
                 toggleRow(this);
             }
