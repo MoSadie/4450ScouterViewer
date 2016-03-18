@@ -3,8 +3,19 @@
  */
 $(document).ready(function () {
     $(".selectable tbody").delegate('td', 'click', toggleRowEvent);
+    document.addEventListener("mousedown", function (event) {
+        if(!event.target || event.target.tagName.toLowerCase() != 'td'){
+            last_highlight = undefined;
+        }
+    });
+    var monitorShift = function (event) {
+        shift_pressed = event.shiftKey;
+    };
+    document.addEventListener("keydown", monitorShift);
+    document.addEventListener("keyup", monitorShift);
 });
-
+var last_highlight = undefined;
+var shift_pressed = false;
 var highlighted = [];
 
 function reloadHighlights() {
@@ -13,8 +24,6 @@ function reloadHighlights() {
     tmp.forEach(function (row) {
         var match_number = row.cells.item(0).textContent;
         var team_number = row.cells.item(1).textContent;
-        console.log(match_number);
-        console.log(team_number);
         $(".selectable tbody tr").each(function () {
             var tmp_match_number = this.cells.item(0).textContent;
             var tmp_team_number = this.cells.item(1).textContent;
@@ -41,7 +50,41 @@ function toggleRow(row) {
 function toggleRowEvent(event) {
     var row = getNearestTableAncestor(event.target, 'tr');
     if (row) {
-        toggleRow(row);
+        if (last_highlight && shift_pressed) {
+            var start = last_highlight.rowIndex;
+            var end = row.rowIndex;
+            var i = 0;
+            if (start < end) {
+                for (i = start; i < end; i++) {
+                    toggleRow(row.parentNode.childNodes.item(i));
+                }
+            }
+            else {
+                for (i = end - 1; i < start - 1; i++) {
+                    toggleRow(row.parentNode.childNodes.item(i));
+                }
+            }
+            deselect();
+        }
+        else {
+            toggleRow(row);
+        }
+        last_highlight = row;
+    }
+}
+
+function deselect() {
+    if (window.getSelection) {
+        var selection = window.getSelection();
+        if (selection.empty) {
+            selection.empty();
+        }
+        else if (selection.removeAllRanges) {
+            selection.removeAllRanges();
+        }
+    }
+    else if (document.selection) {
+        document.selection.empty();
     }
 }
 
