@@ -22,9 +22,11 @@ catch (Exception $e) {
 		<title>Scouter Data Viewer</title>
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/scouting.css">
+		<link rel="stylesheet" href="css/tablehighlight.css">
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<script src="js/scouting.js"></script>
+		<script src="js/tablehighlight.js"></script>
 	</head>
 	<body>
 		<header>
@@ -97,7 +99,7 @@ catch (Exception $e) {
 			</div>
 			<hr>
 			<div class="table-responsive">
-				<table id="data_table" class="table">
+				<table id="data_table" class="table selectable">
 					<thead>
 						<tr>
 							<th>Match #</th>

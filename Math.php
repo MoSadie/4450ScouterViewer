@@ -11,7 +11,7 @@ class Math {
 	 * </p>
 	 * @return float standard deviation of the input array as a float
 	 */
-	public static function standardDeviation($arr) {
+	public static function standardDeviation(&$arr) {
 		if(sizeof($arr) <= 1){
 			return 0;
 		}

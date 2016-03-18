@@ -1,0 +1,8 @@
+.selectable tbody .selected:nth-child(even) {
+    background-color: rgba(64, 128, 255, 0.5) !important;
+    color: white !important;
+}
+.selectable tbody .selected:nth-child(odd) {
+    background-color: rgba(128, 192, 255, 0.5) !important;
+    color: white !important;
+}
