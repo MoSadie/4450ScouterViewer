@@ -16,11 +16,6 @@ if (!preg_match("/4450Scouting\\/*.+/", $user_agent)) {
 	http_response_code(401);
 	exit();
 }
-// Ensure the image directory is created
-$image_dir = "uploaded/images";
-if (!file_exists($image_dir)) {
-	mkdir($image_dir, 0777, true);
-}
 // Read JSON from input
 $data = file_get_contents("php://input");
 // No data? No good!

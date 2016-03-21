@@ -47,8 +47,9 @@ class Naming {
 	}
 
 	static function matchDataToTableRow(&$match){
-		$data = "";
-		$data .= "<tr><td>";
+		$data = "<tr><td style='display: none'>";
+		$data .= $match["id"];
+		$data .= "</td><td>";
 		$data .= $match["match_number"];
 		$data .= "</td><td>";
 		$data .= $match["team_number"];

@@ -21,14 +21,14 @@ var highlighted = [];
 function reloadHighlights() {
     var tmp = highlighted;
     highlighted = [];
-    tmp.forEach(function (row) {
-        var match_number = row.cells.item(0).textContent;
-        var team_number = row.cells.item(1).textContent;
+    tmp.forEach(function (id) {
+        console.log("CURRENT ID IS " + id);
         $(".selectable tbody tr").each(function () {
-            var tmp_match_number = this.cells.item(0).textContent;
-            var tmp_team_number = this.cells.item(1).textContent;
-            if (tmp_match_number == match_number && tmp_team_number == team_number) {
+            var tmp_id = this.cells.item(0).textContent;
+            console.log("WE'RE CHECKING " + tmp_id);
+            if (tmp_id == id) {
                 toggleRow(this);
+                return false;
             }
         });
     });
@@ -36,11 +36,12 @@ function reloadHighlights() {
 
 function toggleRow(row) {
     row.classList.toggle("selected");
+    var id = row.cells.item(0).textContent;
     if (row.classList.contains("selected")) {
-        highlighted.push(row);
+        highlighted.push(id);
     }
     else {
-        var i = highlighted.indexOf(row);
+        var i = highlighted.indexOf(id);
         if (i > -1) {
             highlighted.splice(i, 1);
         }
