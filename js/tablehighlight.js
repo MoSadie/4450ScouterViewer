@@ -3,11 +3,13 @@
  */
 $(document).ready(function () {
     $(".selectable tbody").delegate('td', 'click', toggleRowEvent);
+    /*
     document.addEventListener("mousedown", function (event) {
         if (!event.target || event.target.tagName.toLowerCase() != 'td') {
             last_highlight = undefined;
         }
     });
+    */
     var monitorShift = function (event) {
         shift_pressed = event.shiftKey;
     };
@@ -26,6 +28,7 @@ function paginate() {
     var page = [];
     current_page = 0;
     pages = [];
+    highlighted = [];
     var full_page = false;
     $(".selectable tbody tr").each(function () {
         page.push(this);
@@ -37,7 +40,7 @@ function paginate() {
             full_page = true;
         }
     });
-    if(!full_page){
+    if (!full_page) {
         pages.push(page);
     }
     $(".selectable tbody").innerHTML = "";
@@ -63,7 +66,7 @@ function nextPage() {
 }
 
 function lastPage() {
-    current_page = pages.length - 1;
+    current_page = Math.max(pages.length - 1, 0);
     displayPage();
 }
 
@@ -78,12 +81,12 @@ function displayPage() {
     $(".paginator_selector").each(function () {
         this.value = (current_page + 1) + "/" + (pages.length);
     });
+    reloadHighlights();
 }
 
 function inputPage(who) {
     var input = who.value;
-    console.log(input);
-    if(!input){
+    if (!input) {
         return;
     }
     input = input.split("/")[0];
@@ -94,18 +97,14 @@ function inputPage(who) {
 
 function reloadHighlights() {
     var tmp = highlighted;
-    highlighted = [];
-    tmp.forEach(function (id) {
-        console.log("CURRENT ID IS " + id);
-        $(".selectable tbody tr").each(function () {
-            var tmp_id = this.cells.item(0).textContent;
-            console.log("WE'RE CHECKING " + tmp_id);
-            if (tmp_id == id) {
-                toggleRow(this);
-                return false;
-            }
-        });
+    $(".selectable tbody tr").each(function () {
+        var tmp_id = this.cells.item(0).textContent
+        var has_id = tmp.indexOf(tmp_id) > -1;
+        if (has_id) {
+            toggleRow(this);
+        }
     });
+    highlighted = tmp;
 }
 
 function toggleRow(row) {
