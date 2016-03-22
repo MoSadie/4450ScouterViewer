@@ -22,6 +22,7 @@ catch (Exception $e) {
 		<title>Scouter Data Viewer</title>
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/scouting.css">
+		<link rel="stylesheet" href="css/tablepager.css">
 		<link rel="stylesheet" href="css/tablehighlight.css">
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/bootstrap.js"></script>
@@ -99,11 +100,11 @@ catch (Exception $e) {
 			</div>
 			<hr>
 			<form onsubmit="return false;">
-				<img src="images/first.png" onclick="firstPage()">
-				<img src="images/prev.png" onclick="prevPage()">
-				<input title="Page" class="paginator_selector" type="text" onchange="inputPage(this)">
-				<img src="images/next.png" onclick="nextPage()">
-				<img src="images/last.png" onclick="lastPage()">
+				<img src="images/first.png" onclick="getPager('.selectable').firstPage()">
+				<img src="images/prev.png" onclick="getPager('.selectable').prevPage()">
+				<input title="Page" class="selectable-paginator_selector" type="text" onchange="getPager('.selectable').inputPage(this)">
+				<img src="images/next.png" onclick="getPager('.selectable').nextPage()">
+				<img src="images/last.png" onclick="getPager('.selectable').lastPage()">
 			</form>
 			<div class="table-responsive">
 				<table id="data_table" class="table selectable">
@@ -147,11 +148,11 @@ catch (Exception $e) {
 				</table>
 			</div>
 			<form onsubmit="return false;">
-				<img src="images/first.png" onclick="firstPage()">
-				<img src="images/prev.png" onclick="prevPage()">
-				<input title="Page" class="paginator_selector" type="text" onchange="inputPage(this)">
-				<img src="images/next.png" onclick="nextPage()">
-				<img src="images/last.png" onclick="lastPage()">
+				<img src="images/first.png" onclick="getPager('.selectable').firstPage()">
+				<img src="images/prev.png" onclick="getPager('.selectable').prevPage()">
+				<input title="Page" class="selectable-paginator_selector" type="text" onchange="getPager('.selectable').inputPage(this)">
+				<img src="images/next.png" onclick="getPager('.selectable').nextPage()">
+				<img src="images/last.png" onclick="getPager('.selectable').lastPage()">
 			</form>
 			<footer class="text-center">
 				<div class="container">

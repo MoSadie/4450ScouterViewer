@@ -19,91 +19,11 @@ $(document).ready(function () {
 var last_highlight = undefined;
 var shift_pressed = false;
 var highlighted = [];
-var pages = [];
-var current_page = 0;
-var page_size = 30;
-
-function paginate() {
-    var i = 0;
-    var page = [];
-    current_page = 0;
-    pages = [];
-    highlighted = [];
-    var full_page = false;
-    $(".selectable tbody tr").each(function () {
-        page.push(this);
-        full_page = false;
-        if (i++ >= page_size) {
-            pages.push(page);
-            page = [];
-            i = 0;
-            full_page = true;
-        }
-    });
-    if (!full_page) {
-        pages.push(page);
-    }
-    $(".selectable tbody").innerHTML = "";
-}
-
-function firstPage() {
-    current_page = 0;
-    displayPage();
-}
-
-function prevPage() {
-    if (current_page > 0) {
-        current_page--;
-        displayPage();
-    }
-}
-
-function nextPage() {
-    if (current_page < (pages.length - 1)) {
-        current_page++;
-        displayPage();
-    }
-}
-
-function lastPage() {
-    current_page = Math.max(pages.length - 1, 0);
-    displayPage();
-}
-
-function displayPage() {
-    var str = "";
-    if (pages.length > 0) {
-        pages[current_page].forEach(function (value) {
-            str += value.outerHTML;
-        });
-    }
-    else{
-        current_page = -1;
-    }
-    $(".selectable tbody").each(function () {
-        this.innerHTML = str;
-    });
-    $(".paginator_selector").each(function () {
-        this.value = (current_page + 1) + "/" + (pages.length);
-    });
-    reloadHighlights();
-}
-
-function inputPage(who) {
-    var input = who.value;
-    if (!input) {
-        return;
-    }
-    input = input.split("/")[0];
-    current_page = input - 1;
-    current_page = Math.min(Math.max(0, current_page), pages.length - 1);
-    displayPage();
-}
 
 function reloadHighlights() {
     var tmp = highlighted.slice();
     $(".selectable tbody tr").each(function () {
-        var tmp_id = this.cells.item(0).textContent
+        var tmp_id = this.cells.item(0).textContent;
         var has_id = tmp.indexOf(tmp_id) > -1;
         if (has_id) {
             toggleRow(this);
