@@ -1,13 +1,6 @@
 /**
  * Created by Caleb Milligan on 3/22/2016.
  */
-function initPager(selector) {
-    if (selector.prototype != Pager) {
-        selector = new Pager(selector);
-    }
-    pagers.push(selector);
-    return selector;
-}
 
 function getPager(selector) {
     var match = undefined;
@@ -20,8 +13,26 @@ function getPager(selector) {
     return match;
 }
 
+function removePager(selector) {
+    var match  = undefined;
+    pagers.forEach(function (pager) {
+        if (pager.selector == selector) {
+            match = pager;
+            return false;
+        }
+    });
+    if(match){
+        var index = pagers.indexOf(match);
+        if(index > -1){
+            pagers.splice(index)
+        }
+    }
+    return match;
+}
+
 function Pager(selector) {
     this.selector = selector;
+    pagers.push(this);
 }
 
 Pager.prototype.selector = undefined;
@@ -82,28 +93,34 @@ Pager.prototype.setPage = function (page) {
 Pager.prototype.inputPage = function (input) {
     var value = input.value;
     if (!value) {
-        return;
+        return this;
     }
     value = value.split("/")[0] - 1;
-    if(value != this.getPage) {
+    if (isNaN(value)) {
+        value = this.getPage();
+    }
+    if (value != this.getPage) {
         var old_page = this.getPage();
         this.setPage(value);
         if (this.onPageChanged) {
             this.onPageChanged(this.getPage(), old_page);
         }
     }
+    return this;
 };
 
 Pager.prototype.nextPage = function () {
     if (this.getPage() < (this.pages.length - 1)) {
         this.setPage(this.getPage() + 1)
     }
+    return this;
 };
 
 Pager.prototype.lastPage = function () {
     if (this.getPage() != (this.pages.length - 1)) {
         this.setPage(this.pages.length - 1);
     }
+    return this;
 };
 
 Pager.prototype.displayPage = function () {
@@ -123,6 +140,7 @@ Pager.prototype.displayPage = function () {
     $(this.selector + "-paginator_selector").each(function () {
         this.value = (pager.getPage() + 1) + "/" + (pager.pages.length);
     });
+    return this;
 };
 
 Pager.prototype.paginate = function () {
@@ -135,7 +153,7 @@ Pager.prototype.paginate = function () {
     $(this.getSelector() + " tbody tr").each(function () {
         page.push(this);
         full_page = false;
-        if (i++ >= pager.getPageSize()) {
+        if (i++ + 1 >= pager.getPageSize()) {
             pager.pages.push(page);
             page = [];
             i = 0;
@@ -146,6 +164,7 @@ Pager.prototype.paginate = function () {
         this.pages.push(page);
     }
     $(".selectable tbody").innerHTML = "";
+    return this;
 };
 
 var pagers = [];

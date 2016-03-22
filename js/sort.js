@@ -45,7 +45,10 @@ function executeSort() {
         if (match_request.readyState == 4) {
             if (match_request.status == 200) {
                 document.getElementById("match_data").innerHTML = match_request.responseText;
-                var pager = initPager(".selectable");
+                var pager = new Pager(".selectable");
+                pager.onPageChanged = function () {
+                    reloadHighlights();
+                };
                 pager.paginate();
                 pager.displayPage();
                 reloadHighlights();
