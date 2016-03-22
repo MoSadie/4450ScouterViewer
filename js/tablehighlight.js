@@ -96,7 +96,7 @@ function inputPage(who) {
 }
 
 function reloadHighlights() {
-    var tmp = highlighted;
+    var tmp = highlighted.slice();
     $(".selectable tbody tr").each(function () {
         var tmp_id = this.cells.item(0).textContent
         var has_id = tmp.indexOf(tmp_id) > -1;
