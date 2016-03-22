@@ -26,6 +26,7 @@ catch (Exception $e) {
 		<link rel="stylesheet" href="css/tablehighlight.css">
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/bootstrap.js"></script>
+		<script src="js/tablepager.js"></script>
 		<script src="js/scouting.js"></script>
 		<script src="js/tablehighlight.js"></script>
 	</head>
