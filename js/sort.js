@@ -49,8 +49,7 @@ function executeSort() {
                 pager.onPageChanged = function () {
                     reloadHighlights();
                 };
-                pager.paginate();
-                pager.displayPage();
+                pager.paginate().displayPage();
                 reloadHighlights();
             }
             else if(match_request.status == 500){
