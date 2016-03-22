@@ -4,12 +4,12 @@
 $(document).ready(function () {
     $(".selectable tbody").delegate('td', 'click', toggleRowEvent);
     /*
-    document.addEventListener("mousedown", function (event) {
-        if (!event.target || event.target.tagName.toLowerCase() != 'td') {
-            last_highlight = undefined;
-        }
-    });
-    */
+     document.addEventListener("mousedown", function (event) {
+     if (!event.target || event.target.tagName.toLowerCase() != 'td') {
+     last_highlight = undefined;
+     }
+     });
+     */
     var monitorShift = function (event) {
         shift_pressed = event.shiftKey;
     };
@@ -72,9 +72,14 @@ function lastPage() {
 
 function displayPage() {
     var str = "";
-    pages[current_page].forEach(function (value) {
-        str += value.outerHTML;
-    });
+    if (pages.length > 0) {
+        pages[current_page].forEach(function (value) {
+            str += value.outerHTML;
+        });
+    }
+    else{
+        current_page = -1;
+    }
     $(".selectable tbody").each(function () {
         this.innerHTML = str;
     });
