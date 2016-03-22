@@ -98,6 +98,13 @@ catch (Exception $e) {
 				</div>
 			</div>
 			<hr>
+			<form onsubmit="return false;">
+				<img src="images/first.png" onclick="firstPage()">
+				<img src="images/prev.png" onclick="prevPage()">
+				<input title="Page" class="paginator_selector" type="text" onchange="inputPage(this)">
+				<img src="images/next.png" onclick="nextPage()">
+				<img src="images/last.png" onclick="lastPage()">
+			</form>
 			<div class="table-responsive">
 				<table id="data_table" class="table selectable">
 					<thead>
@@ -139,6 +146,13 @@ catch (Exception $e) {
 					</tbody>
 				</table>
 			</div>
+			<form onsubmit="return false;">
+				<img src="images/first.png" onclick="firstPage()">
+				<img src="images/prev.png" onclick="prevPage()">
+				<input title="Page" class="paginator_selector" type="text" onchange="inputPage(this)">
+				<img src="images/next.png" onclick="nextPage()">
+				<img src="images/last.png" onclick="lastPage()">
+			</form>
 			<footer class="text-center">
 				<div class="container">
 					<div class="row">

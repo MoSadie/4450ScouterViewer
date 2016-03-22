@@ -4,7 +4,7 @@
 $(document).ready(function () {
     $(".selectable tbody").delegate('td', 'click', toggleRowEvent);
     document.addEventListener("mousedown", function (event) {
-        if(!event.target || event.target.tagName.toLowerCase() != 'td'){
+        if (!event.target || event.target.tagName.toLowerCase() != 'td') {
             last_highlight = undefined;
         }
     });
@@ -17,6 +17,80 @@ $(document).ready(function () {
 var last_highlight = undefined;
 var shift_pressed = false;
 var highlighted = [];
+var pages = [];
+var current_page = 0;
+var page_size = 30;
+
+function paginate() {
+    var i = 0;
+    var page = [];
+    current_page = 0;
+    pages = [];
+    var full_page = false;
+    $(".selectable tbody tr").each(function () {
+        page.push(this);
+        full_page = false;
+        if (i++ >= page_size) {
+            pages.push(page);
+            page = [];
+            i = 0;
+            full_page = true;
+        }
+    });
+    if(!full_page){
+        pages.push(page);
+    }
+    $(".selectable tbody").innerHTML = "";
+}
+
+function firstPage() {
+    current_page = 0;
+    displayPage();
+}
+
+function prevPage() {
+    if (current_page > 0) {
+        current_page--;
+        displayPage();
+    }
+}
+
+function nextPage() {
+    if (current_page < (pages.length - 1)) {
+        current_page++;
+        displayPage();
+    }
+}
+
+function lastPage() {
+    current_page = pages.length - 1;
+    displayPage();
+}
+
+function displayPage() {
+    var str = "";
+    pages[current_page].forEach(function (value) {
+        str += value.outerHTML;
+    });
+    $(".selectable tbody").each(function () {
+        this.innerHTML = str;
+    });
+    $(".paginator_selector").each(function () {
+        this.value = (current_page + 1) + "/" + (pages.length);
+    });
+}
+
+function inputPage(who) {
+    var input = who.value;
+    console.log(input);
+    if(!input){
+        return;
+    }
+    input = input.split("/")[0];
+    current_page = input - 1;
+    current_page = Math.min(Math.max(0, current_page), pages.length - 1);
+    displayPage();
+}
 
 function reloadHighlights() {
     var tmp = highlighted;

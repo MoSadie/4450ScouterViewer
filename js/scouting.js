@@ -38,6 +38,8 @@ function getScores() {
         if (match_request.readyState == 4) {
             if (match_request.status == 200) {
                 document.getElementById("match_data").innerHTML = match_request.responseText;
+                paginate();
+                displayPage();
             }
             else if(match_request.status = 500){
                 window.location.replace("errpage.php");

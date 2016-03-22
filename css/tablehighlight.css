@@ -6,3 +6,8 @@
     background-color: rgba(128, 192, 255, 0.5) !important;
     color: white !important;
 }
+
+.paginator_selector{
+    max-width: 75px;
+    text-align: center;
+}
