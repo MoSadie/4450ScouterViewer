@@ -12,7 +12,7 @@ function getScores() {
     request.send();
     request.onreadystatechange = function () {
         if (request.readyState == 4) {
-            if(request.status= 200) {
+            if (request.status = 200) {
                 var response = request.responseText;
                 var matches = JSON.parse(response);
                 document.getElementById("average_score").innerHTML = matches["average"];
@@ -26,7 +26,7 @@ function getScores() {
                 document.getElementById("defense_notes").innerHTML = matches["defense_notes"];
                 document.getElementById("robot_image").setAttribute("src", matches["image"]);
             }
-            else if(match_request.status = 500){
+            else if (match_request.status = 500) {
                 window.location.replace("errpage.php");
             }
         }
@@ -38,9 +38,13 @@ function getScores() {
         if (match_request.readyState == 4) {
             if (match_request.status == 200) {
                 document.getElementById("match_data").innerHTML = match_request.responseText;
-                new Pager(".selectable").setPageSize(18).paginate().displayPage();
+                var pager = Pager.getPager(".selectable");
+                if (!pager) {
+                    pager = new Pager(".selectable").setPageSize(18);
+                }
+                pager.paginate().displayPage();
             }
-            else if(match_request.status = 500){
+            else if (match_request.status = 500) {
                 window.location.replace("errpage.php");
             }
         }

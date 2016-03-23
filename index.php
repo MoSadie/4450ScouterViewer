@@ -101,11 +101,12 @@ catch (Exception $e) {
 			</div>
 			<hr>
 			<form onsubmit="return false;">
-				<img src="images/first.png" onclick="getPager('.selectable').firstPage()">
-				<img src="images/prev.png" onclick="getPager('.selectable').prevPage()">
-				<input title="Page" class="selectable-paginator_selector" type="text" onchange="getPager('.selectable').inputPage(this)">
-				<img src="images/next.png" onclick="getPager('.selectable').nextPage()">
-				<img src="images/last.png" onclick="getPager('.selectable').lastPage()">
+				<img src="images/first.png" onclick="Pager.getPager('.selectable').firstPage()">
+				<img src="images/prev.png" onclick="Pager.getPager('.selectable').prevPage()">
+				<input title="Page" class="selectable-paginator_selector" type="text"
+					   onchange="Pager.getPager('.selectable').inputPage(this)">
+				<img src="images/next.png" onclick="Pager.getPager('.selectable').nextPage()">
+				<img src="images/last.png" onclick="Pager.getPager('.selectable').lastPage()">
 			</form>
 			<div class="table-responsive">
 				<table id="data_table" class="table selectable">
@@ -149,11 +150,12 @@ catch (Exception $e) {
 				</table>
 			</div>
 			<form onsubmit="return false;">
-				<img src="images/first.png" onclick="getPager('.selectable').firstPage()">
-				<img src="images/prev.png" onclick="getPager('.selectable').prevPage()">
-				<input title="Page" class="selectable-paginator_selector" type="text" onchange="getPager('.selectable').inputPage(this)">
-				<img src="images/next.png" onclick="getPager('.selectable').nextPage()">
-				<img src="images/last.png" onclick="getPager('.selectable').lastPage()">
+				<img src="images/first.png" onclick="Pager.getPager('.selectable').firstPage()">
+				<img src="images/prev.png" onclick="Pager.getPager('.selectable').prevPage()">
+				<input title="Page" class="selectable-paginator_selector" type="text"
+					   onchange="Pager.getPager('.selectable').inputPage(this)">
+				<img src="images/next.png" onclick="Pager.getPager('.selectable').nextPage()">
+				<img src="images/last.png" onclick="Pager.getPager('.selectable').lastPage()">
 			</form>
 			<footer class="text-center">
 				<div class="container">

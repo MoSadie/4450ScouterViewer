@@ -45,14 +45,17 @@ function executeSort() {
         if (match_request.readyState == 4) {
             if (match_request.status == 200) {
                 document.getElementById("match_data").innerHTML = match_request.responseText;
-                var pager = new Pager(".selectable");
-                pager.onPageChanged = function () {
-                    reloadHighlights();
-                };
-                pager.setPageSize(18).paginate().displayPage();
+                var pager = Pager.getPager(".selectable");
+                if (!pager) {
+                    pager = new Pager(".selectable").setPageSize(18);
+                    pager.onPageChanged = function () {
+                        reloadHighlights();
+                    };
+                }
+                pager.paginate().displayPage();
                 reloadHighlights();
             }
-            else if(match_request.status == 500){
+            else if (match_request.status == 500) {
                 window.location.replace("../errpage.php");
             }
         }

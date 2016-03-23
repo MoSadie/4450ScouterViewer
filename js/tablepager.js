@@ -2,38 +2,40 @@
  * Created by Caleb Milligan on 3/22/2016.
  */
 
-function getPager(selector) {
+function Pager(selector) {
+    this.selector = selector;
+    Pager.pagers.push(this);
+}
+
+Pager.pagers = [];
+
+Pager.getPager = function (selector) {
     var match = undefined;
-    pagers.forEach(function (pager) {
+    Pager.pagers.forEach(function (pager) {
         if (pager.selector == selector) {
             match = pager;
             return false;
         }
     });
     return match;
-}
+};
 
-function removePager(selector) {
-    var match  = undefined;
-    pagers.forEach(function (pager) {
+Pager.removePager = function (selector) {
+    var match = undefined;
+    Pager.pagers.forEach(function (pager) {
         if (pager.selector == selector) {
             match = pager;
             return false;
         }
     });
-    if(match){
-        var index = pagers.indexOf(match);
-        if(index > -1){
-            pagers.splice(index)
+    if (match) {
+        var index = Pager.pagers.indexOf(match);
+        if (index > -1) {
+            Pager.pagers.splice(index)
         }
     }
     return match;
-}
-
-function Pager(selector) {
-    this.selector = selector;
-    pagers.push(this);
-}
+};
 
 Pager.prototype.selector = undefined;
 
@@ -163,8 +165,8 @@ Pager.prototype.paginate = function () {
     if (!full_page) {
         this.pages.push(page);
     }
-    $(".selectable tbody").innerHTML = "";
+    $(this.getSelector() + " tbody").each(function () {
+        this.innerHTML = "";
+    });
     return this;
 };
-
-var pagers = [];
