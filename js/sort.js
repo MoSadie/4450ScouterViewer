@@ -52,7 +52,7 @@ function executeSort() {
                         reloadHighlights();
                     };
                 }
-                pager.paginate().displayPage();
+                pager.paginate(true).displayPage();
                 reloadHighlights();
             }
             else if (match_request.status == 500) {

@@ -145,7 +145,7 @@ Pager.prototype.displayPage = function () {
     return this;
 };
 
-Pager.prototype.paginate = function () {
+Pager.prototype.paginate = function (do_padding) {
     var i = 0;
     var page = [];
     this.current_page = 0;
@@ -163,6 +163,17 @@ Pager.prototype.paginate = function () {
         }
     });
     if (!full_page) {
+        if (do_padding) {
+            while (i < pager.getPageSize()) {
+                i++;
+                var row = document.createElement("tr");
+                var element = document.createElement("td");
+                element.innerHTML = "0";
+                row.appendChild(element);
+                row.setAttribute("style", "visibility: hidden");
+                page.push(row);
+            }
+        }
         this.pages.push(page);
     }
     $(this.getSelector() + " tbody").each(function () {
