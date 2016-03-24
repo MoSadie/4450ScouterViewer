@@ -169,6 +169,7 @@ Pager.prototype.paginate = function (do_padding) {
                 var row = document.createElement("tr");
                 var element = document.createElement("td");
                 element.innerHTML = "0";
+                element.setAttribute("style", "border: none");
                 row.appendChild(element);
                 row.setAttribute("style", "visibility: hidden");
                 page.push(row);
