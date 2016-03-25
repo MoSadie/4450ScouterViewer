@@ -42,11 +42,11 @@ thead tr {
     background-color: #0F0F0F;
 }
 
-tbody tr:nth-child(odd){
+tbody tr:nth-child(odd) {
     background-color: rgba(48, 48, 48, 0.5);
 }
 
-tbody tr:nth-child(even){
+tbody tr:nth-child(even) {
     background-color: rgba(32, 32, 32, 0.5);
 }
 
@@ -85,4 +85,9 @@ tr input {
     max-height: 100px;
     overflow: hidden;
     overflow-y: scroll;
+}
+
+#performance-table{
+    width: 100%;
+    background-color: transparent;
 }

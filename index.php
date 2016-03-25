@@ -25,6 +25,8 @@ catch (Exception $e) {
 		<link rel="stylesheet" href="css/tablepager.css">
 		<link rel="stylesheet" href="css/tablehighlight.css">
 		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/Chart.Core.js"></script>
+		<script src="js/Chart.Line.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<script src="js/tablepager.js"></script>
 		<script src="js/scouting.js"></script>
@@ -95,6 +97,10 @@ catch (Exception $e) {
 						<hr>
 						<div class="col-lg-6">
 							<div><h4>Defense Notes: </h4><span id="defense_notes"></span></div>
+						</div>
+						<hr>
+						<div class="col-lg-6">
+							<canvas id="performance-table"></canvas>
 						</div>
 					</div>
 				</div>
