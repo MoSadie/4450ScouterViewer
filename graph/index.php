@@ -52,43 +52,43 @@ if (isset($_GET["team"])) {
 		<div class="container">
 			<div class="row">
 				<div class="col col-xs-4">
-					<h3>Portcullis</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Portcullis</h3>
 					<canvas id="graph-portcullis" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3>Chival de Frise</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Chival de Frise</h3>
 					<canvas id="graph-chival" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3>Moat</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Moat</h3>
 					<canvas id="graph-moat" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-xs-4">
-					<h3>Ramparts</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Ramparts</h3>
 					<canvas id="graph-ramparts" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3>Drawbridge</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Drawbridge</h3>
 					<canvas id="graph-drawbridge" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3>Sally Port</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Sally Port</h3>
 					<canvas id="graph-sally" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-xs-4">
-					<h3>Rock Wall</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Rock Wall</h3>
 					<canvas id="graph-rock" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3>Rough Terrain</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Rough Terrain</h3>
 					<canvas id="graph-rough" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3>Low Bar</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Low Bar</h3>
 					<canvas id="graph-low" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>
@@ -98,11 +98,11 @@ if (isset($_GET["team"])) {
 					<canvas id="graph-goals" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3>Endgame</h3>
+					<h3 title="0: Did nothing&#10;1: Parked on ramp&#10;2: Climbed tower">Endgame</h3>
 					<canvas id="graph-endgame" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3>Total Points</h3>
+					<h3 title="Values are approximate and do not account for factors&#10;such as penalties or auto/tele/endgame score differences">Total Points Earned</h3>
 					<canvas id="graph-points" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>
