@@ -42,8 +42,7 @@ if (isset($_GET["team"])) {
 					<form onsubmit="doGraph();return false">
 						<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0"
 							   list="team_numbers" value="<?php echo $team ?>"/>
-						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go"
-							   onclick="doGraph()">
+						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go">
 					</form>
 				</div>
 			</div>
@@ -102,7 +101,8 @@ if (isset($_GET["team"])) {
 					<canvas id="graph-endgame" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="Values are approximate and do not account for factors&#10;such as penalties or auto/tele/endgame score differences">Total Points Earned</h3>
+					<h3 title="Values are approximate and do not account for factors&#10;such as penalties or auto/tele/endgame score differences">
+						Total Points Earned</h3>
 					<canvas id="graph-points" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>

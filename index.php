@@ -43,8 +43,7 @@ catch (Exception $e) {
 					<form onsubmit="getScores();return false">
 						<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0"
 							   list="team_numbers"/>
-						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go"
-							   onclick="getScores()">
+						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go">
 					</form>
 					<h3>Or <a href="sort">view a sortable table</a></h3>
 				</div>
@@ -149,7 +148,7 @@ catch (Exception $e) {
 						</tr>
 					</thead>
 					<tbody id="match_data">
-
+					
 					</tbody>
 				</table>
 			</div>

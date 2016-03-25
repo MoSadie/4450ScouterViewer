@@ -11,6 +11,9 @@ $(document).ready(function () {
 });
 
 function doGraph() {
+    for (var key in Graph.graphs) {
+        Graph.graphs[key].setData([], undefined, [], undefined, []);
+    }
     var team_number = document.getElementById("team_number");
     if (!team_number.value.trim()) {
         return;
@@ -21,11 +24,6 @@ function doGraph() {
     match_request.onreadystatechange = function () {
         if (match_request.readyState == 4) {
             if(match_request.status = 200) {
-                match_request.onreadystatechange = function () {
-                };
-                for (var key in Graph.graphs) {
-                    Graph.graphs[key].setData([], undefined, [], undefined, []);
-                }
                 if (match_request.status == 200) {
                     var matches = JSON.parse(match_request.responseText);
                     var scores = [];
@@ -88,7 +86,7 @@ function doGraph() {
                         if (goal_data.high[i] + goal_data.low[i] >= 8) {
                             score += 25;
                         }
-                        for (key in cross_data) {
+                        for (var key in cross_data) {
                             var crosses = Math.min(Math.max(Math.min(speed_data[key][i], 1), cross_data[key][i]), 3);
                             if (crosses >= 3) {
                                 score += 20;
