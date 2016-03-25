@@ -9,9 +9,10 @@ $(document).ready(function () {
     chart_canvas = canvas_element.getContext("2d");
     Chart.defaults.global.maintainAspectRatio = false;
     Chart.defaults.global.responsive = false;
+    chart = new Chart(chart_canvas);
 });
 
-function refreshCanvas(){
+function refreshCanvas() {
     canvas_element.setAttribute("style", "width:" + width + ";height :" + height + "px");
     canvas_element.setAttribute("height", "" + height);
     canvas_element.setAttribute("width", "" + width);
@@ -20,8 +21,34 @@ function refreshCanvas(){
 var canvas_element;
 var chart_canvas;
 var chart;
+var line;
 var width;
 var height;
+var data = {
+    labels: [],
+    datasets: [
+        {
+            label: "Low Goals",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: []
+        },
+        {
+            label: "High Goals",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: []
+        }
+    ]
+};
 
 function getScores() {
     var team_number = document.getElementById("team_number");
@@ -78,33 +105,15 @@ function getScores() {
                     low_points[i] = low_goals;
                     high_points[i] = high_goals;
                 }
-
-                var data = {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: "Low Goals",
-                            fillColor: "rgba(220,220,220,0.2)",
-                            strokeColor: "rgba(220,220,220,1)",
-                            pointColor: "rgba(220,220,220,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(220,220,220,1)",
-                            data: low_points
-                        },
-                        {
-                            label: "High Goals",
-                            fillColor: "rgba(151,187,205,0.2)",
-                            strokeColor: "rgba(151,187,205,1)",
-                            pointColor: "rgba(151,187,205,1)",
-                            pointStrokeColor: "#fff",
-                            pointHighlightFill: "#fff",
-                            pointHighlightStroke: "rgba(151,187,205,1)",
-                            data: high_points
-                        }
-                    ]
-                };
-                chart = new Chart(chart_canvas).Line(data);
+                data.labels = labels;
+                data.datasets[0].data = low_points;
+                data.datasets[1].data = high_points;
+                if (!line) {
+                    line = chart.Line(data);
+                }
+                else {
+                    line.initialize(data);
+                }
                 refreshCanvas();
             }
             else if (match_request.status = 500) {
