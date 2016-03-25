@@ -1,55 +1,6 @@
 /**
  * Created by Caleb Milligan on 2/23/2016.
  */
-
-$(document).ready(function () {
-    canvas_element = document.getElementById("performance-table");
-    width = canvas_element.clientWidth;
-    height = width / 2;
-    chart_canvas = canvas_element.getContext("2d");
-    Chart.defaults.global.maintainAspectRatio = false;
-    Chart.defaults.global.responsive = false;
-    chart = new Chart(chart_canvas);
-});
-
-function refreshCanvas() {
-    canvas_element.setAttribute("style", "width:" + width + ";height :" + height + "px");
-    canvas_element.setAttribute("height", "" + height);
-    canvas_element.setAttribute("width", "" + width);
-}
-
-var canvas_element;
-var chart_canvas;
-var chart;
-var line;
-var width;
-var height;
-var data = {
-    labels: [],
-    datasets: [
-        {
-            label: "Low Goals",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: []
-        },
-        {
-            label: "High Goals",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: []
-        }
-    ]
-};
-
 function getScores() {
     var team_number = document.getElementById("team_number");
     if (!team_number.value.trim()) {
@@ -73,6 +24,7 @@ function getScores() {
                 document.getElementById("shooting_notes").innerHTML = matches["shooting_notes"];
                 document.getElementById("defense_notes").innerHTML = matches["defense_notes"];
                 document.getElementById("robot_image").setAttribute("src", matches["image"]);
+                document.getElementById("graph_link").setAttribute("href", "graph/?team=" + matches["team_number"]);
             }
             else if (match_request.status = 500) {
                 window.location.replace("errpage.php");
@@ -92,29 +44,6 @@ function getScores() {
                     pager = new Pager(".selectable").setPageSize(18);
                 }
                 pager.paginate().displayPage();
-
-                var low_points = [];
-                var high_points = [];
-                var labels = [];
-                for (var i = 0; i < match_element.childNodes.length; i++) {
-                    var row = match_element.childNodes.item(i);
-                    var match_num = row.childNodes.item(1).textContent;
-                    var low_goals = row.childNodes.item(27).textContent;
-                    var high_goals = row.childNodes.item(28).textContent;
-                    labels[i] = match_num;
-                    low_points[i] = low_goals;
-                    high_points[i] = high_goals;
-                }
-                data.labels = labels;
-                data.datasets[0].data = low_points;
-                data.datasets[1].data = high_points;
-                if (!line) {
-                    line = chart.Line(data);
-                }
-                else {
-                    line.initialize(data);
-                }
-                refreshCanvas();
             }
             else if (match_request.status = 500) {
                 window.location.replace("errpage.php");

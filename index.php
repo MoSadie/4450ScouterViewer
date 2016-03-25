@@ -1,8 +1,8 @@
 <?php
-include_once "MyPDO.php";
 /**
  * Created by Caleb Milligan on 2/1/2016.
  */
+include_once "MyPDO.php";
 try {
 	$db = new MyPDO();
 }
@@ -25,8 +25,6 @@ catch (Exception $e) {
 		<link rel="stylesheet" href="css/tablepager.css">
 		<link rel="stylesheet" href="css/tablehighlight.css">
 		<script src="js/jquery-1.11.3.min.js"></script>
-		<script src="js/Chart.Core.js"></script>
-		<script src="js/Chart.Line.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<script src="js/tablepager.js"></script>
 		<script src="js/scouting.js"></script>
@@ -100,7 +98,7 @@ catch (Exception $e) {
 						</div>
 						<hr>
 						<div class="col-lg-6">
-							<canvas id="performance-table"></canvas>
+							<h4><a id="graph_link" href="graph">View Graphic Data</a></h4>
 						</div>
 					</div>
 				</div>

@@ -43,17 +43,26 @@ if ($action == "getinfo") {
 	echo $json;
 	exit();
 }
-if ($action == "getmatches") {
+if ($action == "getmatches" || $action == "getrawmatches") {
 	// Select and order all match data for the specified team
-	$statement = $db->prepare("SELECT * FROM `stand_scouting` WHERE `team_number`=:team_number ORDER BY `team_number` ASC, `match_number` ASC");
+	$statement = $db->prepare("SELECT * FROM `stand_scouting` WHERE `team_number`=:team_number ORDER BY `match_number` ASC");
 	$statement->bindParam(":team_number", $team, PDO::PARAM_INT);
 	$success = $statement->execute();
 	http_response_code(200);
 	header('Content-Type: text/html;charset=utf-8');
+	$matches = [];
 	if ($success) {
 		for ($i = 0; $i < $statement->rowCount(); $i++) {
 			$match = $statement->fetch(PDO::FETCH_ASSOC);
-			echo Naming::matchDataToTableRow($match);
+			if ($action == "getmatches") {
+				echo Naming::matchDataToTableRow($match);
+			}
+			else {
+				array_push($matches, $match);
+			}
+		}
+		if ($action == "getrawmatches") {
+			echo json_encode($matches);
 		}
 	}
 	$statement->closeCursor();
