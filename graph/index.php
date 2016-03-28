@@ -53,49 +53,49 @@ if (isset($_GET["team"])) {
 		<div class="container">
 			<div class="row">
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Portcullis</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">many portcullis</h3>
 					<canvas id="graph-portcullis" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Chival de Frise</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">such chival de frise</h3>
 					<canvas id="graph-chival" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Moat</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">very moat wow so water games</h3>
 					<canvas id="graph-moat" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Ramparts</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">many ramparts</h3>
 					<canvas id="graph-ramparts" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Drawbridge</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">wowe drawbirdge</h3>
 					<canvas id="graph-drawbridge" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Sally Port</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">much sally prote</h3>
 					<canvas id="graph-sally" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Rock Wall</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">many rock such wall</h3>
 					<canvas id="graph-rock" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Rough Terrain</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">very rough terrain</h3>
 					<canvas id="graph-rough" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">Low Bar</h3>
+					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">wowe so lo bar</h3>
 					<canvas id="graph-low" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-xs-4">
-					<h3>Goals</h3>
+					<h3>in-holes</h3>
 					<canvas id="graph-goals" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
