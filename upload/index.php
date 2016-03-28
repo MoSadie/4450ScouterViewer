@@ -26,7 +26,7 @@
 			<input id="upload_button" disabled="disabled" type="submit" class="btn-sm" value="Upload"/>
 		</form>
 		<script type="text/javascript">
-			initDoge("images/doge.png");
+			initDoge("../images/doge.png");
 		</script>
 	</body>
 </html>

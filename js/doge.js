@@ -14,7 +14,7 @@ function initDoge(image_url) {
             Doge.overlay.removeChild(Doge.overlay.childNodes.item(0));
         }
         var x = randInt(w - 200);
-        var y = randInt(h - 350);
+        var y = randInt(h - 400);
         new Doge(x, y);
     }, 3000);
 }
@@ -29,20 +29,51 @@ function Doge(x, y) {
     this.styles.opacity = 1.0;
     var doge_image = document.createElement("img");
     var doge_text = document.createElement("p");
-    doge_image.setAttribute("style", "opacity: 0.6");
+    doge_image.setAttribute("style", "opacity: 0.3");
     var color = Doge.colors[randInt(Doge.colors.length)];
     doge_text.setAttribute("style", "color: " + color + " !important; opacity: 0.6 !important; text-shadow: -1px -1px 0 " +
-        "#000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000 !important; text-align: center !important; font-family: " +
-        "\"Comic Sans MS\", cursive !important; font-size: 20pt !important;");
-    var such = Doge.such[randInt(Doge.such.length)];
-    var doge = Doge.doge[randInt(Doge.doge.length)];
-    doge_text.innerHTML = such + " " + doge;
+        "#000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000 !important; text-align: center !important; \"Comic Sans\"," +
+        " \"Comic Sans MS\", \"Chalkboard\", \"ChalkboardSE-Regular\", \"Marker Felt\", \"Purisa\", \"URW Chancery L\"," +
+        " cursive !important; font-size: 20pt !important;");
+
+    var such = [
+        "wow",
+        "more than just doge",
+        "very " + randomElement(Doge.doge),
+        "much " + randomElement(Doge.doge),
+        "so " + randomElement(Doge.doge),
+        "such " + randomElement(Doge.doge),
+        "many " + randomElement(Doge.doge)
+    ];
+
+    doge_text.innerHTML = randomElement(such);
     doge_image.setAttribute("src", Doge.image_url);
     this.elem.appendChild(doge_image);
     this.elem.appendChild(doge_text);
     this.applyStyles();
     Doge.overlay.appendChild(this.elem);
 }
+
+function randomElement(array){
+    return array[randInt(array.length)];
+}
+
+Doge.doge = [
+    "dog-e",
+    "robot",
+    "safety",
+    "first",
+    "data",
+    "dance",
+    "stem",
+    "coopertition",
+    "scouting",
+    "education",
+    "teamwork",
+    "tribble",
+    "inspire",
+    "space"
+];
 
 Doge.colors = [
     "#0066FF", "#FF3399", "#33CC33", "#FFFF99", "#FFFF75",
@@ -65,23 +96,6 @@ Doge.prototype.applyStyles = function () {
 };
 
 Doge.prototype.styles = [];
-
-Doge.such = [
-    "wowe",
-    "very",
-    "much",
-    "so",
-    "such",
-    "many"
-];
-Doge.doge = [
-    "dog-e",
-    "robot",
-    "safety",
-    "first",
-    "dance",
-    "wow"
-];
 
 function randInt(limit) {
     return Math.floor(Math.random() * limit);

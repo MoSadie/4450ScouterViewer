@@ -3,7 +3,7 @@
  */
 
 * {
-    font-family: "Comic Sans MS", cursive !important;
+    font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", "Marker Felt", "Purisa", "URW Chancery L", cursive !important;
 }
 
 header {
@@ -31,7 +31,6 @@ body {
     background: #0F0F0F url("../images/da_beckgrond.jpg") repeat;
     text-shadow: 3px 5px 4px #000;
     color: #fff;
-    position: absolute;
 }
 
 input {
