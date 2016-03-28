@@ -29,6 +29,10 @@ catch (Exception $e) {
 		<script src="js/tablepager.js"></script>
 		<script src="js/scouting.js"></script>
 		<script src="js/tablehighlight.js"></script>
+		<script src="js/doge.js"></script>
+		<style>body {
+				background: #0F0F0F url("images/da_beckgrond.jpg") repeat !important;
+			}</style>
 	</head>
 	<body>
 		<header>
@@ -54,7 +58,7 @@ catch (Exception $e) {
 					<div class="row">
 						<div class="media">
 							<img id="robot_image" class="img-responsive img-rounded center-block"
-								 src="images/ORF_Logo.png">
+								 src="images/tem_logoe.png">
 						</div>
 					</div>
 				</div>
@@ -190,5 +194,8 @@ catch (Exception $e) {
 				</datalist>
 			</footer>
 		</div>
+		<script type="text/javascript">
+			initDoge("images/doge.png");
+		</script>
 	</body>
 </html>

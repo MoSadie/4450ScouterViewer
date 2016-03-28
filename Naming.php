@@ -8,44 +8,44 @@ class Naming {
 		$raw_value = Math::standardDeviation($scores);
 		$rounded = round($raw_value);
 		if ($raw_value <= 3.0) {
-			return "Very (~$rounded goals variance)";
+			return "hecka (~$rounded in-holes variance)";
 		}
 		if ($raw_value <= 7.0) {
-			return "Somewhat (~$rounded goals variance)";
+			return "pretty (~$rounded in-holes variance)";
 		}
 		else {
-			return "Unreliable (~$rounded goals variance)";
+			return ":c (~$rounded in-holes variance)";
 		}
 	}
-
+	
 	static function getSpeedName($speed) {
 		switch ((int)$speed) {
 			case 2:
-				return "Fast";
+				return "sanic speed";
 			case 1:
-				return "Medium";
+				return "way too fast";
 			case 0:
-				return "Slow";
+				return "fast";
 			default:
-				return "N/A";
+				return "ur 2 slo";
 		}
 	}
-
+	
 	static function getEndgameName($endgame) {
 		switch ((int)$endgame) {
 			case 0:
-				return "Parked on ramp";
+				return "sat on th rampd";
 			case 1:
-				return "Climbed tower";
+				return "way up high";
 			default:
-				return "N/A";
+				return "nope";
 		}
 	}
-
+	
 	static function getBooleanName($val){
-		return $val ? "Yes" : "No";
+		return $val ? "Yep" : "Nah";
 	}
-
+	
 	static function matchDataToTableRow(&$match){
 		$data = "<tr><td style='display: none'>";
 		$data .= $match["id"];

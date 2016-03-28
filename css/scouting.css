@@ -2,6 +2,10 @@
  * Created by Caleb Milligan on 2/23/2016
  */
 
+* {
+    font-family: "Comic Sans MS", sans-serif !important;
+}
+
 header {
     text-align: center;
 }
@@ -24,9 +28,10 @@ header {
 }
 
 body {
-    background: #0F0F0F url("http://orf.hulk.osd.wednet.edu/files/theme/content-bg.jpg") repeat;
+    background: #0F0F0F url("../images/da_beckgrond.jpg") repeat;
     text-shadow: 3px 5px 4px #000;
     color: #fff;
+    position: absolute;
 }
 
 input {
@@ -57,7 +62,7 @@ tr input {
 .table-responsive {
     border: 4px inset #333;
     border-radius: 10px;
-    background: url("http://orf.hulk.osd.wednet.edu/files/theme/header-footer-bg.jpg") repeat;
+    background: url("../images/da_beckgrond.jpg") repeat;
     max-height: 500px;
     overflow: auto;
 }
@@ -65,7 +70,7 @@ tr input {
 .media {
     border: 4px inset #333;
     border-radius: 10px 0 10px 10px;
-    background: url("http://orf.hulk.osd.wednet.edu/files/theme/header-footer-bg.jpg") repeat;
+    background: url("../images/da_beckgrond.jpg") repeat;
 }
 
 .william {
@@ -74,7 +79,7 @@ tr input {
     margin-left: -5px;
     z-index: 1;
     border-radius: 0 10px 10px 10px;
-    background: url("http://orf.hulk.osd.wednet.edu/files/theme/header-footer-bg.jpg") repeat;
+    background: url("../images/da_beckgrond.jpg") repeat;
 }
 
 #obstacle_data * {
@@ -87,7 +92,7 @@ tr input {
     overflow-y: scroll;
 }
 
-#performance-table{
+#performance-table {
     width: 100%;
     background-color: transparent;
 }

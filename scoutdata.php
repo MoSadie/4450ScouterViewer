@@ -33,7 +33,7 @@ if ($action == "getinfo") {
 	$imgname = "uploaded/images/ROBOT_" . $team . ".jpg";
 	// Otherwise, use the default image
 	if (!file_exists($imgname)) {
-		$imgname = "images/ORF_Logo.png";
+		$imgname = "images/tem_logoe.png";
 	}
 	$data["image"] = $imgname;
 	// Encode JSON and return

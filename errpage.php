@@ -30,6 +30,10 @@ $body = rawurlencode($body);
 		<title>Oops!</title>
 		<link rel="stylesheet" type="text/css" href="css/scouting.css">
 		<link rel="stylesheet" type="text/css" href="css/errpage.css">
+		<script src="js/doge.js"></script>
+		<style>body {
+				background: #0F0F0F url("images/da_beckgrond.jpg") repeat !important;
+			}</style>
 	</head>
 	<body>
 		<p>
@@ -40,5 +44,8 @@ $body = rawurlencode($body);
 				milligancn&#64;students&#46;osd&#46;wednet&#46;edu
 			</a>
 		</p>
+		<script type="text/javascript">
+			initDoge("images/doge.png");
+		</script>
 	</body>
 </html>

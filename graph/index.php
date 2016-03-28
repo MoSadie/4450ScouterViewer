@@ -29,6 +29,7 @@ if (isset($_GET["team"])) {
 		<script src="../js/Chart.Core.js"></script>
 		<script src="../js/Chart.Line.js"></script>
 		<script src="../js/graph.js"></script>
+		<script src="../js/doge.js"></script>
 	</head>
 	<body>
 		<header>
@@ -136,6 +137,9 @@ if (isset($_GET["team"])) {
 				?>
 			</datalist>
 		</footer>
+		<script type="text/javascript">
+			initDoge("../images/doge.png");
+		</script>
 		<?php
 		if ($team) {
 			?>

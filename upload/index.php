@@ -16,6 +16,7 @@
 		<script src="../js/jquery-1.11.3.min.js"></script>
 		<script src="../js/bootstrap.js"></script>
 		<script src="../js/scouting.js"></script>
+		<script src="../js/doge.js"></script>
 	</head>
 	<body>
 		<form action="" method="post" enctype="multipart/form-data" style="background: none">
@@ -24,6 +25,9 @@
 				   onchange="verifyUpload()"/><br/>
 			<input id="upload_button" disabled="disabled" type="submit" class="btn-sm" value="Upload"/>
 		</form>
+		<script type="text/javascript">
+			initDoge("images/doge.png");
+		</script>
 	</body>
 </html>
 <?php

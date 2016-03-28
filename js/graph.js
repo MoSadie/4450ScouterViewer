@@ -2,6 +2,9 @@
  * Created by Caleb Milligan on 3/25/2016.
  */
 $(document).ready(function () {
+    Chart.defaults.global.scaleFontFamily = "Comic Sans MS";
+    Chart.defaults.global.tooltipFontFamily = "Comic Sans MS";
+    Chart.defaults.global.tooltipTitleFontFamily = "Comic Sans MS";
     var nodes = document.getElementsByClassName("graph-container");
     for (var i = 0; i < nodes.length; i++) {
         var node = nodes.item(i);
@@ -155,9 +158,9 @@ Graph.prototype.data = {
     datasets: [
         {
             label: undefined,
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
+            fillColor: "rgba(220,0,0,0.2)",
+            strokeColor: "rgba(220,0,0,1)",
+            pointColor: "rgba(220,0,0,1)",
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
@@ -165,9 +168,9 @@ Graph.prototype.data = {
         },
         {
             label: undefined,
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
+            fillColor: "rgba(0,0,220,0.2)",
+            strokeColor: "rgba(0,0,220,1)",
+            pointColor: "rgba(0,0,220,1)",
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
