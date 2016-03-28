@@ -19,7 +19,7 @@ catch (Exception $e) {
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Scouter Data Viewer</title>
+		<title>April Fool!</title>
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/scouting.css">
 		<link rel="stylesheet" href="css/tablepager.css">

@@ -27,7 +27,7 @@ $body = rawurlencode($body);
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Oops!</title>
+		<title>April Oops!</title>
 		<link rel="stylesheet" type="text/css" href="css/scouting.css">
 		<link rel="stylesheet" type="text/css" href="css/errpage.css">
 		<script src="js/doge.js"></script>

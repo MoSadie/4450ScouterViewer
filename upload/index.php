@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Scouter Data Viewer</title>
+		<title>April Fool!</title>
 		<link rel="stylesheet" href="../css/bootstrap.css">
 		<link rel="stylesheet" href="../css/scouting.css">
 		<script src="../js/jquery-1.11.3.min.js"></script>
