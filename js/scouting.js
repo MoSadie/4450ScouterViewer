@@ -24,7 +24,6 @@ function getScores() {
                 document.getElementById("shooting_notes").innerHTML = matches["shooting_notes"];
                 document.getElementById("defense_notes").innerHTML = matches["defense_notes"];
                 document.getElementById("robot_image").setAttribute("src", matches["image"]);
-                document.getElementById("graph_link").setAttribute("href", "graph/?team=" + matches["team_number"]);
             }
             else if (match_request.status = 500) {
                 window.location.replace("errpage.php");
@@ -49,7 +48,8 @@ function getScores() {
                 window.location.replace("errpage.php");
             }
         }
-    }
+    };
+    document.getElementById("graph_link").setAttribute("href", "graph/?team=" + team_number.value.trim());
 }
 
 function verifyUpload() {
