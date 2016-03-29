@@ -6,7 +6,8 @@ include_once "MyPDO.php";
 include_once "Naming.php";
 
 $query = "SELECT `stand_scouting`.*, `total_points`.`total_points` FROM `stand_scouting` 
-			LEFT JOIN `total_points` ON `total_points`.`match_number` = `stand_scouting`.`match_number` ORDER BY ";
+			LEFT JOIN `total_points` ON `total_points`.`match_number` = `stand_scouting`.`match_number`
+			AND `total_points`.`team_number` = `stand_scouting`.`match_number` ORDER BY ";
 if (isset($_GET["order"])) {
 	$order_params = json_decode($_GET["order"], true);
 	if ($order_params && sizeof($order_params) > 0) {
