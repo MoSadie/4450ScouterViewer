@@ -34,15 +34,15 @@ if (isset($_GET["team"])) {
 	</head>
 	<body>
 		<header>
-			<h1>Olympia Robotics Federation</h1>
-			<h2>2016 FIRST Stronghold Scouter</h2>
+			<h1>olympia robotics federation</h1>
+			<h2>10</h2>
 		</header>
 		<div class="container">
 			<div class="row">
 				<div class="team_query">
-					<h3>Search by team:</h3>
+					<h3>very question many search:</h3>
 					<form onsubmit="doGraph();return false">
-						<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0"
+						<input id="team_number" type="number" title="Team #" placeholder="tem #" min="0"
 							   list="team_numbers" value="<?php echo $team ?>"/>
 						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go">
 					</form>
@@ -53,43 +53,43 @@ if (isset($_GET["team"])) {
 		<div class="container">
 			<div class="row">
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">many portcullis</h3>
+					<h3 title="0: ur 2 slo&#10;1: fast&#10;2: way 2 fast&#10;3: sanic speed">many portcullis</h3>
 					<canvas id="graph-portcullis" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">such chival de frise</h3>
+					<h3 title="0: ur 2 slo&#10;1: fast&#10;2: way 2 fast&#10;3: sanic speed">such chival de frise</h3>
 					<canvas id="graph-chival" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">very moat wow so water games</h3>
+					<h3 title="0: ur 2 slo&#10;1: fast&#10;2: way 2 fast&#10;3: sanic speed">wow so water games</h3>
 					<canvas id="graph-moat" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">many ramparts</h3>
+					<h3 title="0: ur 2 slo&#10;1: fast&#10;2: way 2 fast&#10;3: sanic speed">many ramparts</h3>
 					<canvas id="graph-ramparts" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">wowe drawbirdge</h3>
+					<h3 title="0: ur 2 slo&#10;1: fast&#10;2: way 2 fast&#10;3: sanic speed">wowe drawbirdge</h3>
 					<canvas id="graph-drawbridge" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">much sally prote</h3>
+					<h3 title="0: ur 2 slo&#10;1: fast&#10;2: way 2 fast&#10;3: sanic speed">much sally prote</h3>
 					<canvas id="graph-sally" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">many rock such wall</h3>
+					<h3 title="0: ur 2 slo&#10;1: fast&#10;2: way 2 fast&#10;3: sanic speed">many rock such wall</h3>
 					<canvas id="graph-rock" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">very rough terrain</h3>
+					<h3 title="0: ur 2 slo&#10;1: fast&#10;2: way 2 fast&#10;3: sanic speed">very rough terrain</h3>
 					<canvas id="graph-rough" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: No cross&#10;1: Slow&#10;2: Medium&#10;3: Fast">wowe so lo bar</h3>
+					<h3 title="0: ur 2 slo&#10;1: fast&#10;2: way 2 fast&#10;3: sanic speed">wowe such limbo</h3>
 					<canvas id="graph-low" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>
@@ -99,12 +99,12 @@ if (isset($_GET["team"])) {
 					<canvas id="graph-goals" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="0: Did nothing&#10;1: Parked on ramp&#10;2: Climbed tower">Endgame</h3>
+					<h3 title="0: nope&#10;1: sat on th rampd&#10;2: way up high">finisher</h3>
 					<canvas id="graph-endgame" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 				<div class="col col-xs-4">
-					<h3 title="Values are approximate and do not account for factors&#10;such as penalties or auto/tele/endgame score differences">
-						Total Points Earned</h3>
+					<h3 title="Values are approximate and do not account for factors&#10;such as penalties, auto/tele/endgame score differences,&#10;or shiba inus on the field">
+						totle ponts</h3>
 					<canvas id="graph-points" class="graph-container" style="width: 100%; height:100%"></canvas>
 				</div>
 			</div>

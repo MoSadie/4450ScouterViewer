@@ -37,21 +37,21 @@ catch (Exception $e) {
 	</head>
 	<body>
 		<header>
-			<h1>Olympia Robotics Federation</h1>
-			<h2>2016 FIRST Stronghold Scouter</h2>
+			<h1>olympia robotics federation</h1>
+			<h2>2016 first strongdoge scouter</h2>
 		</header>
 		<hr>
 		<div class="container">
 			<div class="row">
 				<div class="team_query">
-					<h3>Search by team:</h3>
+					<h3>very search much query:</h3>
 					<form onsubmit="getScores();return false">
-						<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0"
+						<input id="team_number" type="number" title="Team #" placeholder="tem #" min="0"
 							   list="team_numbers"/>
 						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go">
 					</form>
 					<br>
-					<h3>Or <a href="sort">view a sortable table</a></h3>
+					<h3><a href="sort">so sort many entries</a></h3>
 				</div>
 			</div>
 			<hr>
@@ -68,70 +68,70 @@ catch (Exception $e) {
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-6">
-								<h4><span>Team Name: </span><span id="team_name"></span></h4>
+								<h4><span>tem name: </span><span id="team_name"></span></h4>
 							</div>
 						</div>
 						<br>
 						<hr>
 						<div class="row">
 							<div class="col-lg-6">
-								<h4><span>Average goals: </span><span id="average_score"></span></h4>
+								<h4><span>avg in-holes: </span><span id="average_score"></span></h4>
 							</div>
 						</div>
 						<br>
 						<hr>
 						<div class="row">
 							<div class="col-lg-6">
-								<h4><span>Reliability: </span><span id="reliability"></span></h4>
+								<h4><span>relibility: </span><span id="reliability"></span></h4>
 							</div>
 						</div>
 						<br>
 						<hr>
 						<div class="row">
 							<div class="col-lg-6">
-								<div><h4>Robot description: </h4><span id="robot_description"></span></div>
+								<div><h4>robot lookie: </h4><span id="robot_description"></span></div>
 							</div>
 						</div>
 						<br>
 						<hr>
 						<div class="row">
 							<div class="col-lg-6">
-								<div><h4>Autonomous Notes: </h4><span id="auto_notes"></span></div>
+								<div><h4>self-move thing: </h4><span id="auto_notes"></span></div>
 							</div>
 						</div>
 						<br>
 						<hr>
 						<div class="row">
 							<div class="col-lg-6">
-								<div><h4>Drive Base Notes: </h4><span id="drive_base_notes"></span></div>
+								<div><h4>scooter bit: </h4><span id="drive_base_notes"></span></div>
 							</div>
 						</div>
 						<br>
 						<hr>
 						<div class="row">
 							<div class="col-lg-6">
-								<div><h4>Pickup Notes: </h4><span id="pickup_notes"></span></div>
+								<div><h4>grabby grab: </h4><span id="pickup_notes"></span></div>
 							</div>
 						</div>
 						<br>
 						<hr>
 						<div class="row">
 							<div class="col-lg-6">
-								<div><h4>Shooting Notes: </h4><span id="shooting_notes"></span></div>
+								<div><h4>pew pew bit: </h4><span id="shooting_notes"></span></div>
 							</div>
 						</div>
 						<br>
 						<hr>
 						<div class="row">
 							<div class="col-lg-6">
-								<div><h4>Defense Notes: </h4><span id="defense_notes"></span></div>
+								<div><h4>defendy things: </h4><span id="defense_notes"></span></div>
 							</div>
 						</div>
 						<br>
 						<hr>
 						<div class="row">
 							<div class="col-lg-6">
-								<h4><a id="graph_link" href="graph">View Graphic Data</a></h4>
+								<h4><a id="graph_link" href="graph">many graphs</a></h4>
 							</div>
 						</div>
 					</div>
@@ -150,37 +150,37 @@ catch (Exception $e) {
 				<table id="data_table" class="table selectable">
 					<thead>
 						<tr>
-							<th>Match #</th>
-							<th>Team #</th>
-							<th>Scouter Name</th>
-							<th>No-Show</th>
-							<th>D.o.F.</th>
-							<th>Autonomous Behavior</th>
-							<th>Defended</th>
-							<th>Pickup Speed</th>
-							<th>Portcullis Crosses</th>
-							<th>Portcullis Speed</th>
-							<th>Chival de Frise Crosses</th>
-							<th>Chival de Frise Speed</th>
-							<th>Moat Crosses</th>
-							<th>Moat Speed</th>
-							<th>Ramparts Crosses</th>
-							<th>Ramparts Speed</th>
-							<th>Drawbridge Crosses</th>
-							<th>Drawbridge Speed</th>
-							<th>Sally Port Crosses</th>
-							<th>Sally Port Speed</th>
-							<th>Rock Wall Crosses</th>
-							<th>Rock Wall Speed</th>
-							<th>Rough Terrain Crosses</th>
-							<th>Rough Terrain Speed</th>
-							<th>Low Bar Crosses</th>
-							<th>Low Bar Speed</th>
-							<th>Low Goals</th>
-							<th>High Goals</th>
-							<th>Endgame</th>
-							<th>Total Points</th>
-							<th>Notes</th>
+							<th>metch #</th>
+							<th>tem #</th>
+							<th>scooter name</th>
+							<th>left us alone ;n;</th>
+							<th>ripperoni</th>
+							<th>self-drivey</th>
+							<th>didefend</th>
+							<th>grabby speed</th>
+							<th>portcullis-crossings</th>
+							<th>portcullis-zoom</th>
+							<th>teeter-totties</th>
+							<th>teeter-zoom</th>
+							<th>moat-swimmings</th>
+							<th>moat-zoom</th>
+							<th>ramports-crossings</th>
+							<th>ramports-zoom</th>
+							<th>scribblebridge-crossings</th>
+							<th>scribblebridge-zoom</th>
+							<th>sally's-crossings</th>
+							<th>sally's-zoom</th>
+							<th>mountain-crossings</th>
+							<th>mountain-zoom</th>
+							<th>rumble-crossings</th>
+							<th>rumble-zoom</th>
+							<th>limbo-crossings</th>
+							<th>limbo-zoom</th>
+							<th>short in-holes</th>
+							<th>tall in-holes</th>
+							<th>finisher</th>
+							<th>lotsa points</th>
+							<th>nots</th>
 						</tr>
 					</thead>
 					<tbody id="match_data">

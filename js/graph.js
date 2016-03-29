@@ -105,18 +105,18 @@ function doGraph() {
                     }
                     scores[i] = score;
                 }
-                Graph.graphs["graph-portcullis"].setData(labels, "Crosses", cross_data["portcullis"], "Speed", speed_data["portcullis"]);
-                Graph.graphs["graph-chival"].setData(labels, "Crosses", cross_data["chival"], "Speed", speed_data["chival"]);
-                Graph.graphs["graph-moat"].setData(labels, "Crosses", cross_data["moat"], "Speed", speed_data["moat"]);
-                Graph.graphs["graph-ramparts"].setData(labels, "Crosses", cross_data["ramparts"], "Speed", speed_data["ramparts"]);
-                Graph.graphs["graph-drawbridge"].setData(labels, "Crosses", cross_data["drawbridge"], "Speed", speed_data["drawbridge"]);
-                Graph.graphs["graph-sally"].setData(labels, "Crosses", cross_data["sally"], "Speed", speed_data["sally"]);
-                Graph.graphs["graph-rock"].setData(labels, "Crosses", cross_data["rock"], "Speed", speed_data["rock"]);
-                Graph.graphs["graph-rough"].setData(labels, "Crosses", cross_data["rough"], "Speed", speed_data["rough"]);
-                Graph.graphs["graph-low"].setData(labels, "Crosses", cross_data["low"], "Speed", speed_data["low"]);
-                Graph.graphs["graph-goals"].setData(labels, "Low Goals", goal_data["low"], "High Goals", goal_data["high"]);
-                Graph.graphs["graph-endgame"].setData(labels, "Activity", endgame_data);
-                Graph.graphs["graph-points"].setData(labels, "Points", scores);
+                Graph.graphs["graph-portcullis"].setData(labels, "crossings", cross_data["portcullis"], "zoom", speed_data["portcullis"]);
+                Graph.graphs["graph-chival"].setData(labels, "crossings", cross_data["chival"], "zoom", speed_data["chival"]);
+                Graph.graphs["graph-moat"].setData(labels, "crossings", cross_data["moat"], "zoom", speed_data["moat"]);
+                Graph.graphs["graph-ramparts"].setData(labels, "crossings", cross_data["ramparts"], "zoom", speed_data["ramparts"]);
+                Graph.graphs["graph-drawbridge"].setData(labels, "crossings", cross_data["drawbridge"], "zoom", speed_data["drawbridge"]);
+                Graph.graphs["graph-sally"].setData(labels, "crossings", cross_data["sally"], "zoom", speed_data["sally"]);
+                Graph.graphs["graph-rock"].setData(labels, "crossings", cross_data["rock"], "zoom", speed_data["rock"]);
+                Graph.graphs["graph-rough"].setData(labels, "crossings", cross_data["rough"], "zoom", speed_data["rough"]);
+                Graph.graphs["graph-low"].setData(labels, "crossings", cross_data["low"], "zoom", speed_data["low"]);
+                Graph.graphs["graph-goals"].setData(labels, "short in-holes", goal_data["low"], "tall in-holes", goal_data["high"]);
+                Graph.graphs["graph-endgame"].setData(labels, "finisher", endgame_data);
+                Graph.graphs["graph-points"].setData(labels, "ponts", scores);
             }
             else if (match_request.status = 500) {
                 window.location.replace("../errpage.php");

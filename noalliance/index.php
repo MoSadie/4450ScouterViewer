@@ -30,10 +30,10 @@ catch (Exception $e) {
 	</head>
 	<body>
 		<header>
-			<h1>Olympia Robotics Federation</h1>
-			<h2>2016 FIRST Stronghold Scouter</h2>
+			<h1>olympia robotics federation</h1>
+			<h2>2016 first strongdoge scouter</h2>
 			<hr>
-			<h3>No-Alliance List</h3>
+			<h3>donut want list</h3>
 		</header>
 		<form onsubmit="return false;">
 			<img src="../images/first.png" onclick="Pager.getPager('.selectable').firstPage()">

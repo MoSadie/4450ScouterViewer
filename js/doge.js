@@ -65,14 +65,18 @@ Doge.doge = [
     "first",
     "data",
     "dance",
+    "spirit",
     "stem",
+    "automation",
     "coopertition",
     "scouting",
     "education",
     "teamwork",
     "tribble",
+    "kamen",
     "inspire",
-    "space"
+    "enterprise",
+    "wow"
 ];
 
 Doge.colors = [

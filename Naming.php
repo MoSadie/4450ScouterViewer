@@ -43,7 +43,7 @@ class Naming {
 	}
 	
 	static function getBooleanName($val){
-		return $val ? "Yep" : "Nah";
+		return $val ? "ye" : "nuh";
 	}
 	
 	static function matchDataToTableRow(&$match){
