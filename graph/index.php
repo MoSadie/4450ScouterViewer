@@ -22,6 +22,9 @@ if (isset($_GET["team"])) {
   -->
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Caleb Milligan">
+		<title>Graphical Data Viewer</title>
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../css/scouting.css">
 		<script type="application/javascript" src="../js/jquery-1.11.3.min.js"></script>

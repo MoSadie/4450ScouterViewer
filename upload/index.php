@@ -10,7 +10,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Scouter Data Viewer</title>
+		<title>Manual Image Upload</title>
+		<meta name="author" content="Caleb Milligan">
 		<link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
 		<link type="text/css" rel="stylesheet" href="../css/scouting.css">
 		<script type="application/javascript" src="../js/jquery-1.11.3.min.js"></script>

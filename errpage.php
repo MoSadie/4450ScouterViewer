@@ -27,6 +27,7 @@ $body = rawurlencode($body);
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="author" content="Caleb Milligan">
 		<title>Oops!</title>
 		<link rel="stylesheet" type="text/css" href="css/scouting.css">
 		<link rel="stylesheet" type="text/css" href="css/errpage.css">

@@ -19,6 +19,7 @@ catch (Exception $e) {
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="author" content="Caleb Milligan">
 		<title>No-Alliance List</title>
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../css/scouting.css">
