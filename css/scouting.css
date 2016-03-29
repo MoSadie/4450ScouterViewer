@@ -74,6 +74,7 @@ tr input {
     margin-left: -5px;
     z-index: 1;
     border-radius: 0 10px 10px 10px;
+    overflow: hidden;
     background: url("http://orf.hulk.osd.wednet.edu/files/theme/header-footer-bg.jpg") repeat;
 }
 

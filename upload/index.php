@@ -11,11 +11,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Scouter Data Viewer</title>
-		<link rel="stylesheet" href="../css/bootstrap.css">
-		<link rel="stylesheet" href="../css/scouting.css">
-		<script src="../js/jquery-1.11.3.min.js"></script>
-		<script src="../js/bootstrap.js"></script>
-		<script src="../js/scouting.js"></script>
+		<link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="../css/scouting.css">
+		<script type="application/javascript" src="../js/jquery-1.11.3.min.js"></script>
+		<script type="application/javascript" src="../js/bootstrap.js"></script>
+		<script type="application/javascript" src="../js/scouting.js"></script>
 	</head>
 	<body>
 		<form action="" method="post" enctype="multipart/form-data" style="background: none">
