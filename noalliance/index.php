@@ -53,19 +53,26 @@ catch (Exception $e) {
 				</thead>
 				<tbody>
 					<?php
-					$statement = $db->prepare("SELECT `match_number`, `team_number`, `no_alliance_reason` FROM `stand_scouting` WHERE `no_alliance`=1 ORDER BY `team_number` ASC");
-					$statement->execute();
-					for ($i = 0; $i < $statement->rowCount(); $i++) {
-						$match = $statement->fetch(PDO::FETCH_ASSOC);
-						echo "<tr><td>";
-						echo $match["team_number"];
-						echo "</td><td>";
-						echo $match["match_number"];
-						echo "</td><td>";
-						echo $match["no_alliance_reason"];
-						echo "</td></tr>";
+					try {
+						$statement = $db->prepare("SELECT `match_number`, `team_number`, `no_alliance_reason` FROM `stand_scouting` WHERE `no_alliance`=1 ORDER BY `team_number` ASC");
+						$statement->execute();
+						for ($i = 0; $i < $statement->rowCount(); $i++) {
+							$match = $statement->fetch(PDO::FETCH_ASSOC);
+							echo "<tr><td>";
+							echo $match["team_number"];
+							echo "</td><td>";
+							echo $match["match_number"];
+							echo "</td><td>";
+							echo $match["no_alliance_reason"];
+							echo "</td></tr>";
+						}
+						$statement->closeCursor();
 					}
-					$statement->closeCursor();
+					catch (Exception $e) {
+						error_log($e->__toString());
+						header("Location: ../errpage.php?timestamp=" . time() . "&err=" . get_class($e), true);
+						exit();
+					}
 					?>
 				</tbody>
 			</table>
