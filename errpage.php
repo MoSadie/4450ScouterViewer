@@ -37,9 +37,9 @@ $body = rawurlencode($body);
 	</head>
 	<body>
 		<p>
-			An error has occurred!<br/>
-			Please alert a system administrator,<br/>
-			or contact Caleb Milligan at<br/>
+			we had an oopsie :c<br/>
+			give a sysadmin a ringey-dingey,<br/>
+			or shoot a mail to caleb milligan at<br/>
 			<a href="mailto:milligancn&#64;students&#46;osd&#46;wednet&#46;edu?subject=<?php echo $subject ?>&body=<?php echo $body ?>">
 				milligancn&#64;students&#46;osd&#46;wednet&#46;edu
 			</a>
