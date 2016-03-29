@@ -20,16 +20,17 @@ catch (Exception $e) {
 	<head>
 		<meta charset="utf-8">
 		<title>April Fool!</title>
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<link rel="stylesheet" href="css/scouting.css">
-		<link rel="stylesheet" href="css/tablepager.css">
-		<link rel="stylesheet" href="css/tablehighlight.css">
-		<script src="js/jquery-1.11.3.min.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/tablepager.js"></script>
-		<script src="js/scouting.js"></script>
-		<script src="js/tablehighlight.js"></script>
-		<script src="js/doge.js"></script>
+		<title>Scouter Data Viewer</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/scouting.css">
+		<link rel="stylesheet" type="text/css" href="css/tablepager.css">
+		<link rel="stylesheet" type="text/css" href="css/tablehighlight.css">
+		<script type="text/css" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/css" src="js/bootstrap.js"></script>
+		<script type="text/css" src="js/tablepager.js"></script>
+		<script type="text/css" src="js/scouting.js"></script>
+		<script type="text/css" src="js/tablehighlight.js"></script>
+		<script type="application/javascript" src="js/doge.js"></script>
 		<style>body {
 				background: #0F0F0F url("images/da_beckgrond.jpg") repeat !important;
 			}</style>
@@ -49,6 +50,7 @@ catch (Exception $e) {
 							   list="team_numbers"/>
 						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go">
 					</form>
+					<br>
 					<h3>Or <a href="sort">view a sortable table</a></h3>
 				</div>
 			</div>
@@ -63,54 +65,74 @@ catch (Exception $e) {
 					</div>
 				</div>
 				<div class="col-xs-5 william">
-					<div class="row">
-						<div class="col-lg-6">
-							<h4><span>Team Name: </span><span id="team_name"></span></h4>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+								<h4><span>Team Name: </span><span id="team_name"></span></h4>
+							</div>
 						</div>
 						<br>
 						<hr>
-						<div class="col-lg-6">
-							<h4><span>Average goals: </span><span id="average_score"></span></h4>
+						<div class="row">
+							<div class="col-lg-6">
+								<h4><span>Average goals: </span><span id="average_score"></span></h4>
+							</div>
 						</div>
 						<br>
 						<hr>
-						<div class="col-lg-6">
-							<h4><span>Reliability: </span><span id="reliability"></span></h4>
+						<div class="row">
+							<div class="col-lg-6">
+								<h4><span>Reliability: </span><span id="reliability"></span></h4>
+							</div>
 						</div>
 						<br>
 						<hr>
-						<div class="col-lg-6">
-							<div><h4>Robot description: </h4><span id="robot_description"></span></div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div><h4>Robot description: </h4><span id="robot_description"></span></div>
+							</div>
 						</div>
 						<br>
 						<hr>
-						<div class="col-lg-6">
-							<div><h4>Autonomous Notes: </h4><span id="auto_notes"></span></div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div><h4>Autonomous Notes: </h4><span id="auto_notes"></span></div>
+							</div>
 						</div>
 						<br>
 						<hr>
-						<div class="col-lg-6">
-							<div><h4>Drive Base Notes: </h4><span id="drive_base_notes"></span></div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div><h4>Drive Base Notes: </h4><span id="drive_base_notes"></span></div>
+							</div>
 						</div>
 						<br>
 						<hr>
-						<div class="col-lg-6">
-							<div><h4>Pickup Notes: </h4><span id="pickup_notes"></span></div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div><h4>Pickup Notes: </h4><span id="pickup_notes"></span></div>
+							</div>
 						</div>
 						<br>
 						<hr>
-						<div class="col-lg-6">
-							<div><h4>Shooting Notes: </h4><span id="shooting_notes"></span></div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div><h4>Shooting Notes: </h4><span id="shooting_notes"></span></div>
+							</div>
 						</div>
 						<br>
 						<hr>
-						<div class="col-lg-6">
-							<div><h4>Defense Notes: </h4><span id="defense_notes"></span></div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div><h4>Defense Notes: </h4><span id="defense_notes"></span></div>
+							</div>
 						</div>
 						<br>
 						<hr>
-						<div class="col-lg-6">
-							<h4><a id="graph_link" href="graph">View Graphic Data</a></h4>
+						<div class="row">
+							<div class="col-lg-6">
+								<h4><a id="graph_link" href="graph">View Graphic Data</a></h4>
+							</div>
 						</div>
 					</div>
 				</div>

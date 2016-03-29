@@ -78,6 +78,7 @@ tr input {
     margin-left: -5px;
     z-index: 1;
     border-radius: 0 10px 10px 10px;
+    overflow: hidden;
     background: url("../images/da_beckgrond.jpg") repeat;
 }
 

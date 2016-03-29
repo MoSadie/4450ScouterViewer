@@ -22,15 +22,15 @@ if (isset($_GET["team"])) {
   -->
 <html>
 	<head>
-		<link rel="stylesheet" href="../css/bootstrap.css">
-		<link rel="stylesheet" href="../css/scouting.css">
 		<title>April Fool!</title>
-		<script src="../js/jquery-1.11.3.min.js"></script>
-		<script src="../js/bootstrap.js"></script>
-		<script src="../js/Chart.Core.js"></script>
-		<script src="../js/Chart.Line.js"></script>
-		<script src="../js/graph.js"></script>
-		<script src="../js/doge.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../css/scouting.css">
+		<script type="application/javascript" src="../js/jquery-1.11.3.min.js"></script>
+		<script type="application/javascript" src="../js/bootstrap.js"></script>
+		<script type="application/javascript" src="../js/Chart.Core.js"></script>
+		<script type="application/javascript" src="../js/Chart.Line.js"></script>
+		<script type="application/javascript" src="../js/graph.js"></script>
+		<script type="application/javascript" src="../js/doge.js"></script>
 	</head>
 	<body>
 		<header>

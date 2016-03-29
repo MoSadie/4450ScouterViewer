@@ -11,12 +11,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>April Fool!</title>
-		<link rel="stylesheet" href="../css/bootstrap.css">
-		<link rel="stylesheet" href="../css/scouting.css">
-		<script src="../js/jquery-1.11.3.min.js"></script>
-		<script src="../js/bootstrap.js"></script>
-		<script src="../js/scouting.js"></script>
-		<script src="../js/doge.js"></script>
+		<link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="../css/scouting.css">
+		<script type="application/javascript" src="../js/jquery-1.11.3.min.js"></script>
+		<script type="application/javascript" src="../js/bootstrap.js"></script>
+		<script type="application/javascript" src="../js/scouting.js"></script>
+		<script type="application/javascript" src="../js/doge.js"></script>
 	</head>
 	<body>
 		<form action="" method="post" enctype="multipart/form-data" style="background: none">
