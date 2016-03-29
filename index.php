@@ -24,11 +24,11 @@ catch (Exception $e) {
 		<link rel="stylesheet" type="text/css" href="css/scouting.css">
 		<link rel="stylesheet" type="text/css" href="css/tablepager.css">
 		<link rel="stylesheet" type="text/css" href="css/tablehighlight.css">
-		<script type="text/css" src="js/jquery-1.11.3.min.js"></script>
-		<script type="text/css" src="js/bootstrap.js"></script>
-		<script type="text/css" src="js/tablepager.js"></script>
-		<script type="text/css" src="js/scouting.js"></script>
-		<script type="text/css" src="js/tablehighlight.js"></script>
+		<script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="application/javascript" src="js/bootstrap.js"></script>
+		<script type="application/javascript" src="js/tablepager.js"></script>
+		<script type="application/javascript" src="js/scouting.js"></script>
+		<script type="application/javascript" src="js/tablehighlight.js"></script>
 	</head>
 	<body>
 		<header>
