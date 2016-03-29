@@ -165,6 +165,7 @@ catch (Exception $e) {
 							<th>Low Goals</th>
 							<th>High Goals</th>
 							<th>Endgame</th>
+							<th>Total Points</th>
 							<th>Notes</th>
 						</tr>
 					</thead>
