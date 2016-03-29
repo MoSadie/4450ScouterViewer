@@ -108,6 +108,13 @@ class Naming {
 		$data .= "</td><td>";
 		$data .= Naming::getEndgameName($match["endgame"]);
 		$data .= "</td><td>";
+		if(isset($match["total_points"])) {
+			$data .= $match["total_points"];
+		}
+		else{
+			$data .= "?";
+		}
+		$data .= "</td><td>";
 		$data .= $match["notes"];
 		$data .= "</td></tr>";
 		return $data;

@@ -1,5 +1,6 @@
 <?php
 include_once "MyPDO.php";
+include_once "Utils.php";
 /**
  * Created by Caleb Milligan on 2/17/2016.
  */
@@ -40,7 +41,7 @@ foreach ($teams as $team) {
 	$statement->bindParam(":team_number", $team["team_number"]);
 	$statement->execute();
 	// Generate and exec insert
-	generateInsert($db, "pit_scouting", $team);
+	Utils::generateInsert($db, "pit_scouting", $team);
 }
 // Save each match from stand scouting
 foreach ($matches as $match) {
@@ -50,38 +51,10 @@ foreach ($matches as $match) {
 	$statement->bindParam(":match_number", $match["match_number"]);
 	$statement->execute();
 	// Generate and exec insert
-	generateInsert($db, "stand_scouting", $match);
-}
-
-/**
- * Automatically generate and execute an SQL INSERT statement for the supplied data
- *
- * @param $db PDO
- * @param $table_name string
- * @param $values array
- */
-function generateInsert(&$db, $table_name, &$values) {
-	// Don't bother with empty values
-	if (sizeof($values) === 0) {
-		return;
-	}
-	// Define query strings
-	$query = "REPLACE INTO `$table_name` (";
-	$values_query = "VALUES (";
-	// Append each column and binding name
-	foreach ($values as $column_name => $value) {
-		$query .= "`$column_name`, ";
-		$values_query .= ":$column_name, ";
-	}
-	// Delete trailing commas and whitespace
-	$values_query = substr($values_query, 0, strlen($values_query) - 2) . ")";
-	$query = substr($query, 0, strlen($query) - 2) . ") " . $values_query;
-	// Prepare the statement
-	$statement = $db->prepare($query);
-	// Bind each value
-	foreach ($values as $column_name => $value) {
-		$statement->bindValue(":" . $column_name, $value);
-	}
-	// Execute the statement
-	$statement->execute();
+	Utils::generateInsert($db, "stand_scouting", $match);
+	$total_points = [];
+	$total_points["match_number"] = $match["match_number"];
+	$total_points["team_number"] = $match["team_number"];
+	$total_points["total_points"] = Utils::calcTotalScore($match);
+	Utils::generateInsert($db, "total_points", $total_points);
 }
