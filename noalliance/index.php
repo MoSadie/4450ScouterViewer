@@ -26,6 +26,7 @@ catch (Exception $e) {
 		<script type="application/javascript" src="../js/bootstrap.js"></script>
 		<script type="application/javascript" src="../js/tablepager.js"></script>
 		<script type="application/javascript" src="../js/tablehighlight.js"></script>
+		<script type="application/javascript" src="../js/doge.js"></script>
 	</head>
 	<body>
 		<header>
@@ -97,5 +98,6 @@ catch (Exception $e) {
 				</div>
 			</div>
 		</footer>
+		<script type="text/javascript">initDoge("../images/doge.png")</script>
 	</body>
 </html>
