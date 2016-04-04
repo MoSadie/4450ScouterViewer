@@ -1,6 +1,12 @@
 /**
  * Created by Caleb Milligan on 2/23/2016.
  */
+$(document).ready(function () {
+    if(!Pager.getPager(".selectable")){
+        new Pager(".selectable").setPageSize(18);
+    }
+});
+
 function getScores() {
     var team_number = document.getElementById("team_number");
     if (!team_number.value.trim()) {
