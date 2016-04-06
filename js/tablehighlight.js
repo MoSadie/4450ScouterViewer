@@ -3,13 +3,6 @@
  */
 $(document).ready(function () {
     $(".selectable tbody").delegate('td', 'click', toggleRowEvent);
-    /*
-     document.addEventListener("mousedown", function (event) {
-     if (!event.target || event.target.tagName.toLowerCase() != 'td') {
-     last_highlight = undefined;
-     }
-     });
-     */
     var monitorShift = function (event) {
         shift_pressed = event.shiftKey;
     };
