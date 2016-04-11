@@ -16,7 +16,7 @@ var highlighted = [];
 function reloadHighlights() {
     var tmp = highlighted.slice();
     $(".selectable tbody tr").each(function () {
-        var tmp_id = this.cells.item(0).textContent;
+        var tmp_id = this.cells.item(0).textContent + ";" + this.cells.item(1).textContent;
         var has_id = tmp.indexOf(tmp_id) > -1;
         if (has_id) {
             toggleRow(this);
@@ -27,7 +27,7 @@ function reloadHighlights() {
 
 function toggleRow(row) {
     row.classList.toggle("selected");
-    var id = row.cells.item(0).textContent;
+    var id = row.cells.item(0).textContent + ";" + row.cells.item(1).textContent;
     if (row.classList.contains("selected")) {
         highlighted.push(id);
     }

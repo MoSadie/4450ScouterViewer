@@ -56,5 +56,9 @@ foreach ($matches as $match) {
 	$total_points["match_number"] = $match["match_number"];
 	$total_points["team_number"] = $match["team_number"];
 	$total_points["total_points"] = Utils::calcTotalScore($match);
+	$statement = $db->prepare("DELETE FROM `total_points` WHERE `team_number`=:team_number AND `match_number`=:match_number");
+	$statement->bindParam(":team_number", $match["team_number"]);
+	$statement->bindParam(":match_number", $match["match_number"]);
+	$statement->execute();
 	Utils::generateInsert($db, "total_points", $total_points);
 }
