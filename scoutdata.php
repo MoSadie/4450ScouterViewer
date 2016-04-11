@@ -45,9 +45,10 @@ if ($action == "getinfo") {
 }
 if ($action == "getmatches" || $action == "getrawmatches") {
 	// Select and order all match data for the specified team
-	$statement = $db->prepare("SELECT `stand_scouting`.*, `total_points`.`total_points` FROM `stand_scouting` 
-			LEFT JOIN `total_points` ON `total_points`.`match_number` = `stand_scouting`.`match_number`
-			WHERE `stand_scouting`.`team_number`=:team_number ORDER BY `stand_scouting`.`match_number` ASC");
+	$statement = $db->prepare("SELECT `stand_scouting`.*, `c`.`total_points` FROM `stand_scouting` LEFT JOIN `total_points` 
+				  				AS `c` ON `c`.`team_number`=`stand_scouting`.`team_number` AND 
+				  				`c`.`match_number`=`stand_scouting`.`match_number` WHERE `c`.`team_number`=:team_number ORDER 
+				  				BY `stand_scouting`.`match_number` ASC");
 	/*
 	$statement = $db->prepare("SELECT * FROM `stand_scouting` 
 			WHERE `team_number`=:team_number ORDER BY `match_number` ASC");
