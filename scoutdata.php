@@ -30,11 +30,12 @@ if ($action == "getinfo") {
 	}
 	$statement->closeCursor();
 	$defenses_crossed = [];
-	$statement = $db->prepare("SELECT SUM(`portcullis_crosses`) + SUM(`portcullis_speed`) AS `portcullis_crossed`, SUM(`chival_crosses`) + SUM(`chival_speed`) AS `chival_crossed`, SUM(`moat_crosses`) + SUM(`moat_speed`) AS `moat_crossed`, SUM(`ramparts_crosses`) + SUM(`ramparts_speed`) AS `ramparts_crossed`, SUM(`drawbridge_crosses`) + SUM(`drawbridge_speed`) AS `drawbridge_crossed`, SUM(`sally_crosses`) + SUM(`sally_speed`) AS `sally_crossed`, SUM(`rock_crosses`) + SUM(`rock_speed`) AS `rock_crossed`, SUM(`rough_crosses`) + SUM(`rough_speed`) AS `rough_crossed`, SUM(`low_crosses`) + SUM(`low_speed`) AS `low_crossed` FROM `stand_scouting` WHERE `team_number`=:team_number");
+	$statement = $db->prepare("SELECT SUM(`portcullis_crosses`) AS `portcullis_crossed`, SUM(`chival_crosses`) AS `chival_crossed`, SUM(`moat_crosses`) AS `moat_crossed`, SUM(`ramparts_crosses`) AS `ramparts_crossed`, SUM(`drawbridge_crosses`) AS `drawbridge_crossed`, SUM(`sally_crosses`) AS `sally_crossed`, SUM(`rock_crosses`) AS `rock_crossed`, SUM(`rough_crosses`) AS `rough_crossed`, SUM(`low_crosses`) AS `low_crossed` FROM `stand_scouting` WHERE `team_number`=:team_number");
 	$statement->bindParam(":team_number", $team, PDO::PARAM_INT);
 	$success = $statement->execute();
 	if ($success && $statement->rowCount() > 0) {
 		$result = $statement->fetch(PDO::FETCH_ASSOC);
+		error_log(json_encode($result));
 		if ($result["portcullis_crossed"] > 0) {
 			array_push($defenses_crossed, "Portcullis");
 		}

@@ -61,69 +61,69 @@ catch (Exception $e) {
 					</div>
 				</div>
 				<div class="col-xs-5 william">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-6">
+					<div class="f">
+						<div class="a">
+							<div class="b">
 								<h4><span>Team Name: </span><span id="team_name"></span></h4>
 							</div>
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-lg-6">
+						<div class="a">
+							<div class="b">
 								<h4><span>Average goals: </span><span id="average_score"></span></h4>
 							</div>
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-lg-6">
+						<div class="a">
+							<div class="b">
 								<h4><span>Reliability: </span><span id="reliability"></span></h4>
 							</div>
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-lg-6">
-								<h4><span>Defenses crossed: </span><span id="defenses_crossed"></span></h4>
+						<div class="a">
+							<div class="b">
+								<div><h4><span>Defenses crossed: </span></h4><span id="defenses_crossed"></span></div>
 							</div>
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-lg-6">
+						<div class="a">
+							<div class="b">
 								<div><h4>Robot description: </h4><span id="robot_description"></span></div>
 							</div>
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-lg-6">
+						<div class="a">
+							<div class="b">
 								<div><h4>Autonomous Notes: </h4><span id="auto_notes"></span></div>
 							</div>
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-lg-6">
+						<div class="a">
+							<div class="b">
 								<div><h4>Drive Base Notes: </h4><span id="drive_base_notes"></span></div>
 							</div>
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-lg-6">
+						<div class="a">
+							<div class="b">
 								<div><h4>Pickup Notes: </h4><span id="pickup_notes"></span></div>
 							</div>
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-lg-6">
+						<div class="a">
+							<div class="b">
 								<div><h4>Shooting Notes: </h4><span id="shooting_notes"></span></div>
 							</div>
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-lg-6">
+						<div class="a">
+							<div class="b">
 								<div><h4>Defense Notes: </h4><span id="defense_notes"></span></div>
 							</div>
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-lg-6">
+						<div class="a">
+							<div class="b">
 								<h4><a id="graph_link" href="graph">View Graphic Data</a></h4>
 							</div>
 						</div>
