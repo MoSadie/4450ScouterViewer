@@ -29,6 +29,7 @@ function getScores() {
                 document.getElementById("pickup_notes").innerHTML = matches["pickup_notes"];
                 document.getElementById("shooting_notes").innerHTML = matches["shooting_notes"];
                 document.getElementById("defense_notes").innerHTML = matches["defense_notes"];
+                document.getElementById("defenses_crossed").innerHTML = JSON.stringify(matches["defenses_crossed"]);
                 document.getElementById("robot_image").setAttribute("src", matches["image"]);
             }
             else if (match_request.status = 500) {

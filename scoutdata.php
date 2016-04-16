@@ -29,6 +29,43 @@ if ($action == "getinfo") {
 		$data = array_merge($data, $statement->fetch(PDO::FETCH_ASSOC));
 	}
 	$statement->closeCursor();
+	$defenses_crossed = [];
+	$statement = $db->prepare("SELECT SUM(`portcullis_crosses`) + SUM(`portcullis_speed`) AS `portcullis_crossed`, SUM(`chival_crosses`) + SUM(`chival_speed`) AS `chival_crossed`, SUM(`moat_crosses`) + SUM(`moat_speed`) AS `moat_crossed`, SUM(`ramparts_crosses`) + SUM(`ramparts_speed`) AS `ramparts_crossed`, SUM(`drawbridge_crosses`) + SUM(`drawbridge_speed`) AS `drawbridge_crossed`, SUM(`sally_crosses`) + SUM(`sally_speed`) AS `sally_crossed`, SUM(`rock_crosses`) + SUM(`rock_speed`) AS `rock_crossed`, SUM(`rough_crosses`) + SUM(`rough_speed`) AS `rough_crossed`, SUM(`low_crosses`) + SUM(`low_speed`) AS `low_crossed` FROM `stand_scouting` WHERE `team_number`=:team_number");
+	$statement->bindParam(":team_number", $team, PDO::PARAM_INT);
+	$success = $statement->execute();
+	if ($success && $statement->rowCount() > 0) {
+		$result = $statement->fetch(PDO::FETCH_ASSOC);
+		if ($result["portcullis_crossed"] > 0) {
+			array_push($defenses_crossed, "Portcullis");
+		}
+		if ($result["chival_crossed"] > 0) {
+			array_push($defenses_crossed, "Chival de Frise");
+		}
+		if ($result["moat_crossed"] > 0) {
+			array_push($defenses_crossed, "Moat");
+		}
+		if ($result["ramparts_crossed"] > 0) {
+			array_push($defenses_crossed, "Ramparts");
+		}
+		if ($result["drawbridge_crossed"] > 0) {
+			array_push($defenses_crossed, "Drawbridge");
+		}
+		if ($result["sally_crossed"] > 0) {
+			array_push($defenses_crossed, "Sally Port");
+		}
+		if ($result["rock_crossed"] > 0) {
+			array_push($defenses_crossed, "Rock Wall");
+		}
+		if ($result["rough_crossed"] > 0) {
+			array_push($defenses_crossed, "Rough Terrain");
+		}
+		if ($result["low_crossed"] > 0) {
+			array_push($defenses_crossed, "Low Bar");
+		}
+	}
+	$statement->closeCursor();
+	$data["defenses_crossed"] = $defenses_crossed;
+
 	// If an image has been uploaded for this robot, specify its URL
 	$imgname = "uploaded/images/ROBOT_" . $team . ".jpg";
 	// Otherwise, use the default image

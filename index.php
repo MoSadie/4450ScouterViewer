@@ -82,6 +82,12 @@ catch (Exception $e) {
 						<hr>
 						<div class="row">
 							<div class="col-lg-6">
+								<h4><span>Defenses crossed: </span><span id="defenses_crossed"></span></h4>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-lg-6">
 								<div><h4>Robot description: </h4><span id="robot_description"></span></div>
 							</div>
 						</div>
