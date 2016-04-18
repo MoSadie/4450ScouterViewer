@@ -101,10 +101,6 @@ catch (Exception $e) {
 						<div>
 							<div><h4>Defense Notes: </h4><span id="defense_notes"></span></div>
 						</div>
-						<hr>
-						<div>
-							<h4><a id="graph_link" href="graph">View Graphic Data</a></h4>
-						</div>
 					</div>
 				</div>
 			</div>
