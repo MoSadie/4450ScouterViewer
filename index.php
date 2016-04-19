@@ -11,6 +11,7 @@ catch (Exception $e) {
 	header("Location: ./errpage.php?timestamp=" . time() . "&err=" . get_class($e), true);
 	exit();
 }
+$team_provided = false;
 ?>
 <!DOCTYPE html>
 <!--
@@ -43,7 +44,12 @@ catch (Exception $e) {
 					<h3>Search by team:</h3>
 					<form onsubmit="getScores();return false">
 						<input id="team_number" type="number" title="Team #" placeholder="Team #" min="0"
-							   list="team_numbers"/>
+							   list="team_numbers" <?php
+						if (isset($_GET["team"]) && preg_match("/^\\d*$/", $_GET["team"])) {
+							$team_provided = true;
+							echo "value=\"" . $_GET["team"] . "\"";
+						}
+						?>/>
 						<input id="submit_team" type="submit" class="btn-sm" value="Go" title="Go">
 					</form>
 					<br>
@@ -53,54 +59,50 @@ catch (Exception $e) {
 			<hr>
 			<div class="row">
 				<div class="col-xs-7">
-					<div class="row">
-						<div class="media">
-							<img id="robot_image" class="img-responsive img-rounded center-block"
-								 src="images/ORF_Logo.png">
-						</div>
+					<div class="row media">
+						<img id="robot_image" class="img-responsive img-rounded center-block"
+							 src="images/ORF_Logo.png">
 					</div>
 				</div>
 				<div class="col-xs-5 william">
-					<div class="f">
-						<div>
-							<h4><span>Team Name: </span><span id="team_name"></span></h4>
-						</div>
-						<hr>
-						<div>
-							<h4><span>Average goals: </span><span id="average_score"></span></h4>
-						</div>
-						<hr>
-						<div>
-							<h4><span>Reliability: </span><span id="reliability"></span></h4>
-						</div>
-						<hr>
-						<div>
-							<div><h4><span>Defenses crossed: </span></h4><span id="defenses_crossed"></span></div>
-						</div>
-						<hr>
-						<div>
-							<div><h4>Robot description: </h4><span id="robot_description"></span></div>
-						</div>
-						<hr>
-						<div>
-							<div><h4>Autonomous Notes: </h4><span id="auto_notes"></span></div>
-						</div>
-						<hr>
-						<div>
-							<div><h4>Drive Base Notes: </h4><span id="drive_base_notes"></span></div>
-						</div>
-						<hr>
-						<div>
-							<div><h4>Pickup Notes: </h4><span id="pickup_notes"></span></div>
-						</div>
-						<hr>
-						<div>
-							<div><h4>Shooting Notes: </h4><span id="shooting_notes"></span></div>
-						</div>
-						<hr>
-						<div>
-							<div><h4>Defense Notes: </h4><span id="defense_notes"></span></div>
-						</div>
+					<div>
+						<h4><span>Team Name: </span><span id="team_name"></span></h4>
+					</div>
+					<hr>
+					<div>
+						<h4><span>Average goals: </span><span id="average_score"></span></h4>
+					</div>
+					<hr>
+					<div>
+						<h4><span>Reliability: </span><span id="reliability"></span></h4>
+					</div>
+					<hr>
+					<div>
+						<div><h4><span>Defenses crossed: </span></h4><span id="defenses_crossed"></span></div>
+					</div>
+					<hr>
+					<div>
+						<div><h4>Robot description: </h4><span id="robot_description"></span></div>
+					</div>
+					<hr>
+					<div>
+						<div><h4>Autonomous Notes: </h4><span id="auto_notes"></span></div>
+					</div>
+					<hr>
+					<div>
+						<div><h4>Drive Base Notes: </h4><span id="drive_base_notes"></span></div>
+					</div>
+					<hr>
+					<div>
+						<div><h4>Pickup Notes: </h4><span id="pickup_notes"></span></div>
+					</div>
+					<hr>
+					<div>
+						<div><h4>Shooting Notes: </h4><span id="shooting_notes"></span></div>
+					</div>
+					<hr>
+					<div>
+						<div><h4>Defense Notes: </h4><span id="defense_notes"></span></div>
 					</div>
 				</div>
 			</div>
@@ -167,10 +169,17 @@ catch (Exception $e) {
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
+							<!--<p>Star our <a href="https://github.com/Short-Circuit/4450ScouterViewer">site</a> or <a
+									href="https://github.com/Short-Circuit/4450Scouter">app</a> on GitHub</p>-->
 							<p>Copyright © Olympia Robotics Federation. All rights reserved.</p>
 						</div>
 					</div>
 				</div>
+				<?php
+				if ($team_provided) {
+					echo "<script type=\"text/javascript\">getScores()</script>";
+				}
+				?>
 				<datalist id="team_numbers">
 					<?php
 					try {

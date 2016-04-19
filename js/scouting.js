@@ -56,7 +56,6 @@ function getScores() {
             }
         }
     };
-    document.getElementById("graph_link").setAttribute("href", "graph/?team=" + team_number.value.trim());
 }
 
 function verifyUpload() {
