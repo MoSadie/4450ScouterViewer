@@ -1,6 +1,7 @@
 <?php
 $file = uniqid("", true) . ".sql";
 $output = `mysqldump -u username -ppassword --no-create-info --skip-triggers database pit_scouting stand_scouting total_points > $file`;
+echo $output;
 if (file_exists($file)) {
 	header('Content-Description: File Transfer');
 	header('Content-Type: application/octet-stream');
@@ -20,6 +21,6 @@ if (file_exists($file)) {
 <!DOCTYPE html>
 <html>
 	<head>
-		<script type="text/javascript">window.close()</script>
+		<!--<script type="text/javascript">window.close()</script>-->
 	</head>
 </html>
