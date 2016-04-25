@@ -169,6 +169,11 @@ $team_provided = false;
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
+							<a href="./export" target="_blank">Export raw SQL data</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
 							<!--<p>Star our <a href="https://github.com/Short-Circuit/4450ScouterViewer">site</a> or <a
 									href="https://github.com/Short-Circuit/4450Scouter">app</a> on GitHub</p>-->
 							<p>Copyright © Olympia Robotics Federation. All rights reserved.</p>

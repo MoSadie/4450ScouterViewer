@@ -2,7 +2,7 @@
  * Created by Caleb Milligan on 2/23/2016.
  */
 $(document).ready(function () {
-    if(!Pager.getPager(".selectable")){
+    if (!Pager.getPager(".selectable")) {
         new Pager(".selectable").setPageSize(18);
     }
 });
