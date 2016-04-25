@@ -37,6 +37,6 @@ else {
 	if (file_exists($file)) {
 		unlink($file);
 	}
-	header("Location: ../errpage.php");
+	header("Location: ../errpage.php?timestamp=" . time());
 }
 ?>
