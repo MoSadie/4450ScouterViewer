@@ -2,6 +2,7 @@
 /**
  * Created by Caleb Milligan on 2/24/2016.
  */
+ignore_user_abort(true);
 ?>
 <!DOCTYPE html>
 <!--

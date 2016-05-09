@@ -2,6 +2,7 @@
 /**
  * Created by Caleb Milligan on 2/17/2016.
  */
+ignore_user_abort(true);
 // We need this to check validity
 if (!isset($_SERVER["HTTP_USER_AGENT"])) {
 	echo file_get_contents("unauthorized.html");

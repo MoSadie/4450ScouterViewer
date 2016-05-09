@@ -174,8 +174,8 @@ $team_provided = false;
 					</div>
 					<div class="row">
 						<div class="col-xs-12">
-							<!--<p>Star our <a href="https://github.com/Short-Circuit/4450ScouterViewer">site</a> or <a
-									href="https://github.com/Short-Circuit/4450Scouter">app</a> on GitHub</p>-->
+							<p>Star our <a href="https://github.com/Short-Circuit/4450ScouterViewer">site</a> or <a
+									href="https://github.com/Short-Circuit/4450Scouter">app</a> on GitHub</p>
 							<p>Copyright © Olympia Robotics Federation. All rights reserved.</p>
 						</div>
 					</div>

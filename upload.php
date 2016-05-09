@@ -1,9 +1,10 @@
 <?php
-include_once "MyPDO.php";
-include_once "Utils.php";
 /**
  * Created by Caleb Milligan on 2/17/2016.
  */
+ignore_user_abort(true);
+include_once "MyPDO.php";
+include_once "Utils.php";
 // We need this to check validity
 if (!isset($_SERVER["HTTP_USER_AGENT"])) {
 	echo file_get_contents("unauthorized.html");
