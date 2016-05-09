@@ -37,8 +37,8 @@ $body = rawurlencode($body);
 			An error has occurred!<br/>
 			Please alert a system administrator,<br/>
 			or contact Caleb Milligan at<br/>
-			<a href="mailto:milligancn&#64;students&#46;osd&#46;wednet&#46;edu?subject=<?php echo $subject ?>&body=<?php echo $body ?>">
-				milligancn&#64;students&#46;osd&#46;wednet&#46;edu
+			<a href="mailto:Caleb&#46;Milligan&#64;stmartin&#46;edu?subject=<?php echo $subject ?>&body=<?php echo $body ?>">
+				Caleb&#46;Milligan&#64;stmartin&#46;edu
 			</a>
 		</p>
 	</body>
